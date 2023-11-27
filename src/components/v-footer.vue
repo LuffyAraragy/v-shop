@@ -5,6 +5,9 @@
             <div class="v-footer__menu content-options">
                 <div class="v-footer___text-h2">
                     Меню
+                    <button class="button" @click="loadData">
+
+                    </button>
                 </div>
                 <div class="v-footer___text-h3">
                     Купить
@@ -80,10 +83,33 @@
             </div>
             <div class="v-footer__information">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut  magna aliqua.  / @2020. Все права защищены 
+                
             </div>
         </div>
     </div>
 </template>
+
+
+<script>
+import {fetchFooterData} from '@/assets/api/apiFooter'
+
+    export default {
+        name: 'v-footer',
+        data() {
+            return {
+                
+            }
+        },
+        methods: {
+            loadData() {
+                console.log("delayResponse");
+                console.log(fetchFooterData());
+            }
+        },
+        
+    }
+</script>
+
 
 <style>
 .v-footer {
@@ -171,7 +197,3 @@
 }
     
 </style>
-
-<script>
-    
-</script>
