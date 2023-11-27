@@ -1,67 +1,73 @@
-$main-color-text: #2F2D2D;
-$main-color-text: #2A7D03;
-$main-color-text: #363636;
-$main-color-text: #C4C4C4;
-$main-color-text: #FFF;
-$main-color-text: #000000;
-
-$main-color-background-button-black: #2F2D2D;
-$main-color-background-button-green: #2A7D03;
-$main-color-background-button-white: #F8F7F7;
+// Начало пишеться как обознание моего индивидуального кода
+// Цвет простого текста
+$app-color-text-gray: #2F2D2D;
+$app-color-text-green: #2A7D03;
+$app-color-text-black-gray: #363636;
+$app-color-text-white-gray: #C4C4C4;
+$app-color-text-white: #FFF;
+$app-color-text-black: #000000;
+//Цвет background КНОПКИ 
+$app-color-background-button-black-gray: #2F2D2D;
+$app-color-background-button-green: #2A7D03;
+$app-color-background-button-white: #F8F7F7;
 // Ещё прозрачный
+//Цвет ТЕКСТА КНОПКИ 
+$app-color-text-button-white: #FFF;
+$app-color-text-button-green: #2A7D03;
 
-$main-color-text-button-white: #FFF;
-$main-color-text-button-green: #2A7D03;
-$main-color-text-button-white: #FFF;
 
-$main-border-button-white: 2px solid #FFF;
-$main-border-button-green-2: 2px solid #2A7D03;
-$main-border-button-green-1: 1px solid #2A7D03;
+// Цвет и размер рамки кнопки
+$app-border-button-white: 2px solid #FFF;
+$app-border-button-green-1: 1px solid #2A7D03;
+$app-border-button-green-2: 2px solid #2A7D03;
 
-$box-shadow-all-1: 2px 2px 5px 0px rgba(0, 0, 0, 0.05);
-$box-shadow-all-2: 0px 1px 5px 0px rgba(0, 0, 0, 0.10);
+// Размер, цвет ТЕНИ блока
+$box-shadow-1: 2px 2px 5px 0px rgba(0, 0, 0, 0.05);
+$box-shadow-2: 0px 1px 5px 0px rgba(0, 0, 0, 0.10);
 
 // Пк версия
+// Имя стиял текста
 $app-font-face: 'Geometria';
-$app-font-weight-regular1: 300;
-$app-font-weight-regular2: 400;
-$app-font-weight-regular3: 500;
-$app-font-weight-medium4: 700;
-$app-font-weight-bold5: 800;
+// Толщина текста
+$app-font-weight-300: 300;
+$app-font-weight-400: 400;
+$app-font-weight-500: 500;
+$app-font-weight-700: 700;
+$app-font-weight-800: 800;
 
 // Пк версия
-$app-font-size: (
+$app-font-size-sm: (
     'size': 12px,
     'line-height': normal,
 );
 
-$app-font-size: (
+$app-font-size-xl: (
     'size': 14px,
     'line-height': normal,
 );
 
-$app-font-size: (
+$app-font-size-2xl: (
     'size': 16px,
     'line-height': normal,
 );
 
-$app-font-size: (
+$app-font-size-3xl: (
     'size': 18px,
     'line-height': normal,
 );
 
-$app-font-size: (
+$app-font-size-4xl: (
     'size': 20px,
     'line-height': 20px,
 );
 
-$app-font-size: (
+$app-font-size-5xl: (
     'size': 36px,
     'line-height': 40px,
     // Белый текст 'line-height': 50px, который висит вверху 
 );
 
-$app-font-size: (
+$app-font-size-6xl: (
     'size': 60px,
     'line-height': 60px,
 );
@@ -70,12 +76,12 @@ $app-font-size: (
 
 // mobile size 
 // main-titles
-$app-font-size: (
+$app-font-size-mobile: (
     'size': 22px,
     'line-height': normal,
 );
 
-$app-font-size: (
+$app-font-size-mobile-hi: (
     'size': 24px,
     'line-height': 40px,
 );
