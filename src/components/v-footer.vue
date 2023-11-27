@@ -104,6 +104,7 @@ import {fetchFooterData} from '@/assets/api/apiFooter'
             loadData() {
                 console.log("delayResponse");
                 console.log(fetchFooterData());
+                console.log("delayResponse");
             }
         },
         
