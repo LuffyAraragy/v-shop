@@ -145,6 +145,18 @@ export default {
   padding: 0;
   
 }
+
+.app {
+  width: 100%;
+  height: 100%;
+}
+.container {
+  /* Поменял */
+  padding: 0 15px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
 .swiper-content-1 {
   width: 500px;
   height: 500px;

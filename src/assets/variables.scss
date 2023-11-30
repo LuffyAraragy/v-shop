@@ -6,15 +6,16 @@ $app-color-text-black-gray: #363636;
 $app-color-text-white-gray: #C4C4C4;
 $app-color-text-white: #FFF;
 $app-color-text-black: #000000;
+
 //Цвет background КНОПКИ 
 $app-color-background-button-black-gray: #2F2D2D;
 $app-color-background-button-green: #2A7D03;
 $app-color-background-button-white: #F8F7F7;
+
 // Ещё прозрачный
 //Цвет ТЕКСТА КНОПКИ 
 $app-color-text-button-white: #FFF;
 $app-color-text-button-green: #2A7D03;
-
 
 // Цвет и размер рамки кнопки
 $app-border-button-white: 2px solid #FFF;
@@ -28,6 +29,7 @@ $box-shadow-2: 0px 1px 5px 0px rgba(0, 0, 0, 0.10);
 // Пк версия
 // Имя стиял текста
 $app-font-face: 'Geometria';
+
 // Толщина текста
 $app-font-weight-300: 300;
 $app-font-weight-400: 400;
@@ -63,7 +65,7 @@ $app-font-size-4xl: (
 
 $app-font-size-5xl: (
     'size': 36px,
-    'line-height': 40px,
+    // 'line-height': 40px,
     // Белый текст 'line-height': 50px, который висит вверху 
 );
 
@@ -71,8 +73,6 @@ $app-font-size-6xl: (
     'size': 60px,
     'line-height': 60px,
 );
-
-
 
 // mobile size 
 // main-titles
@@ -85,3 +85,31 @@ $app-font-size-mobile-hi: (
     'size': 24px,
     'line-height': 40px,
 );
+
+@mixin text-controller($color, $line-heigh, $size, $font-weight) {
+    color: $color;
+    line-height: $line-heigh;
+    font-size: $size;
+    font-weight: $font-weight;
+}
+
+@mixin button-controller($color, $background-color, $line-height, $font-size, $border, $font-weight) {
+    color: $color;
+    background-color: $background-color;
+    line-height: $line-heigh;
+    font-size: $size;
+    border: $border;
+    font-weight: $font-weight;
+}
+
+@mixin button-controller-hover($background,$transition) {
+    background: $background;
+    transition: $transition;
+
+}
+
+@mixin button-controller-focus($background,$transition) {
+    background: $background;
+    transition: $transition;
+}
+

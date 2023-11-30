@@ -71,6 +71,34 @@
             </div>
         </div>
     </div>
+
+    <div class="online-calculator">
+        <button class="online-calculator__button">
+            Свернуть
+        </button>
+        <div class="online-calculator__description">
+            Онлайн-калькулятор ипотеки
+        </div>
+        <div class="online-calculator__block-price" v-for="( blockPrice, blockPriceIndex ) in 4" :key="blockPriceIndex">
+            <div class="online-calculator__price-description">
+                Срок кредитования
+            </div>
+            <div class="online-calculator__price-line">
+                price-line
+            </div>
+        </div>
+        <div class="online-calculator__block-payment">
+            <div class="online-calculator__monthly-payment">
+                Ежемесячный платёж:
+            </div>
+            <div class="online-calculator__payment-amount">
+                50 000 ₽ / мес
+            </div>
+        </div>
+        <button class="button button--green">
+            Получить ипотеку
+        </button>
+    </div>
 </template>
 
 <style>
@@ -139,6 +167,36 @@
 .v-bank__date-content {
     display: flex;
     justify-content: space-between;
+}
+
+/* online-calculator */
+.online-calculator {
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    width: 350px;
+    height: 798px;
+    flex-shrink: 0;
+    border-radius: 5px 5px 0px 0px;
+    background: #FFF;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.10);
+}
+.online-calculator__button {
+    border-radius: 5px 5px 0px 0px;
+    border: 1px solid #2A7D03;
+    width: 100%;
+    height: 100%;
+    max-height: 39px;
+    
+}
+.online-calculator__block-price {
+    display: grid;
+    height: 117px;
+    border-bottom: 1px solid #D3D3D3;;
+}
+
+.online-calculator__payment-amount {
+    margin-top: 8px;
 }
 
 </style>

@@ -1,89 +1,47 @@
 <!--Доделать футер поменять у соцеальных сетей отступы и подуцмать как расположить конент -->
 <template>
+    <!-- <button class="button" @click="loadData">
+        {{ test2 }}
+    </button> -->
     <div class="v-footer">
-        <div class="v-footer__content">
-            <div class="v-footer__menu content-options">
-                <div class="v-footer___text-h2">
-                    Меню
-                    <button class="button" @click="loadData">
-
-                    </button>
-                </div>
-                <div class="v-footer___text-h3">
-                    Купить
-                </div>
-                <div class="v-footer___text-h3">
-                    Продать
-                </div>
-                <div class="v-footer___text-h3">
-                    Сдать
-                </div>
-                <div class="v-footer___text-h3">
-                    Снять
-                </div>
-                <div class="v-footer___text-h3">
-                    Без агента
+        <div class="v-footer__block-content container">
+            <div class="v-footer__content">
+                <div class="v-footer__menu content-options" 
+                    v-for="(test, index1) in arrayFooterData"
+                    :key="index1"
+                >
+                    <div
+                        v-for="(arrayFooterData, index2) in test"
+                        :key="index2"
+                    >
+                        <div class="v-footer___text-h2"  v-if="index2==0">
+                            {{ arrayFooterData }}
+                        </div>
+                        <div class="v-footer___text-h3"  v-if="index2!=0">
+                            {{ arrayFooterData }}
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="v-footer__this-company content-options">
-                <div class="v-footer___text-h2">
-                    Наша компания
+            <div class="v-footer__all-social-network" v-if="arrayFooterSocialContacts.length == 3">
+                <div class="v-footer__social-network">
+                    <img alt="" class="social-network"
+                        v-for="(socialNetwork, index3) in arrayFooterSocialNetwork"
+                        :key="index3"
+                        :src="require(`@/img/footer/${arrayFooterSocialNetwork[index3]}`)"
+                    >
                 </div>
-                <div class="v-footer___text-h3">
-                    О компании
+                <div class="mail">
+                    <img :src="require(`@/img/footer/${arrayFooterSocialContacts[0][0]}`)" class="contact">
+                    <p class="v-footer__text">{{ arrayFooterSocialContacts[0][1] }}</p>
                 </div>
-                <div class="v-footer___text-h3">
-                    Отзывы
+                <div class="telephone-number">
+                    <img :src="require(`@/img/footer/${arrayFooterSocialContacts[1][0]}`)" alt="" class="contact">
+                    <p class="v-footer__text">{{ arrayFooterSocialContacts[1][1] }}</p>
                 </div>
-                <div class="v-footer___text-h3">
-                    Контакты
+                <div class="v-footer__information">
+                    {{ arrayFooterSocialContacts[2][0] }}
                 </div>
-            </div>
-
-            <div class="v-footer__services content-options">
-                <div class="v-footer___text-h2">
-                    Услуги
-                </div>
-                <div class="v-footer___text-h3">
-                    Ремонт
-                </div>
-                <div class="v-footer___text-h3">
-                    Дизайн
-                </div>
-            </div>
-
-            <div class="v-footer__cooperation content-options">
-                <div class="v-footer___text-h2">
-                    Сотрудничество
-                </div>
-                <div class="v-footer___text-h3">
-                    Сотрудничество
-                </div>
-                <div class="v-footer___text-h3">
-                    Сдать в управление
-                </div>
-            </div>
-        </div>
-        <div class="v-footer__all-social-network">
-            <div class="v-footer__social-network">
-                <img src="@/img/footer/vk.svg" alt="" class="social-network">
-                <img src="@/img/footer/media.svg" alt="" class="social-network">
-                <img src="@/img/footer/youtube.svg" alt="" class="social-network">
-                <img src="@/img/footer/facebook.svg" alt="" class="social-network">
-                <img src="@/img/footer/iconfinder.svg" alt="" class="social-network">
-            </div>
-            <div class="mail">
-                <img src="@/img/footer/mail.svg" alt="" class="contact">
-                <p class="v-footer__text">Info@hh-r.ru</p>
-            </div>
-            <div class="telephone-number">
-                <img src="@/img/footer/telephone.svg" alt="" class="contact">
-                <p class="v-footer__text">+7&nbsp;812&nbsp;333-55-15</p>
-            </div>
-            <div class="v-footer__information">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut  magna aliqua.  / @2020. Все права защищены 
-                
             </div>
         </div>
     </div>
@@ -91,40 +49,57 @@
 
 
 <script>
-import {fetchFooterData} from '@/assets/api/apiFooter'
+import {fetchFooterData, fetchFooterDataSocialNetwork, fetchFooterDataContacts} from '@/assets/api/apiFooter'
 
     export default {
         name: 'v-footer',
         data() {
             return {
-                
+                arrayFooterData: [],
+                arrayFooterSocialNetwork: [],
+                test4: [],
+                arrayFooterSocialContacts: []
             }
         },
         methods: {
             loadData() {
-                console.log("delayResponse");
-                console.log(fetchFooterData());
+                fetchFooterData().then(result =>
+                {
+                    this.arrayFooterData = result;
+                });
+                fetchFooterDataSocialNetwork().then(result =>
+                {
+                    this.arrayFooterSocialNetwork = result;
+                    console.log(this.arrayFooterSocialNetwork);
+                });
+                fetchFooterDataContacts().then(result =>
+                {
+                    this.arrayFooterSocialContacts = result
+                });
             }
         },
-        
+        mounted() {
+            this.loadData();
+        }
     }
 </script>
 
 
 <style>
 .v-footer {
-    margin: auto;
     width: 100%;
-    height: 438px;
-    flex-shrink: 0;
+    height: 100%;
     background: #2F2D2D;
-    
 }
 
 .v-footer__all-social-network {
+    /* Поменял */
+    padding-top: 30px;
+    padding-bottom: 70px;
     display: flex;
-    gap: 0px;
-    justify-content: space-around;
+    gap: 60px;
+    /* Поменял */
+    justify-content: space-between;
 }
 .v-footer__social-network {
     display: flex;
@@ -138,7 +113,9 @@ import {fetchFooterData} from '@/assets/api/apiFooter'
 .v-footer__content {
     padding-top: 70px;
     display: flex;
-    justify-content: space-around;
+    /* Поменял */
+    justify-content: space-between;
+    
     
 }
 
