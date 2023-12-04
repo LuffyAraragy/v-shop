@@ -1,10 +1,7 @@
-<!--Доделать футер поменять у соцеальных сетей отступы и подуцмать как расположить конент -->
+<!--TODO Доделать футер поменять у соцеальных сетей отступы и подуцмать как расположить конент -->
 <template>
-    <!-- <button class="button" @click="loadData">
-        {{ test2 }}
-    </button> -->
     <div class="v-footer">
-        <div class="v-footer__block-content container">
+            <div class="v-footer__block-content container">
             <div class="v-footer__content">
                 <div class="v-footer__menu content-options" 
                     v-for="(test, index1) in arrayFooterData"
@@ -21,7 +18,7 @@
                             {{ arrayFooterData }}
                         </div>
                     </div>
-                </div>
+                </div> 
             </div>
             <div class="v-footer__all-social-network" v-if="arrayFooterSocialContacts.length == 3">
                 <div class="v-footer__social-network">
@@ -53,12 +50,16 @@ import {fetchFooterData, fetchFooterDataSocialNetwork, fetchFooterDataContacts} 
 
     export default {
         name: 'v-footer',
+        components: {
+
+        },
         data() {
             return {
                 arrayFooterData: [],
                 arrayFooterSocialNetwork: [],
                 test4: [],
-                arrayFooterSocialContacts: []
+                arrayFooterSocialContacts: [],
+                content: [],
             }
         },
         methods: {
@@ -71,16 +72,20 @@ import {fetchFooterData, fetchFooterDataSocialNetwork, fetchFooterDataContacts} 
                 {
                     this.arrayFooterSocialNetwork = result;
                     console.log(this.arrayFooterSocialNetwork);
+                    
+                    
                 });
                 fetchFooterDataContacts().then(result =>
                 {
                     this.arrayFooterSocialContacts = result
                 });
+                
             }
         },
         mounted() {
             this.loadData();
-        }
+        },
+
     }
 </script>
 
@@ -101,10 +106,12 @@ import {fetchFooterData, fetchFooterDataSocialNetwork, fetchFooterDataContacts} 
     /* Поменял */
     justify-content: space-between;
 }
+
 .v-footer__social-network {
     display: flex;
     gap: 20px;
 }
+
 .social-network {
     width: 30px;
     height: 30px;
@@ -115,8 +122,6 @@ import {fetchFooterData, fetchFooterDataSocialNetwork, fetchFooterDataContacts} 
     display: flex;
     /* Поменял */
     justify-content: space-between;
-    
-    
 }
 
 .content-options {
@@ -125,6 +130,7 @@ import {fetchFooterData, fetchFooterDataSocialNetwork, fetchFooterDataContacts} 
     flex-shrink: 0;
     gap: 30px;
 }
+
     .v-footer___text-h2 {
         color: #FFF;
         font-family: Geometria;
@@ -133,6 +139,7 @@ import {fetchFooterData, fetchFooterDataSocialNetwork, fetchFooterDataContacts} 
         font-weight: 500;
         line-height: normal;
     }
+
     .v-footer___text-h3 {
         color: #FFF;
         font-family: Geometria;
@@ -151,10 +158,12 @@ import {fetchFooterData, fetchFooterDataSocialNetwork, fetchFooterDataContacts} 
     font-weight: 400;
     line-height: normal;
 }
+
 .contact {
     width: 20px;
     height: 20px;
 }
+
 .v-footer__information {
     max-width: 421px;
     color: #FFF;
@@ -164,10 +173,12 @@ import {fetchFooterData, fetchFooterDataSocialNetwork, fetchFooterDataContacts} 
     font-weight: 300;
     line-height: 18px; /* 150% */
 }
+
 .telephone-number {
     display: flex;
     gap: 25px;
 }
+
 .mail {
     display: flex;
     gap: 15px;

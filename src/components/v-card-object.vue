@@ -26,52 +26,20 @@
 
 
     <div class="v-bank">
-        <div class="v-bank__content">
-            <img src="@/img/bank/39307215501_a6edae48a0_o 2.svg" alt="" class="v-bank__img">
+        <div class="v-bank__content" v-for="(arrays, index) in arrayBank" :key="index">
+            <img :src="require(`@/img/bank/${ arrays[0] }`)" alt="" class="v-bank__img">
             <div class="v-bank__date-content">
                 <div class="v-bank__percent">
-                    Росбанк 18%
+                    {{ arrays[1] }}
                 </div>
                 <div class="v-bank__date">
-                    от 28.05.2020
+                    {{ arrays[2] }}
                 </div>
             </div>
         </div>
-        <div class="v-bank__content">
-            <img src="@/img/bank/Dom 1.svg" alt="" class="v-bank__img">
-            <div class="v-bank__date-content">
-                <div class="v-bank__percent">
-                    Росбанк 18%
-                </div>
-                <div class="v-bank__date">
-                    от 28.05.2020
-                </div>
-            </div>
-        </div>
-        <div class="v-bank__content">
-            <img src="@/img/bank/1356398132 1.svg" alt="" class="v-bank__img">
-            <div class="v-bank__date-content">
-                <div class="v-bank__percent">
-                    Росбанк 18%
-                </div>
-                <div class="v-bank__date">
-                    от 28.05.2020
-                </div>
-            </div>
-        </div>
-        <div class="v-bank__content">
-            <img src="@/img/bank/058 1.svg" alt="" class="v-bank__img">
-            <div class="v-bank__date-content">
-                <div class="v-bank__percent">
-                    Росбанк 18%
-                </div>
-                <div class="v-bank__date">
-                    от 28.05.2020
-                </div>
-            </div>
-        </div>
+        
     </div>
-
+<!-- Следующий контент блок -->
     <div class="online-calculator">
         <button class="online-calculator__button">
             Свернуть
@@ -83,8 +51,11 @@
             <div class="online-calculator__price-description">
                 Срок кредитования
             </div>
-            <div class="online-calculator__price-line">
-                price-line
+            <div class="field">
+                <input v-model="value[blockPriceIndex]" type="range" min="0" :max="valueMax[blockPriceIndex]" class="slider" />
+                <span :v-model="value[blockPriceIndex]">
+                    {{ value[blockPriceIndex] }}
+                </span>
             </div>
         </div>
         <div class="online-calculator__block-payment">
@@ -102,6 +73,7 @@
 </template>
 
 <style>
+
 .v-card-object {
     background-color: #FFFFFF;
     width: 350px;
@@ -109,28 +81,33 @@
     border-radius: 5px;
     box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.10);
 }
+
 .v-card-object__block {
     padding: 30px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
+
 .v-card-object__img {
     margin: 20px;
     border-radius: 50%;
 }
+
 .v-card-object__name {
     margin-top: 15px;
 }
+
 .v-card-object__text {
     margin-top: 19px;
     text-align: center;
 }
+
 .v-card-object__button {
     margin-top: 33px;
 }
+
 .v-card-object__button-block {
     margin-top: 20px;
     display: flex;
@@ -176,11 +153,11 @@
     justify-content: center;
     width: 350px;
     height: 798px;
-    flex-shrink: 0;
     border-radius: 5px 5px 0px 0px;
     background: #FFF;
     box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.10);
 }
+
 .online-calculator__button {
     border-radius: 5px 5px 0px 0px;
     border: 1px solid #2A7D03;
@@ -189,6 +166,7 @@
     max-height: 39px;
     
 }
+
 .online-calculator__block-price {
     display: grid;
     height: 117px;
@@ -199,10 +177,61 @@
     margin-top: 8px;
 }
 
+input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 15px;
+      height: 15px;
+      background: #2A7D03; /* Цвет ползунка */
+      cursor: pointer;
+      border-radius: 50px;
+    }
+    
+    input[type="range"] {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 1px;
+      background: #C4C4C4;
+      outline: none;
+      opacity: 0.7;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+      border-radius: 5px;
+    }
+    
 </style>
 
 <script>
+
+import {vBank} from '@/assets/api/apiFooter'
+// import Slider from '@vueform/slider'
+// import { vCardObject } from '@/assets/api/apiFooter'
+
 export default {
+    components: {
+        // Slider
+    },
+    data() {
+        return {
+            value: [0,0,0,0],
+            valueMax: [4000000, 500000, 240, 100],
+            arrayBank: []
+            // valueMax: [],
+        }
+    },
+    methods: {
+        check() {
+            
+            vBank().then(result =>
+                {
+                    this.arrayBank = result
+                    console.log(this.arrayBank);
+                });
+        }
+    },
+    mounted() {
+        this.check();
+    }
     
 }
 </script>

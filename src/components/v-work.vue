@@ -4,67 +4,18 @@
             Этапы работ
         </div>
         <div class="v-work__content-all">
-            <div class="v-work__content">
+            <div class="v-work__content" v-for="(array, index) in arrayBank2" :key="index">
                 <div class="v-work__all-stages">
                     <div class="v-work__circle">
-                        1
+                        {{ index+1 }}
                     </div>
-                    <img src="@/img/work/multimedia-option 5.svg" alt="" class="v-work__img">
+                    <img :src="require(`@/img/work/${array[0]}`)" alt="" class="v-work__img">
 
                     <div class="text__20px test1">
-                        Вы оставляете заявку
+                        {{ array[1] }}
                     </div>
                     <div class="text__h3 test2">
-                        Вы оставляете заявку, мы связываемся с Вами 
-                        для уточнения подробностей, согласовываем дату и время встречи
-                    </div>
-                </div>
-            </div>
-            <div class="v-work__content">
-                <div class="v-work__all-stages">
-                    <div class="v-work__circle">
-                        1
-                    </div>
-                    <img src="@/img/work/multimedia-option 5.svg" alt="" class="v-work__img">
-
-                    <div class="text__20px test1">
-                        Вы оставляете заявку
-                    </div>
-                    <div class="text__h3 test2">
-                        Вы оставляете заявку, мы связываемся с Вами 
-                        для уточнения подробностей, согласовываем дату и время встречи
-                    </div>
-                </div>
-            </div>
-            <div class="v-work__content">
-                <div class="v-work__all-stages">
-                    <div class="v-work__circle">
-                        1
-                    </div>
-                    <img src="@/img/work/multimedia-option 5.svg" alt="" class="v-work__img">
-
-                    <div class="text__20px test1">
-                        Вы оставляете заявку
-                    </div>
-                    <div class="text__h3 test2">
-                        Вы оставляете заявку, мы связываемся с Вами 
-                        для уточнения подробностей, согласовываем дату и время встречи
-                    </div>
-                </div>
-            </div>
-            <div class="v-work__content">
-                <div class="v-work__all-stages">
-                    <div class="v-work__circle">
-                        1
-                    </div>
-                    <img src="@/img/work/multimedia-option 5.svg" alt="" class="v-work__img">
-
-                    <div class="text__20px test1">
-                        Вы оставляете заявку
-                    </div>
-                    <div class="text__h3 test2">
-                        Вы оставляете заявку, мы связываемся с Вами 
-                        для уточнения подробностей, согласовываем дату и время встречи
+                        {{ array[2] }}
                     </div>
                 </div>
             </div>
@@ -72,17 +23,50 @@
     </div>
 </template>
 
+
+<script>
+import {vBank2} from '@/assets/api/apiFooter'
+
+export default {
+    components: {
+        
+    },
+    data() {
+        return {
+            arrayBank2: []
+        }
+    },
+    methods: {
+        check() {   
+            vBank2().then(result =>
+                {
+                    this.arrayBank2 = result
+                    console.log(this.arrayBank2);
+                });
+        }
+    },
+    mounted() {
+        this.check();
+    }
+    
+}
+
+</script>
+
 <style>
+
 .v-work__title {
     display: flex;
     justify-content: center;
 }
+
 .v-work__content-all {
     /* Отцентровать весь контент кроме Этапов работы */
     display: flex;
     justify-content: center;
     column-gap: 30px;
 }
+
 .v-work__circle {
     color: #FFF;
     display: flex;
@@ -98,6 +82,7 @@
     background-color: #2A7D03;;
     border-radius: 50%;
 }
+
 .v-work__all-stages {
     display: grid;
     align-items: center;
@@ -118,8 +103,7 @@
     grid-row: 3;
     grid-column: 1 / 3;
 }
+
 </style>
  
-<script>
 
-</script>

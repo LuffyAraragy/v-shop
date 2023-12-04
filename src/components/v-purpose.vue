@@ -51,15 +51,18 @@
     background-size: cover;
     background-image: url(@/img/purpose/179360-OWJAH8-307\ 1.svg);
 }
+
 .v-purpose__all-step {
     margin-top: 60px;
     display: flex;
     gap: 30px;
     justify-content: center;
 }
+
 .v-purpose__title {
     text-align: center;
 }
+
 .v-purpose__background {
     display: flex;
     justify-content: center;
@@ -69,6 +72,7 @@
     background-color: #2A7D03;;
     border-radius: 50%;
 }
+
 .v-purpose__step {
     height: 210;
     width: 255px;
@@ -77,6 +81,7 @@
     align-items: center;
     text-align: center;
 }
+
 .v-purpose__img {
     width: 65px;
     height: 65px;
@@ -85,6 +90,7 @@
 .v-purpose__text {
     width: 255px;
 }
+
 </style>
 
 <script>

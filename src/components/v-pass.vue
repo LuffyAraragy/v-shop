@@ -70,6 +70,7 @@
     border-radius: 5px;
     background: #FFF;
 }
+
     .v-pass__input::placeholder {
         padding-left: 20px;
     }
@@ -79,6 +80,7 @@
     display: flex;
     justify-content: center;
 }
+
 .v-in-numbers__all-content {
     margin-top: 60px;
     display: flex;
@@ -86,9 +88,11 @@
     justify-content: center;
     align-items: center;
 }
+
 .v-in-numbers__block-number {
     height: 100%;
 }
+
 .v-in-numbers__number {
     color: #2A7D03;
     font-family: Geometria;
@@ -98,15 +102,18 @@
     line-height: 60px; /* 100% */
     text-align: center;
 }
+
 .v-in-numbers__all-numbers {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 350px;
     gap: 30px;
 }
+
 .v-in-numbers__text {
     text-align: center;
 }
+
 </style>
 
 <script>

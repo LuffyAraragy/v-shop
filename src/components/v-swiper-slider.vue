@@ -13,12 +13,15 @@
 </template>
 
 <style>
-    .swiper{
-        width: 70%;
-    }
-    .swiper img{
-        width: 100%;
-    }
+
+.swiper{
+    width: 70%;
+}
+
+.swiper img{
+    width: 100%;
+}
+
 </style>
 
 <script>

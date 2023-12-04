@@ -95,6 +95,7 @@
 </template>
 
 <style>
+
 .v-object {
     display: flex;
     flex-direction: column;
@@ -105,6 +106,7 @@
     border-radius: 5px;
     background: #F8F7F7;
 }
+
 .v-object__input {
     border-radius: 5px;
     border: 2px solid #F3F3F3;
@@ -113,9 +115,9 @@
     height: 52px;
     flex-shrink: 0;
 }
+
 .v-object__text {
     margin-bottom: 15px;
-
     color: #2F2D2D;
     font-family: Geometria;
     font-size: 16px;
@@ -123,6 +125,7 @@
     font-weight: 500;
     line-height: normal;
 }
+
 </style>
 
 <script>

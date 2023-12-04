@@ -17,7 +17,6 @@
                 Выбрать
             </button>
         </div>
-        
     </div>
 </template>
 
@@ -32,6 +31,7 @@
     flex-shrink: 0;
     background-color: rgb(181, 250, 250);
 }
+
 .v-your-location__text {
     margin-top: 60px;
     color: #2F2D2D;
@@ -42,15 +42,19 @@
     font-weight: 700;
     line-height: normal;
 }
+
 .v-your-location__block {
     display: flex;
 }
+
 .v-your-location__button-left-right {
     margin-top: 40px;
 }
+
 .v-your-location__block {
     margin-top: 35px;
 }
+
 /* Тут поменять кнопку размеры */
 .v-your-location__button {
     width: 202px;
@@ -64,11 +68,9 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-
     cursor: pointer;
     transition: 0.4s;
 }
-
 
 .v-your-location__button:hover {
   background: #FFF;
@@ -76,6 +78,7 @@
   transition: background 0.4s;
   transition: color 0.4s;
 }
+
 .v-your-location__button:focus {
   background: #226702;
   transition: background 0.4s;

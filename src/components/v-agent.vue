@@ -50,17 +50,21 @@
     justify-content: center;
     gap: 40px;
 }
+
 .agent {
     text-align: center;
 }
+
 .block-content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
+
 .v-agent__button {
     margin: auto;
 }
+
 .v-agent__content {
     display: flex;
     align-items: center;

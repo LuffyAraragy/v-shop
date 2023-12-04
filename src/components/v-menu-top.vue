@@ -53,10 +53,12 @@
     display: flex;
     gap: 15px;
 }
+
 .v-menu-top__mail {
     display: flex;
     gap: 10px;
 }
+
 .v-menu-top__telephone {
     display: flex;
     gap: 15px;
@@ -75,6 +77,7 @@
     background: url(@/img/menu/whitLogo.svg), lightgray 50%;
     background-repeat: no-repeat;
 }
+
 .v-menu-top__like {
     display: flex;
     gap: 25px;

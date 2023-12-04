@@ -6,9 +6,11 @@
     <v-menu-top>
 
     </v-menu-top>
+    
     <v-footer>
 
     </v-footer>
+    
     <v-your-location>
 
     </v-your-location>
@@ -90,7 +92,6 @@ import vCardObject from './components/v-card-object.vue';
 import vPass from './components/v-pass.vue';
 import vSwiperSlider from './components/v-swiper-slider.vue';
 
-
 import { Navigation, Pagination, A11y, Thumbs } from 'swiper/modules';
 
 // Import Swiper Vue.js components
@@ -119,7 +120,7 @@ export default {
     vPass,
     vSwiperSlider,
     Swiper,
-    SwiperSlide,
+    SwiperSlide
   },
   setup() {
       const onSwiper = (swiper) => {
@@ -150,6 +151,7 @@ export default {
   width: 100%;
   height: 100%;
 }
+
 .container {
   /* Поменял */
   padding: 0 15px;
@@ -162,12 +164,11 @@ export default {
   height: 500px;
   background-color: aqua;
 }
+
 .v-swiper {
   width: 300px;
   height: 300px;
-  
 }
-
 
 .button {
   width: 310px;
@@ -190,16 +191,13 @@ export default {
   /* ОТ себя добавил */
   cursor: pointer;
   transition: 0.4s;
-  
 }
+
   .button--rounded-top {
-    border-radius: 5px 5px 0px 0px;
-    
+    border-radius: 5px 5px 0px 0px; 
     border-color: #2F2D2D;
     background: #2F2D2D;
-    
     color: #FFF;
-
     font-family: Geometria;
     font-size: 16px;
     font-style: normal;
@@ -213,6 +211,7 @@ export default {
     color: #2F2D2D;
     border: 2px solid #2A7D03;
   }
+
   .button--rounded-right {
     border-radius: 0px 5px 5px 0px;
     background: #fff;
@@ -228,7 +227,6 @@ export default {
 .input {
   width: 200px;
   height: 50px;
-
   border-radius: 5px;
   border: 2px solid #F3F3F3;
   background: #FFF;
@@ -249,6 +247,7 @@ export default {
   font-weight: 800;
   line-height: 40px; 
 }
+
   .text__h2--white {
     color: #FFF;
   }
@@ -281,18 +280,20 @@ export default {
   font-weight: 300;
   line-height: 24px;
 }
+
   .text__16px--black {
     color: #2F2D2D;
     font-weight: 400;
   }
+
 .button:hover {
   background: #FFF;
   transition: background 0.4s;
 }
+
 .button:focus {
   background: #226702;
   transition: background 0.4s;
 }
-
 
 </style>

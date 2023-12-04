@@ -70,10 +70,12 @@
     display: flex;
     gap: 20px;
 }
+
 .v-questions__information {
     display: grid;
     gap: 40px;
 }
+
 .v-questions__mail {
     display: flex;
     gap: 20px;
@@ -83,10 +85,12 @@
     display: flex;
     gap: 20px;
 }
+
 .v-questions__time-all {
     display: grid;
     gap: 15px;
 }
+
 .v-questions__time {
     color: #2F2D2D;
     font-family: Geometria;
@@ -95,27 +99,31 @@
     font-weight: 300;
     line-height: normal;
 }
+
 .v-questions__statement {
     margin-top: 20px;
 }
+
 .v-questions__input-content {
     margin-top: 40px;
     display: grid;
     gap: 20px;
 }
+
 .v-questions__button {
     margin-top: 30px;
 }
+
 .v-questions__form {
     padding: 60px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
     background-color: #2F2D2D;
     width: 445px;
     flex-shrink: 0;
 }
+
 </style>
 
 <script>
