@@ -1,5 +1,36 @@
 <template>
   <div class="app">
+    <card-service :arrayCardService="1">
+
+    </card-service>
+    <app-swiper-slider>
+      
+    </app-swiper-slider>
+    <app-input :placeholder="placeholder" width="200px">
+      
+    </app-input>
+    <AppButton :hasWhite="true" width="270px" :hasOutline="true" :hasSmall="true" class="">
+      hello world
+    </AppButton>
+    <AppButton :hasWhite="true" width="310px" :hasOutline="true" class="">
+      hello world
+    </AppButton>
+    <AppButton :hasGreen="true" width="255px" class="">
+      hello world
+    </AppButton>
+    <AppButton :hasGreen="true" width="270px" class="">
+      hello world
+    </AppButton>
+    <AppButton :hasBlack="true" :hasAround="true" width="270px" class="">
+      hello world
+    </AppButton>
+    <card-item
+      v-for="(array, index) in arrayFromCard"
+      :key="index"
+      :arrayCardService="array"
+    >
+
+    </card-item>
     <v-components>
 
     </v-components>
@@ -42,7 +73,7 @@
   
   <swiper class="v-swiper swiper-thumbs"
     :modules="modules"
-    :slides-per-view="3"
+    :slides-per-view="1"
     :space-between="50"
     navigation
     :pagination="{ clickable: true }"
@@ -50,7 +81,7 @@
     @swiper="onSwiper"
     @slideChange="onSlideChange"
   >
-    <swiper-slide>Slide 1</swiper-slide>
+    <swiper-slide><img src="@/img/agent/information-2 1.svg"></swiper-slide>
     <swiper-slide>Slide 2</swiper-slide>
     <swiper-slide>Slide 3</swiper-slide>
     <swiper-slide>Slide 1</swiper-slide>
@@ -61,18 +92,23 @@
     <swiper-slide>Slide 3</swiper-slide>
   </swiper>
 
-  <div class="swiper swiper_thumbnail">                                   
+  <!-- <div class="swiper swiper_thumbnail">                                   
     <div class="swiper-wrapper">                                        
         <div class="swiper-slide"><img src="@/img/agent/information-2 1.svg"></div>   
         <div class="swiper-slide"><img src="@/img/agent/information-2 1.svg"></div>   
         <div class="swiper-slide"><img src="@/img/agent/information-2 1.svg"></div>   
     </div>                                                              
-  </div> 
+  </div>  -->
 </div>
     
     <v-swiper-slider>
       
     </v-swiper-slider>
+
+    <header-block>
+
+    </header-block>
+
   </div>
   
 </template> 
@@ -92,6 +128,7 @@ import vCardObject from './components/v-card-object.vue';
 import vPass from './components/v-pass.vue';
 import vSwiperSlider from './components/v-swiper-slider.vue';
 
+import headerBlock from './components/HeaderBlock.vue'
 import { Navigation, Pagination, A11y, Thumbs } from 'swiper/modules';
 
 // Import Swiper Vue.js components
@@ -102,6 +139,12 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import AppButton from './components/AppButton.vue';
+import CardItem from './components/CardItem.vue';
+import AppInput from './components/AppInput.vue';
+import CardService from './components/CardService.vue'
+// import AppSwiperSlider from './components/AppSwiperSlider.vue';
+import {vCardService} from '@/assets/api/apiFooter'
 
 
 export default {
@@ -120,7 +163,19 @@ export default {
     vPass,
     vSwiperSlider,
     Swiper,
-    SwiperSlide
+    SwiperSlide,
+    headerBlock,
+    AppButton,
+    CardItem,
+    AppInput,
+    CardService,
+    // AppSwiperSlider
+  },
+  data() {
+    return {
+      let1: false,
+      arrayFromCard: []
+    }
   },
   setup() {
       const onSwiper = (swiper) => {
@@ -136,15 +191,96 @@ export default {
         modules: [Navigation, Pagination, A11y, Thumbs],
       };
     },
+    methods: {
+        check() {
+            vCardService().then(result =>
+            {
+                this.arrayFromCard = result
+                console.log(this.arrayFromCard);
+            }); 
+        }, 
+    },
+    mounted() {
+        this.check();
+        setTimeout(() => {
+            this.let1 = true;
+        }, 3000);
+    },
   
 }
 </script>
 
 <style lang="scss">
+@import './assets/variables.scss';
+
 * {
   margin: 0;
   padding: 0;
-  
+}
+
+.text {
+  font-size: 14px;
+  font-family: $font-face;
+  font-weight: $font-weight-400;
+  color: #2F2D2D;
+  font-style: normal;
+  line-height: normal;
+
+  &--font-weight-300 {
+    font-weight: $font-weight-300;
+  }
+
+  &--font-weight-400 {
+    font-weight: $font-weight-400;
+  }
+
+  &--font-weight-500 {
+    font-weight: $font-weight-500;
+  }
+
+  &--font-weight-700 {
+    font-weight: $font-weight-700;
+  }
+
+  &--font-weight-800 {
+    font-weight: $font-weight-800;
+  }
+
+  &--font-size-sm {
+    font-size: 12px;
+  }
+
+  &--font-size-normal {
+    font-size: 16px;
+  }
+
+  &--font-size-normalx2 {
+    font-size: 20px;
+  }
+
+  &--font-size-normalx3 {
+    font-size: 24px;
+  }
+
+  &--font-size-big {
+    font-size: 36px;
+  }
+//цвет текста
+  &--color-white {
+    color: #FFF;
+  }
+
+  &--color-gray {
+    color: #949494;
+  }
+
+  &--color-green {
+    color: #2A7D03;
+  }
+
+  &--color-black {
+    color: black;
+  }
 }
 
 .app {
@@ -152,11 +288,26 @@ export default {
   height: 100%;
 }
 
+.button123 {
+  width: 310px;
+  height: 60px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 2px solid #2A7D03;
+  background-color: #2A7D03;
+  color: #FFF;
+  font-family: Geometria;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
 .container {
-  /* Поменял */
-  padding: 0 15px;
-  max-width: 1140px;
+  max-width: 1112px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 .swiper-content-1 {
@@ -263,14 +414,14 @@ export default {
   line-height: 40px;
 }
 
-.text {
-  color: #2F2D2D;
-  font-family: Geometria;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
+// .text {
+//   color: #2F2D2D;
+//   font-family: Geometria;
+//   font-size: 14px;
+//   font-style: normal;
+//   font-weight: 400;
+//   line-height: normal;
+// }
 
 .text__16px {
   color: #FFF;

@@ -53,3 +53,42 @@ export async function vBank() {
   ]
   return delayResponse(bankContent);
 }
+
+
+export async function vCardItem() {
+  let cardItem = [
+    ["VladaSteblina.png", "5206 1.png", "23184 1.png"],
+    ["3 900 000 ₽", "love.svg"],
+    ["2-ком. квартира", "73 кв. м.", "2/15 эт."],
+    ["ул. Воскресенская 12А"],
+    ["м. Сокольники"],
+  ]
+  return delayResponse(cardItem);
+}
+
+export async function vCardService() {
+  let cardService = [
+    [
+      ["VladaSteblina.png", "5206 1.png", "23184 1.png"],
+      ["3 900 000 ₽", "love.svg"],
+      ["2-ком. квартира", "73 кв. м.", "2/15 эт."],
+      ["ул. Воскресенская 12А"],
+      ["м. Сокольники"],
+    ],
+    [
+      ["VladaSteblina.png", "5206 1.png", "23184 1.png"],
+      ["3 900 222 ₽", "love.svg"],
+      ["2-ком. квартира", "73 кв. м.", "2/15 эт."],
+      ["ул. Воскресенская 12А"],
+      ["м. Сокольники"],
+    ],
+    [
+      ["VladaSteblina.png", "5206 1.png", "23184 1.png"],
+      ["3 900 333 ₽", "love.svg"],
+      ["2-ком. квартира", "73 кв. м.", "2/15 эт."],
+      ["ул. Воскресенская 12А"],
+      ["м. Сокольники"],
+    ],
+  ]
+  return delayResponse(cardService);
+}

@@ -60,6 +60,7 @@ import {fetchFooterData, fetchFooterDataSocialNetwork, fetchFooterDataContacts} 
                 test4: [],
                 arrayFooterSocialContacts: [],
                 content: [],
+                let: false,
             }
         },
         methods: {
@@ -84,6 +85,9 @@ import {fetchFooterData, fetchFooterDataSocialNetwork, fetchFooterDataContacts} 
         },
         mounted() {
             this.loadData();
+            setTimeout(() => {
+                this.let = true;
+            }, 2000);
         },
 
     }
