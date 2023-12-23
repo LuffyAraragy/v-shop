@@ -1,42 +1,42 @@
 <template>
-  <div class="card-item" v-if="this.let">
-    <!-- Передаём массив с изображениями -->
-    <app-swiper-slider :arrayImgCards="arrayCardService[0]">
-        
-    </app-swiper-slider>
-    <div class="card-item__block-content">
-        <div class="card-item__info-block">
-            <div class="text text--font-weight-800 text--font-size-normalx2 price">
-                {{ arrayCardService[1][0] }}
+    <div class="card-item" v-if="this.let">
+        <!-- Передаём массив с изображениями -->
+        <app-swiper-slider :arrayImgCards="arrayCardService[0]">
+            
+        </app-swiper-slider>
+        <div class="card-item__block-content">
+            <div class="card-item__info-block">
+                <div class="text text--font-weight-800 text--font-size-normalx2 price">
+                    {{ arrayCardService[1][0] }}
+                </div>
+                <img :src="require(`@/img/cardItem/${arrayCardService[1][1]}`)" alt="">
             </div>
-            <img :src="require(`@/img/cardItem/${arrayCardService[1][1]}`)" alt="">
-        </div>
-        
-        <div class="info-item">
-            <div class="text text--color-black card-item__text" 
-                v-for="(text, index) in arrayCardService[2]"
-                :key="index"
-            >
-            <!-- TODO(Ponosonik): Не правильно применяются стили -->
-               {{ text }}
+            
+            <div class="info-item">
+                <div class="text text--color-black card-item__text" 
+                    v-for="(text, index) in arrayCardService[2]"
+                    :key="index"
+                >
+                <!-- TODO(Ponosonik): Не правильно применяются стили -->
+                {{ text }}
+                </div>
             </div>
-        </div>
-        <div class="text card-item__street">
-            {{ arrayCardService[3][0] }}
-        </div>
-        <div class="text text--font-weight-300 text--font-size-sm card-item__text-small">
-            {{ arrayCardService[4][0] }}
-        </div>
-        <app-button width="310px" :hasWhite="true" :hasOutline="true">
-            <!-- <div :style="{ 'background-image' : 'url(./img/cardItem/phoneWhite.svg)'}" class="card-item__img">
-                
-            </div> -->
-            <div>
-                Показать телефон
+            <div class="text card-item__street">
+                {{ arrayCardService[3][0] }}
             </div>
-        </app-button>
+            <div class="text text--font-weight-300 text--font-size-sm card-item__text-small">
+                {{ arrayCardService[4][0] }}
+            </div>
+            <app-button width="310px" :hasWhite="true" :hasOutline="true">
+                <!-- <div :style="{ 'background-image' : 'url(./img/cardItem/phoneWhite.svg)'}" class="card-item__img">
+                    
+                </div> -->
+                <div>
+                    Показать телефон
+                </div>
+            </app-button>
+        </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -101,20 +101,9 @@ export default {
 
 <style lang="scss" scoped>
 
-// .card-item__img {
-//     width: 20px;
-//     height: 20px;
-//     background-image: url(../img/cardItem/phone-4\ 2.svg);
-// }
-
-// .card-item__img:focus {
-//     background-image: url(../img/cardItem/love.svg);
-// }
-
 .card-item__img {
     width: 20px;
     height: 20px;
-    // background-image: url(@/img/cardItem/phoneWhite.svg);
 }
 
 .card-item {

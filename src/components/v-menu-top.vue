@@ -1,12 +1,12 @@
 <template>
-    <div class="v-menu-top">
-        <div class="v-menu-top__logo">
+    <div class="v-menu-top container">
+        <!-- <div class="v-menu-top__logo">
 
-        </div>
+        </div> -->
         <div class="v-menu-top__city">
             <img src="@/img/menu/pin 1.svg" alt="" class="contact">
             <div class="v-menu-top__city-name v-menu-top__text">
-                Санкт-Петербург
+                Екатеринбург
             </div>
         </div>
         <div class="v-menu-top__mail">
@@ -18,26 +18,61 @@
         <div class="v-menu-top__telephone">
             <img src="@/img/menu/Group.svg" alt="" class="contact">
             <div class="v-menu-top__telephone-name v-menu-top__text">
-                +7 (905) 345-42-12
+                +7 (777) 777-77-77
             </div>
         </div>
-        <div class="button">
+        <AppButton :hasWhite="true" width="220px" :hasOutline="true" :hasSmall="true" class="">
             Бесплатная консультация
-        </div>
+        </AppButton>
         <div class="v-menu-top__like">
-            <img src="@/img/menu/love-and-romance 1.svg" alt="" class="contact">
-            <img src="@/img/menu/user 1.svg" alt="" class="contact">
+            <button class="testButton" @click="consoleLog">
+                <img src="@/img/menu/love-and-romance 1.svg" alt="" class="contact">
+            </button>
+            <button class="testButton" @click="consoleLog">
+                <img src="@/img/menu/user 1.svg" alt="" class="contact">
+            </button>
         </div>
     </div>
 </template>
 
+<script>
+import AppButton from './AppButton.vue';
+    export default {
+        name: "v-menu-top",
+        components: {
+            AppButton
+        },
+        data() {
+            return {
+                
+            }
+        },
+        methods: {
+            consoleLog() {
+                console.log("consoleLog()");
+            }
+        }
+    }
+
+</script>
+
 <style>
+.testButton {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
 .v-menu-top {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     width: 1740px;
     height: 70px;
     flex-shrink: 0;
+}
+
+.v-menu-top__telephone-name {
+    width: 130px;
 }
 
 .v-menu-top__text {
@@ -82,6 +117,3 @@
 
 </style>
 
-<script>
-
-</script>

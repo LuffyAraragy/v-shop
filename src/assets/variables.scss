@@ -1,81 +1,52 @@
-$main-color-text: #2F2D2D;
-$main-color-text: #2A7D03;
-$main-color-text: #363636;
-$main-color-text: #C4C4C4;
-$main-color-text: #FFF;
-$main-color-text: #000000;
+// Цвет простого текста
+// Цвет после # писить 
+// позиционирование
+// потом дисплай
+// ентером разделять
+$color-gray: #2F2D2D;
+$color-green: #2A7D03;
+$color-green-bright: #309003;
+$color-black-gray: #363636;
+$color-white-gray: #C4C4C4;
+$color-white-gray: #C4C4C4;
+$color-white: #FFF;
+$color-black: #000000;
 
-$main-color-background-button-black: #2F2D2D;
-$main-color-background-button-green: #2A7D03;
-$main-color-background-button-white: #F8F7F7;
-// Ещё прозрачный
+// Цвет рамки кнопки
+$border-size-1: 1px;
+$border-size-2: 2px;
 
-$main-color-text-button-white: #FFF;
-$main-color-text-button-green: #2A7D03;
-$main-color-text-button-white: #FFF;
+// Radius у кнопок
+$radius: 5px;
+$radius-left: 0px 5px 5px 0px;
+$radius-right: 5px 0px 0px 5px;
+$radius-top: 5px 5px 0px 0px;
 
-$main-border-button-white: 2px solid #FFF;
-$main-border-button-green-2: 2px solid #2A7D03;
-$main-border-button-green-1: 1px solid #2A7D03;
-
-$box-shadow-all-1: 2px 2px 5px 0px rgba(0, 0, 0, 0.05);
-$box-shadow-all-2: 0px 1px 5px 0px rgba(0, 0, 0, 0.10);
-
-// Пк версия
-$app-font-face: 'Geometria';
-$app-font-weight-regular1: 300;
-$app-font-weight-regular2: 400;
-$app-font-weight-regular3: 500;
-$app-font-weight-medium4: 700;
-$app-font-weight-bold5: 800;
+// Размер, цвет ТЕНИ блока
+$box-shadow-sm: 2px 2px 5px 0px rgba(0, 0, 0, 0.05);
+$box-shadow-normal: 0px 1px 5px 0px rgba(0, 0, 0, 0.10);
 
 // Пк версия
-$app-font-size: (
-    'size': 12px,
-    'line-height': normal,
-);
+// Имя стиял текста
+$font-face: 'Geometria';
 
-$app-font-size: (
-    'size': 14px,
-    'line-height': normal,
-);
+// Толщина текста
+$font-weight-300: 300;
+$font-weight-400: 400;
+$font-weight-500: 500;
+$font-weight-700: 700;
+$font-weight-800: 800;
 
-$app-font-size: (
-    'size': 16px,
-    'line-height': normal,
-);
-
-$app-font-size: (
-    'size': 18px,
-    'line-height': normal,
-);
-
-$app-font-size: (
-    'size': 20px,
-    'line-height': 20px,
-);
-
-$app-font-size: (
-    'size': 36px,
-    'line-height': 40px,
-    // Белый текст 'line-height': 50px, который висит вверху 
-);
-
-$app-font-size: (
-    'size': 60px,
-    'line-height': 60px,
-);
-
-
+// Пк версия
+$font-size-sm: 12px;
+$font-size-xl: 14px;
+$font-size-2xl: 16px;
+$font-size-3xl: 18px;
+$font-size-4xl: 20px;
+$font-size-5xl: 36px;
 
 // mobile size 
 // main-titles
-$app-font-size: (
-    'size': 22px,
-    'line-height': normal,
-);
-
-$app-font-size: (
-    'size': 24px,
-    'line-height': 40px,
-);
+$font-size-mobile: 22px;
+$font-size-mobile-hi: 24px;
+    
