@@ -9,6 +9,13 @@
     <menu-left>
 
     </menu-left>
+    <card-item
+      v-for="(array, index) in arrayCard"
+      :key="index"
+      :card="array"
+    >
+
+    </card-item>
     <!-- <app-swiper-slider>
       
     </app-swiper-slider> -->
@@ -30,14 +37,7 @@
     <AppButton :hasBlack="true" :hasAround="true" width="270px" class="">
       hello world
     </AppButton>
-    <card-item
-      v-for="(array, index) in arrayFromCard"
-      :key="index"
-      :arrayCardService="array"
-    >
-
-    </card-item>
-    <v-components v-if="let1" :menuLeft="appMenuLeft">
+    <v-components v-if="isLoad" :menuLeft="appMenuLeft">
 
     </v-components>
     
@@ -163,7 +163,7 @@ import AppButton from './components/AppButton.vue';
 import CardItem from './components/CardItem.vue';
 import AppInput from './components/AppInput.vue';
 // import AppSwiperSlider from './components/AppSwiperSlider.vue';
-import {vCardService, vMenuLeft, vAddObject} from '@/assets/api/apiFooter'
+import {vCardService, vMenuLeft, vAddObject, vServiceCardList} from '@/assets/api/apiFooter'
 import CardObject from './components/CardObject.vue';
 import AppCardLocation from './components/AppCardLocation.vue';
 import WithoutAgent from './components/WithoutAgent.vue';
@@ -198,16 +198,16 @@ export default {
     AppCardLocation,
     WithoutAgent,
     TestMovie,
-    // AppSwiperSlider
     AddressOffice,
   },
   data() {
     return {
-      let1: false,
+      isLoad: false,
       arrayFromCard: [],
       appMenuLeft: [],
       arrayVObject: [],
-      movieStore: useMovieStore()
+      movieStore: useMovieStore(),
+      arrayCard: [],
     }
   },
   setup() {
@@ -241,12 +241,17 @@ export default {
                 this.arrayVObject = result
                 console.log(this.arrayVObject);
             });
+            vServiceCardList().then(result =>
+            {
+                this.arrayCard = result
+                console.log(this.arrayCard);
+            });
         }, 
     },
     mounted() {
         this.check();
         setTimeout(() => {
-            this.let1 = true;
+            this.isLoad = true;
         }, 3000);
     },
 }

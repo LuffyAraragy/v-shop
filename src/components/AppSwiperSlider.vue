@@ -6,15 +6,13 @@
       :space-between="50"
       navigation
       :pagination="{ clickable: true }"
-      @swiper="onSwiper"
-      @slideChange="onSlideChange"
     >
       <swiper-slide 
-        v-for="(arr, indexs) in arrayImgCards" 
+        v-for="(arrayImg, indexs) in arrayImgCards" 
         :key="indexs"
       >
         <img 
-          :src="require(`@/img/cardItem/${arrayImgCards[indexs]}`)" 
+          :src="require(`@/img/cardItem/${arrayImg}`)" 
           alt=""
         >
         </swiper-slide>
@@ -46,15 +44,7 @@ export default {
       }
     },
     setup() {
-      const onSwiper = (swiper) => {
-        console.log(swiper);
-      };
-      const onSlideChange = () => {
-        console.log('slide change');
-      };
       return {
-        onSwiper,
-        onSlideChange,
         modules: [Navigation, Pagination, A11y, Thumbs],
       };
     },

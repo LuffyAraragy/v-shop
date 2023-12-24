@@ -66,6 +66,16 @@ export async function vCardItem() {
   return delayResponse(cardItem);
 }
 
+export async function vServiceCardList() {
+  let serviceCardList = [
+    { img: ["VladaSteblina.png", "5206 1.png", "23184 1.png"], price: "3 900 000 ₽", icon: "love.svg", characteristics: ["2-ком. квартира", "73 кв. м.", "2/15 эт."], address: "ул. Воскресенская 12А", metro: "м. Сокольники", onLiked: false},
+    { img: ["VladaSteblina.png", "5206 1.png", "23184 1.png"], price: "3 900 222 ₽", icon: "love.svg", characteristics: ["2-ком. квартира", "73 кв. м.", "2/15 эт."], address: "ул. Воскресенская 12А", metro: "м. Сокольники", onLiked: false},
+    { img: ["VladaSteblina.png", "5206 1.png", "23184 1.png"], price: "3 900 333 ₽", icon: "love.svg", characteristics: ["2-ком. квартира", "73 кв. м.", "2/15 эт."], address: "ул. Воскресенская 12А", metro: "м. Сокольники", onLiked: false},
+  ]
+  return delayResponse(serviceCardList);
+}
+
+
 export async function vCardService() {
   let cardService = [
     [

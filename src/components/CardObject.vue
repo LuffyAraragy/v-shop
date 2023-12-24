@@ -30,14 +30,13 @@
 
         </app-property>
         <div class="alax">
-            <card-item
+            <!-- <card-item
                 v-for="(array, index) in arrayFromCard"
                 :key="index"
-                :arrayCardService="array"
-                
+                :card="array"
             >
 
-            </card-item>
+            </card-item> -->
         </div>
         
         <div class="card-object__location-block block">
@@ -53,19 +52,19 @@
 
 <script>
 import AppProperty from './AppProperty.vue'
-import CardItem from './CardItem.vue'
+// import CardItem from './CardItem.vue'
 import {vCardService} from '@/assets/api/apiFooter'
 
 export default {
     name: "CardObject",
     components: {
         AppProperty,
-        CardItem,
+        // CardItem,
     },
     data() {
         return {
             arrayFromCard: [],
-            let1: false
+            isLoad: false
         }
     },
     methods: {
@@ -81,7 +80,7 @@ export default {
     mounted() {
         this.check();
         setTimeout(() => {
-            this.let1 = true;
+            this.isLoad = true;
         }, 3000);
     },
 }
