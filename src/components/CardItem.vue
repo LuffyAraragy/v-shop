@@ -23,7 +23,7 @@
             <div class="text card-item__street">
                 {{ card.address }}
             </div>
-            <div class="text text--font-weight-300 text--font-size-sm card-item__text-small">
+            <div class="text text--font-weight-300 text--font-size-sm2 card-item__text-small">
                 {{ card.metro }}
             </div>
             <app-button width="310px" :hasWhite="true" :hasOutline="true">
@@ -85,7 +85,8 @@ export default {
 
     &__text {
         border-right: $border-size-1 solid $color-white-gray;
-        font-size: $font-size-xl;   
+        font-size: $font-size-xl;
+        padding-right: $size-block-20; 
     }
 
     &__text:last-child {
@@ -107,7 +108,8 @@ export default {
     &__info {
         display: flex;
         gap: $gap-20;
-        justify-content: space-around;
+        justify-content: space-between;
+        
     }
 }
 
