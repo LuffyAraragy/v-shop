@@ -21,7 +21,13 @@
     </div>
 </template>
 
-<style>
+<script >
+export default {
+    name: "VYourLocation"
+}
+</script>
+
+<style lang="scss" scoped>
 
 .v-your-location {
     display: flex;
@@ -82,7 +88,3 @@
 }
 
 </style>
-
-<script>
-
-</script>

@@ -12,6 +12,14 @@
     </div>
 </template>
 
+<script>
+
+export default {
+    name: "VSwiperSlider"
+}
+
+</script>
+
 <style>
 
 .swiper{
@@ -24,10 +32,4 @@
 
 </style>
 
-<script>
 
-
-export default {
-    
-}
-</script>

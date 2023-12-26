@@ -115,7 +115,7 @@
 import AppButton from './AppButton.vue';
 
 export default {
-    name: 'v-object',
+    name: 'VObject',
     data() {
         return {
             let1: false,

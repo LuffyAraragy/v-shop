@@ -31,6 +31,8 @@ import {vBank2} from '@/assets/api/apiFooter'
 
 
 export default {
+    name: "VWork",
+    
     components: {
         
     },

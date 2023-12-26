@@ -49,7 +49,7 @@
 import {fetchFooterData, fetchFooterDataSocialNetwork, fetchFooterDataContacts} from '@/assets/api/apiFooter'
 
     export default {
-        name: 'v-footer',
+        name: 'VFooter',
         components: {
 
         },

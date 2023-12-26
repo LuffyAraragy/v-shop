@@ -71,6 +71,25 @@
     </div>
 </template>
 
+<script>
+export default {
+    name: 'VComponents',
+    data() {
+        return {
+            let2: false
+        }
+    },
+    props: {
+        menuLeft: Array
+    },
+    mounted() {
+        setTimeout(() => {
+            this.let2 = true;
+        }, 3000);
+    },
+}
+</script>
+
 <style>
     .menu-left {
         display: flex;
@@ -115,22 +134,3 @@
         backdrop-filter: blur(7px);
     }
 </style>
-
-<script>
-export default {
-    name: 'v-component',
-    data() {
-        return {
-            let2: false
-        }
-    },
-    props: {
-        menuLeft: Array
-    },
-    mounted() {
-        setTimeout(() => {
-            this.let2 = true;
-        }, 3000);
-    },
-}
-</script>

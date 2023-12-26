@@ -43,6 +43,12 @@
     </div>
 </template>
 
+<script >
+export default {
+    name: "VAgent"
+}
+</script>
+
 <style>
 .v-agent {
     display: grid;
@@ -86,7 +92,3 @@
 }
 
 </style>
-
-<script>
-
-</script>

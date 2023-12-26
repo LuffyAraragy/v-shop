@@ -38,7 +38,7 @@
 <script>
 import AppButton from './AppButton.vue';
     export default {
-        name: "v-menu-top",
+        name: "VMenuTop",
         components: {
             AppButton
         },

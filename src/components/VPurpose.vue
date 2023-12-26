@@ -40,6 +40,14 @@
     </div>
 </template>
 
+<script>
+
+export default {
+    name: "VPurpose"
+}
+
+</script>
+
 <style>
 
 .v-purpose {
@@ -86,7 +94,3 @@
     width: 255px;
 }
 </style>
-
-<script>
-
-</script>

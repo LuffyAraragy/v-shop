@@ -57,6 +57,14 @@
     </div>
 </template>
 
+<script>
+
+export default {
+    name: "VPass"
+}
+
+</script>
+
 <style>
 .v-pass {
     display: grid;
@@ -108,9 +116,3 @@
     text-align: center;
 }
 </style>
-
-<script>
-export default {
-    
-}
-</script>

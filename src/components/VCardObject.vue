@@ -72,8 +72,6 @@
     </div>
 </template>
 
-
-
 <script>
 
 import {vBank} from '@/assets/api/apiFooter'
@@ -81,30 +79,27 @@ import {vBank} from '@/assets/api/apiFooter'
 // import { vCardObject } from '@/assets/api/apiFooter'
 
 export default {
+    name: "VCardObject",
     components: {
-        // Slider
+
     },
     data() {
         return {
             value: [0,0,0,0],
             valueMax: [4000000, 500000, 240, 100],
             arrayBank: []
-            // valueMax: [],
         }
     },
     methods: {
         check() {
-            
-            vBank().then(result =>
-                {
-                    this.arrayBank = result
-                    console.log(this.arrayBank);
-                });
+            vBank().then(result =>{
+                this.arrayBank = result
+                console.log(this.arrayBank);
+            });
         }
     },
     mounted() {
         this.check();
-        
     }  
 }
 </script>
@@ -152,8 +147,8 @@ export default {
     justify-content: center;
     align-items: center;
 }
-/* Новая задаяа про банк */
 
+/* Новая задаяа про банк */
 .v-bank {
     width: 350px;
     height: 100%;
@@ -183,7 +178,6 @@ export default {
     justify-content: space-between;
 }
 
-/* online-calculator */
 .online-calculator {
     display: grid;
     text-align: center;
@@ -201,7 +195,6 @@ export default {
     width: 100%;
     height: 100%;
     max-height: 39px;
-    
 }
 
 .online-calculator__block-price {

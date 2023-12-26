@@ -22,21 +22,21 @@
     <app-input :placeholder="placeholder" width="200px">
       
     </app-input>
-    <AppButton :hasWhite="true" width="270px" :hasOutline="true" :hasSmall="true" class="">
+    <app-button :hasWhite="true" width="270px" :hasOutline="true" :hasSmall="true" class="">
       hello world
-    </AppButton>
-    <AppButton :hasWhite="true" width="310px" :hasOutline="true" class="">
+    </app-button>
+    <app-button :hasWhite="true" width="310px" :hasOutline="true" class="">
       hello world
-    </AppButton>
-    <AppButton :hasGreen="true" width="255px" class="">
+    </app-button>
+    <app-button :hasGreen="true" width="255px" class="">
       hello world
-    </AppButton>
-    <AppButton :hasGreen="true" width="270px" class="">
+    </app-button>
+    <app-button :hasGreen="true" width="270px" class="">
       hello world
-    </AppButton>
-    <AppButton :hasBlack="true" :hasAround="true" width="270px" class="">
+    </app-button>
+    <app-button :hasBlack="true" :hasAround="true" width="270px" class="">
       hello world
-    </AppButton>
+    </app-button>
     <v-components v-if="isLoad" :menuLeft="appMenuLeft">
 
     </v-components>
@@ -133,22 +133,22 @@
 
 <script>
 
-import vComponents from './components/v-components.vue';
-import vFooter from './components/v-footer.vue';
-import vMenuTop from './components/v-menu-top.vue';
-import vYourLocation from './components/v-your-location.vue';
-import vAgent from './components/v-agent.vue';
-import vWork from './components/v-work.vue';
-import vQuestions from './components/v-questions.vue';
-import vPurpose from './components/v-purpose.vue';
-import vObject from './components/v-object.vue';
-import vCardObject from './components/v-card-object.vue';
-import vPass from './components/v-pass.vue';
-import vSwiperSlider from './components/v-swiper-slider.vue';
+import VComponents from './components/VComponents.vue';
+import VFooter from './components/VFooter.vue';
+import VMenuTop from './components/VMenuTop.vue';
+import VYourLocation from './components/VYourLocation.vue';
+import VAgent from './components/VAgent.vue';
+import VWork from './components/VWork.vue';
+import VQuestions from './components/VQuestions.vue';
+import VPurpose from './components/VPurpose.vue';
+import VObject from './components/VObject.vue';
+import VCardObject from './components/VCardObject.vue';
+import VPass from './components/VPass.vue';
+import VSwiperSlider from './components/VSwiperSlider.vue';
 import AddressOffice from './components/AddressOffice .vue';
 
 
-import headerBlock from './components/HeaderBlock.vue'
+import HeaderBlock from './components/HeaderBlock.vue'
 import { Navigation, Pagination, A11y, Thumbs } from 'swiper/modules';
 
 // Import Swiper Vue.js components
@@ -176,21 +176,21 @@ import { useMovieStore } from './stores/MovieStore';
 export default {
   name: 'App',
   components: {
-    vComponents, 
-    vFooter,
-    vMenuTop,
-    vYourLocation,
-    vAgent,
-    vWork,
-    vQuestions,
-    vPurpose,
-    vObject,
-    vCardObject,
-    vPass,
-    vSwiperSlider,
+    VComponents, 
+    VFooter,
+    VMenuTop,
+    VYourLocation,
+    VAgent,
+    VWork,
+    VQuestions,
+    VPurpose,
+    VObject,
+    VCardObject,
+    VPass,
+    VSwiperSlider,
     Swiper,
     SwiperSlide,
-    headerBlock,
+    HeaderBlock,
     AppButton,
     CardItem,
     AppInput,

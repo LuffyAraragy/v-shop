@@ -69,12 +69,10 @@ export default {
     },
     methods: {
         check() {
-            vCardService().then(result =>
-            {
+            vCardService().then(result =>{
                 this.arrayFromCard = result
                 console.log(this.arrayFromCard);
             }); 
-            
         }, 
     },
     mounted() {

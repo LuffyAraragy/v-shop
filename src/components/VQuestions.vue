@@ -55,6 +55,14 @@
     </div>
 </template>
 
+<script>
+
+export default {
+    name: "VQuestions"
+}
+
+</script>
+
 <style>
 .v-questions {
     display: flex;
@@ -117,7 +125,3 @@
     flex-shrink: 0;
 }
 </style>
-
-<script>
-
-</script>
