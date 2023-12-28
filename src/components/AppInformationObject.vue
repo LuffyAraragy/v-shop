@@ -1,23 +1,23 @@
 <template>
-    <div class="v-card-object">
-        <div class="v-card-object__block">
-            <div class="v-card-object__title">
+    <div class="app-information-object">
+        <div class="app-information-object__block">
+            <div class="app-information-object__title">
                 Нужна помощь специалиста?
             </div>
-            <img src="@/img/cardObject/5c9b5dd452e03_woman_in_mirror 1.svg" alt="" class="v-card-object__img">
-            <div class="v-card-object__name">
+            <img src="@/img/cardObject/5c9b5dd452e03_woman_in_mirror 1.svg" alt="" class="app-information-object__img">
+            <div class="app-information-object__name">
                 Татьяна
             </div>
-            <div class="v-card-object__text">
+            <div class="app-information-object__text">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             </div>
-            <button class="button v-card-object__button button--green">
+            <button class="button app-information-object__button button--green">
                 Заказать звонок
             </button>
-            <button class="button v-card-object__button-block">
+            <button class="button app-information-object__button-block">
                 <img src="@/img/cardObject/communications 2.svg" alt="">
                 <!-- Может этот блок лишний -->
-                <div class="v-card-object__text-telephone">
+                <div class="app-information-object__text-telephone">
                     Показать телефон
                 </div>
             </button>
@@ -25,14 +25,14 @@
     </div>
 
 
-    <div class="v-bank">
-        <div class="v-bank__content" v-for="(arrays, index) in arrayBank" :key="index">
-            <img :src="require(`@/img/bank/${ arrays[0] }`)" alt="" class="v-bank__img">
-            <div class="v-bank__date-content">
-                <div class="v-bank__percent">
+    <div class="app-bank">
+        <div class="app-bank__content" v-for="(arrays, index) in arrayBank" :key="index">
+            <img :src="require(`@/img/bank/${ arrays[0] }`)" alt="" class="app-bank__img">
+            <div class="app-bank__date-content">
+                <div class="app-bank__percent">
                     {{ arrays[1] }}
                 </div>
-                <div class="v-bank__date">
+                <div class="app-bank__date">
                     {{ arrays[2] }}
                 </div>
             </div>
@@ -40,15 +40,15 @@
         
     </div>
 <!-- Следующий контент блок -->
-    <div class="online-calculator">
-        <button class="online-calculator__button">
+    <div class="app-online-calculator">
+        <button class="app-online-calculator__button">
             Свернуть
         </button>
-        <div class="online-calculator__description">
+        <div class="app-online-calculator__description">
             Онлайн-калькулятор ипотеки
         </div>
-        <div class="online-calculator__block-price" v-for="( blockPrice, blockPriceIndex ) in 4" :key="blockPriceIndex">
-            <div class="online-calculator__price-description">
+        <div class="app-online-calculator__block-price" v-for="( blockPrice, blockPriceIndex ) in 4" :key="blockPriceIndex">
+            <div class="app-online-calculator__price-description">
                 Срок кредитования
             </div>
             <div class="field">
@@ -58,11 +58,11 @@
                 </span>
             </div>
         </div>
-        <div class="online-calculator__block-payment">
-            <div class="online-calculator__monthly-payment">
+        <div class="app-online-calculator__block-payment">
+            <div class="app-online-calculator__monthly-payment">
                 Ежемесячный платёж:
             </div>
-            <div class="online-calculator__payment-amount">
+            <div class="app-online-calculator__payment-amount">
                 50 000 ₽ / мес
             </div>
         </div>
@@ -79,7 +79,7 @@ import {vBank} from '@/assets/api/apiFooter'
 // import { vCardObject } from '@/assets/api/apiFooter'
 
 export default {
-    name: "VCardObject",
+    name: "AppInformationObject",
     components: {
 
     },
@@ -106,7 +106,7 @@ export default {
 
 <style>
 
-.v-card-object {
+.app-information-object {
     background-color: #FFFFFF;
     width: 350px;
     height: 487px;
@@ -114,7 +114,7 @@ export default {
     box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.10);
 }
 
-.v-card-object__block {
+.app-information-object__block {
     padding: 30px 0;
     display: flex;
     flex-direction: column;
@@ -122,25 +122,25 @@ export default {
     align-items: center;
 }
 
-.v-card-object__img {
+.app-information-object__img {
     margin: 20px;
     border-radius: 50%;
 }
 
-.v-card-object__name {
+.app-information-object__name {
     margin-top: 15px;
 }
 
-.v-card-object__text {
+.app-information-object__text {
     margin-top: 19px;
     text-align: center;
 }
 
-.v-card-object__button {
+.app-information-object__button {
     margin-top: 33px;
 }
 
-.v-card-object__button-block {
+.app-information-object__button-block {
     margin-top: 20px;
     display: flex;
     gap: 15px;
@@ -149,7 +149,7 @@ export default {
 }
 
 /* Новая задаяа про банк */
-.v-bank {
+.app-bank {
     width: 350px;
     height: 100%;
     flex-shrink: 0;
@@ -158,13 +158,13 @@ export default {
     box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.10);
 }
 
-.v-bank__img {
+.app-bank__img {
     width: 99px;
     height: 25px;
     flex-shrink: 0;
 }
 
-.v-bank__content {
+.app-bank__content {
     display: flex;
     flex-direction: column;
     row-gap: 20px;
@@ -173,12 +173,12 @@ export default {
     border-bottom: 1px solid #C4C4C4;
 }
 
-.v-bank__date-content {
+.app-bank__date-content {
     display: flex;
     justify-content: space-between;
 }
 
-.online-calculator {
+.app-online-calculator {
     display: grid;
     text-align: center;
     justify-content: center;
@@ -189,7 +189,7 @@ export default {
     box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.10);
 }
 
-.online-calculator__button {
+.app-online-calculator__button {
     border-radius: 5px 5px 0px 0px;
     border: 1px solid #2A7D03;
     width: 100%;
@@ -197,13 +197,13 @@ export default {
     max-height: 39px;
 }
 
-.online-calculator__block-price {
+.app-online-calculator__block-price {
     display: grid;
     height: 117px;
     border-bottom: 1px solid #D3D3D3;;
 }
 
-.online-calculator__payment-amount {
+.app-online-calculator__payment-amount {
     margin-top: 8px;
 }
 

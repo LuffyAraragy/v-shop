@@ -1,5 +1,5 @@
 <template>
-    <div class="address-office container">
+    <div class="app-address-office container">
         <div class="text  text--color-gray">
             Адрес офиса:
         </div>
@@ -25,11 +25,11 @@
 import AppButton from './AppButton.vue'
 export default {
   components: { AppButton },
-    name: "AddressOffice"
+    name: "AppAddressOffice"
 }
 </script>
 <style lang="scss">
-.address-office {
+.app-address-office {
     display: flex;
     justify-content: space-between;
     align-items: center;

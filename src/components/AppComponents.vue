@@ -1,5 +1,5 @@
 <template>
-    <div class="v-component" v-if="let2">
+    <div class="app-component" v-if="let2">
         <button class="button">
             Привет коля
         </button>
@@ -54,7 +54,7 @@
             Всем привет это text
         </p>
 
-        <div class="menu-left">
+        <div class="app-menu-left">
             <div class="content" v-for="(array, index) in menuLeft" :key="index">
                 <img
                     v-if="index <= 4"
@@ -73,7 +73,7 @@
 
 <script>
 export default {
-    name: 'VComponents',
+    name: 'AppComponents',
     data() {
         return {
             let2: false
@@ -91,7 +91,7 @@ export default {
 </script>
 
 <style>
-    .menu-left {
+    .app-menu-left {
         display: flex;
         flex-flow: column;
         width: 180px;
@@ -129,7 +129,7 @@ export default {
         color: #FFF;
     }
 
-    .menu-left--black {
+    .app-menu-left--black {
         background: rgba(0, 0, 0, 0.40);
         backdrop-filter: blur(7px);
     }

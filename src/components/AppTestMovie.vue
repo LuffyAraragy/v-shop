@@ -1,12 +1,12 @@
 <template>
-    <div class="test-movie">
+    <div class="app-test-movie">
         {{ movie.id }}
     </div>  
 </template>
 
 <script>
 export default {
-    name: "TestMovie",
+    name: "AppTestMovie",
     data() {
         return {
 

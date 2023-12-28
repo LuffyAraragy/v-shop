@@ -1,9 +1,9 @@
 <!--TODO Доделать футер поменять у соцеальных сетей отступы и подуцмать как расположить конент -->
 <template>
-    <div class="v-footer" v-if="this.let">
-        <div class="v-footer__block-content container">
-            <div class="v-footer__content">
-                <div class="v-footer__menu content-options" 
+    <div class="app-footer" v-if="this.let">
+        <div class="app-footer__block-content container">
+            <div class="app-footer__content">
+                <div class="app-footer__menu content-options" 
                     v-for="(test, index1) in arrayFooterData"
                     :key="index1"
                 >
@@ -11,17 +11,17 @@
                         v-for="(arrayFooterData, index2) in test"
                         :key="index2"
                     >
-                        <div class="v-footer___text-h2"  v-if="index2==0">
+                        <div class="app-footer___text-h2"  v-if="index2==0">
                             {{ arrayFooterData }}
                         </div>
-                        <div class="v-footer___text-h3"  v-if="index2!=0">
+                        <div class="app-footer___text-h3"  v-if="index2!=0">
                             {{ arrayFooterData }}
                         </div>
                     </div>
                 </div> 
             </div>
-            <div class="v-footer__all-social-network" v-if="arrayFooterSocialContacts.length == 3">
-                <div class="v-footer__social-network">
+            <div class="app-footer__all-social-network" v-if="arrayFooterSocialContacts.length == 3">
+                <div class="app-footer__social-network">
                     <img alt="" class="social-network"
                         v-for="(socialNetwork, index3) in arrayFooterSocialNetwork"
                         :key="index3"
@@ -30,13 +30,13 @@
                 </div>
                 <div class="mail">
                     <img :src="require(`@/img/footer/${arrayFooterSocialContacts[0][0]}`)" class="contact">
-                    <p class="v-footer__text">{{ arrayFooterSocialContacts[0][1] }}</p>
+                    <p class="app-footer__text">{{ arrayFooterSocialContacts[0][1] }}</p>
                 </div>
                 <div class="telephone-number">
                     <img :src="require(`@/img/footer/${arrayFooterSocialContacts[1][0]}`)" alt="" class="contact">
-                    <p class="v-footer__text">{{ arrayFooterSocialContacts[1][1] }}</p>
+                    <p class="app-footer__text">{{ arrayFooterSocialContacts[1][1] }}</p>
                 </div>
-                <div class="v-footer__information">
+                <div class="app-footer__information">
                     {{ arrayFooterSocialContacts[2][0] }}
                 </div>
             </div>
@@ -49,7 +49,7 @@
 import {fetchFooterData, fetchFooterDataSocialNetwork, fetchFooterDataContacts} from '@/assets/api/apiFooter'
 
     export default {
-        name: 'VFooter',
+        name: 'AppFooter',
         components: {
 
         },
@@ -95,13 +95,13 @@ import {fetchFooterData, fetchFooterDataSocialNetwork, fetchFooterDataContacts} 
 
 
 <style>
-.v-footer {
+.app-footer {
     width: 100%;
     height: 100%;
     background: #2F2D2D;
 }
 
-.v-footer__all-social-network {
+.app-footer__all-social-network {
     /* Поменял */
     padding-top: 30px;
     padding-bottom: 70px;
@@ -111,7 +111,7 @@ import {fetchFooterData, fetchFooterDataSocialNetwork, fetchFooterDataContacts} 
     justify-content: space-between;
 }
 
-.v-footer__social-network {
+.app-footer__social-network {
     display: flex;
     gap: 20px;
 }
@@ -121,7 +121,7 @@ import {fetchFooterData, fetchFooterDataSocialNetwork, fetchFooterDataContacts} 
     height: 30px;
 }
 
-.v-footer__content {
+.app-footer__content {
     padding-top: 70px;
     display: flex;
     /* Поменял */
@@ -135,7 +135,7 @@ import {fetchFooterData, fetchFooterDataSocialNetwork, fetchFooterDataContacts} 
     gap: 30px;
 }
 
-    .v-footer___text-h2 {
+    .app-footer___text-h2 {
         color: #FFF;
         font-family: Geometria;
         font-size: 16px;
@@ -144,7 +144,7 @@ import {fetchFooterData, fetchFooterDataSocialNetwork, fetchFooterDataContacts} 
         line-height: normal;
     }
 
-    .v-footer___text-h3 {
+    .app-footer___text-h3 {
         color: #FFF;
         font-family: Geometria;
         font-size: 14px;
@@ -153,7 +153,7 @@ import {fetchFooterData, fetchFooterDataSocialNetwork, fetchFooterDataContacts} 
         line-height: normal;
     }
 
-.v-footer__text {
+.app-footer__text {
     color: #FFF;
 
     font-family: Geometria;
@@ -168,7 +168,7 @@ import {fetchFooterData, fetchFooterDataSocialNetwork, fetchFooterDataContacts} 
     height: 20px;
 }
 
-.v-footer__information {
+.app-footer__information {
     max-width: 421px;
     color: #FFF;
     font-family: Geometria;

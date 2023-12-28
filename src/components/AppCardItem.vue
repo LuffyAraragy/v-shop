@@ -1,17 +1,17 @@
 <template>
-    <div class="card-item" v-if="isLoad">
+    <div class="app-card-item" v-if="isLoad">
         <!-- Передаём массив с изображениями -->
         <app-swiper-slider :arrayImgCards="card.img">
             
         </app-swiper-slider>
-        <div class="card-item__block-content">
-            <div class="card-item__info-block">
+        <div class="app-card-item__block-content">
+            <div class="app-card-item__info-block">
                 <div class="text text--font-weight-800 text--font-size-normalx2 price">
                     {{ card.price }}
                 </div>
                 <img :src="require(`@/img/cardItem/${card.icon}`)" alt="">
             </div>
-            <div class="card-item__info">
+            <div class="app-card-item__info">
                 <div class="text text--color-black card-item__text" 
                     v-for="(text, index) in card.characteristics"
                     :key="index"
@@ -20,17 +20,17 @@
                 {{ text }}
                 </div>
             </div>
-            <div class="text card-item__street">
+            <div class="text app-card-item__street">
                 {{ card.address }}
             </div>
-            <div class="text text--font-weight-300 text--font-size-sm2 card-item__text-small">
+            <div class="text text--font-weight-300 text--font-size-sm2 app-card-item__text-small">
                 {{ card.metro }}
             </div>
-            <app-button width="310px" :hasWhite="true" :hasOutline="true">
+            <AppButton width="310px" :hasWhite="true" :hasOutline="true">
                 <div>
                     Показать телефон
                 </div>
-            </app-button>
+            </AppButton>
         </div>
     </div>
 </template>
@@ -49,7 +49,7 @@ export default {
         AppButton,
         AppSwiperSlider,
     },
-    name: "CardItem",
+    name: "AppCardItem",
     data() {
         return {
             isLoad: false,
@@ -68,7 +68,7 @@ export default {
 
 <style lang="scss" scoped>
 
-.card-item {
+.app-card-item {
     max-width: $size-block-350;
 
     &__img {

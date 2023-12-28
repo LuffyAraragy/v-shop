@@ -1,5 +1,5 @@
 <template>
-    <div class="menu-left" v-if="let2">
+    <div class="app-menu-left" v-if="let2">
         <div class="content" v-for="(array, index) in menuLeft" :key="index">
             <img
                 v-if="index <= 4"
@@ -16,7 +16,7 @@
 </template>
 <script>
 export default {
-    name: "MenuLeft",
+    name: "AppMenuLeft",
     data() {
         return {
             let2: false
@@ -33,7 +33,7 @@ export default {
 }
 </script>
 <style lang="scss">
-    .menu-left {
+    .app-menu-left {
         display: flex;
         flex-flow: column;
         width: 180px;

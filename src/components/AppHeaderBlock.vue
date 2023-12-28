@@ -1,18 +1,18 @@
 <template>
-  <div class="header-block">
-    <div class="header-block__all-content">
-        <img src="@/img/h1/young.png" alt="" class="header-block__background-img">
-        <div class="header-block__title">
+  <div class="app-header-block">
+    <div class="app-header-block__all-content">
+        <img src="@/img/h1/young.png" alt="" class="app-header-block__background-img">
+        <div class="app-header-block__title">
             {{ onContent }}
         </div>
-        <div class="header-block__content-text"
+        <div class="app-header-block__content-text"
             v-for="(content, index) in 3"
             :key="index"
         >
-            <div class="header-block__img">
+            <div class="app-header-block__img">
                 0000
             </div>
-            <div class="header-block__text">
+            <div class="app-header-block__text">
                 Гибкая система вознаграджения
             </div>
         </div>
@@ -28,32 +28,30 @@
 
 <script>
 export default {
-    name: "HeaderBlock",
+    name: "AppHeaderBlock",
     props: ["onContent"]
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 
-.header-block {
+.app-header-block {
     text-align: center;
-}
-
-.header-block {
     max-width: 100%;
     max-height: 100%;
-}
 
-.header-block__all-content {
+    &__all-content {
+        max-width: 100%;
+        max-height: 100%;
+    }
     
-    max-width: 100%;
-    max-height: 100%;
+    &__background-img {
+        max-width: 100%;
+        max-height: 100%;
+    }
 }
 
-.header-block__background-img {
-    max-width: 100%;
-    max-height: 100%;
-}
+
 
 
 </style>

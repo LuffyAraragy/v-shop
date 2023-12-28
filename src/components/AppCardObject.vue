@@ -1,34 +1,34 @@
 <template>
-    <div class="card-object">
-        <div class="card-object__property-block">
-            <div class="card-object__title">
+    <div class="app-card-object">
+        <div class="app-card-object__property-block">
+            <div class="app-card-object__title">
 
             </div>
             <app-property>
 
             </app-property>
         </div>
-        <div class="card-object__card-block">
-            <div class="card-object__title">
+        <div class="app-card-object__card-block">
+            <div class="app-card-object__title">
 
             </div>
-            <div class="card-object__card">
+            <div class="app-card-object__card">
 
             </div>
         </div>
-        <div class="card-object__description-block block">
-            <div class="card-object__title">
+        <div class="app-card-object__description-block block">
+            <div class="app-card-object__title">
                 Описание
             </div>
-            <div class="card-object__description">
+            <div class="app-card-object__description">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
                 velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </div>
         </div>
-        <app-property>
+        <AppProperty>
 
-        </app-property>
+        </AppProperty>
         <div class="alax">
             <!-- <card-item
                 v-for="(array, index) in arrayFromCard"
@@ -39,11 +39,11 @@
             </card-item> -->
         </div>
         
-        <div class="card-object__location-block block">
+        <div class="app-card-object__location-block block">
             <div class="title">
 
             </div>
-            <div class="card-object__location">
+            <div class="app-card-object__location">
                 
             </div>
         </div>
@@ -56,7 +56,7 @@ import AppProperty from './AppProperty.vue'
 import {vCardService} from '@/assets/api/apiFooter'
 
 export default {
-    name: "CardObject",
+    name: "AppCardObject",
     components: {
         AppProperty,
         // CardItem,
@@ -85,12 +85,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-// .alax {
-//     display: flex;
-//     height: 200px;
-// }
-.card-object {
+.app-card-object {
     max-width: 730px;
     margin: 0 auto;
     padding: 0 15px;

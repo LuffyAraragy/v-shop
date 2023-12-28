@@ -25,7 +25,7 @@ import {vCardAgent} from '@/assets/api/apiFooter'
 
 export default {
   components: { AppButton },
-    name: 'WithoutAgent',
+    name: 'AppWithoutAgent',
     data() {
         return {
             let1: false,

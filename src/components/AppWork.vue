@@ -1,15 +1,15 @@
 <template>
-    <div class="v-work">
-        <div class="text__h2 v-work__title">
+    <div class="app-work">
+        <div class="text__h2 app-work__title">
             Этапы работ
         </div>
-        <div class="v-work__content-all">
-            <div class="v-work__content" v-for="(array, index) in arrayBank2" :key="index">
-                <div class="v-work__all-stages">
-                    <div class="v-work__circle">
+        <div class="app-work__content-all">
+            <div class="app-work__content" v-for="(array, index) in arrayBank2" :key="index">
+                <div class="app-work__all-stages">
+                    <div class="app-work__circle">
                         {{ index+1 }}
                     </div>
-                    <img :src="require(`@/img/work/${array[0]}`)" alt="" class="v-work__img">
+                    <img :src="require(`@/img/work/${array[0]}`)" alt="" class="app-work__img">
 
                     <div class="text__20px test1">
                         {{ array[1] }}
@@ -31,7 +31,7 @@ import {vBank2} from '@/assets/api/apiFooter'
 
 
 export default {
-    name: "VWork",
+    name: "AppWork",
     
     components: {
         
@@ -60,21 +60,21 @@ export default {
 
 </script>
 
-<style>
+<style lang="scss" scoped>
 
-.v-work__title {
+.app-work__title {
     display: flex;
     justify-content: center;
 }
 
-.v-work__content-all {
+.app-work__content-all {
     /* Отцентровать весь контент кроме Этапов работы */
     display: flex;
     justify-content: center;
     column-gap: 30px;
 }
 
-.v-work__circle {
+.app-work__circle {
     color: #FFF;
     display: flex;
     justify-content: center;
@@ -90,7 +90,7 @@ export default {
     border-radius: 50%;
 }
 
-.v-work__all-stages {
+.app-work__all-stages {
     display: grid;
     align-items: center;
     grid-template-columns: repeat(2, 1fr);

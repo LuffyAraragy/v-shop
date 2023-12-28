@@ -43,12 +43,12 @@
 <script>
 
 export default {
-    name: "VPurpose"
+    name: "AppPurpose"
 }
 
 </script>
 
-<style>
+<style lang="scss" scoped>
 
 .v-purpose {
     padding: 100px 0;

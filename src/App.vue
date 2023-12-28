@@ -1,21 +1,21 @@
 <template>
   <div class="app">
-    <v-menu-top>
+    <AppMenuTop>
 
-    </v-menu-top>
-    <address-office>
+    </AppMenuTop>
+    <AppAddressOffice>
 
-    </address-office>
+    </AppAddressOffice>
     <menu-left>
 
     </menu-left>
-    <card-item
+    <AppCardItem
       v-for="(array, index) in arrayCard"
       :key="index"
       :card="array"
     >
 
-    </card-item>
+    </AppCardItem>
     <!-- <app-swiper-slider>
       
     </app-swiper-slider> -->
@@ -37,43 +37,43 @@
     <app-button :hasBlack="true" :hasAround="true" width="270px" class="">
       hello world
     </app-button>
-    <v-components v-if="isLoad" :menuLeft="appMenuLeft">
+    <AppComponent v-if="isLoad" :menuLeft="appMenuLeft">
 
-    </v-components>
+    </AppComponent>
     
     
-    <v-footer>
+    <AppFooter>
 
-    </v-footer>
+    </AppFooter>
     
-    <v-your-location>
+    <AppYourLocation>
 
-    </v-your-location>
-    <v-agent>
+    </AppYourLocation>
+    <AppAgent>
 
-    </v-agent>
-    <v-work>
+    </AppAgent>
+    <AppWork>
 
-    </v-work>
-    <v-questions>
+    </AppWork>
+    <AppQuestions>
       
-    </v-questions>
-    <v-purpose>
+    </AppQuestions>
+    <AppPurpose>
 
-    </v-purpose>
-    <v-object :arrayVObjectItem="arrayVObject">
+    </AppPurpose>
+    <AppObject :arrayVObjectItem="arrayVObject">
 
-    </v-object>
-    <v-card-object>
+    </AppObject>
+    <AppInformationObject>
 
-    </v-card-object>
-    <v-pass>
+    </AppInformationObject>
+    <AppPass>
 
-    </v-pass>
+    </AppPass>
     
-    <card-object>
+    <AppCardObject>
 
-    </card-object>
+    </AppCardObject>
 
 <div class="swiper-content-1">
   
@@ -106,49 +106,43 @@
     </div>                                                              
   </div>  -->
 </div>
-    
-    <v-swiper-slider>
-      
-    </v-swiper-slider>
+    <AppHeaderBlock>
 
-    <header-block>
+    </AppHeaderBlock>
+    <AppCardLocation>
 
-    </header-block>
-    <app-card-location>
+    </AppCardLocation>
 
-    </app-card-location>
+    <AppWithoutAgent>
 
-    <without-agent>
-
-    </without-agent>
+    </AppWithoutAgent>
     <div class="movies">
       
     </div>
-    <test-movie v-for="movie in movieStore.movies" :key="movie.id" :movie="movie">
+    <AppTestMovie v-for="movie in movieStore.movies" :key="movie.id" :movie="movie">
       
-    </test-movie>
+    </AppTestMovie>
   </div>
   
 </template> 
 
 <script>
 
-import VComponents from './components/VComponents.vue';
-import VFooter from './components/VFooter.vue';
-import VMenuTop from './components/VMenuTop.vue';
-import VYourLocation from './components/VYourLocation.vue';
-import VAgent from './components/VAgent.vue';
-import VWork from './components/VWork.vue';
-import VQuestions from './components/VQuestions.vue';
-import VPurpose from './components/VPurpose.vue';
-import VObject from './components/VObject.vue';
-import VCardObject from './components/VCardObject.vue';
-import VPass from './components/VPass.vue';
-import VSwiperSlider from './components/VSwiperSlider.vue';
-import AddressOffice from './components/AddressOffice .vue';
+import AppComponent from './components/AppComponents.vue';
+import AppFooter from './components/AppFooter.vue';
+import AppMenuTop from './components/AppMenuTop.vue';
+import AppYourLocation from './components/AppYourLocation.vue';
+import AppAgent from './components/AppAgent.vue';
+import AppWork from './components/AppWork.vue';
+import AppQuestions from './components/AppQuestions.vue';
+import AppPurpose from './components/AppPurpose.vue';
+import AppObject from './components/AppObject.vue';
+import AppInformationObject from './components/AppInformationObject.vue';
+import AppPass from './components/AppPass.vue';
+import AppAddressOffice from './components/AppAddressOffice .vue';
 
 
-import HeaderBlock from './components/HeaderBlock.vue'
+import AppHeaderBlock from './components/AppHeaderBlock.vue'
 import { Navigation, Pagination, A11y, Thumbs } from 'swiper/modules';
 
 // Import Swiper Vue.js components
@@ -160,15 +154,15 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import AppButton from './components/AppButton.vue';
-import CardItem from './components/CardItem.vue';
+import AppCardItem from './components/AppCardItem.vue';
 import AppInput from './components/AppInput.vue';
 // import AppSwiperSlider from './components/AppSwiperSlider.vue';
 import {vCardService, vMenuLeft, vAddObject, vServiceCardList} from '@/assets/api/apiFooter'
-import CardObject from './components/CardObject.vue';
+import AppCardObject from './components/AppCardObject.vue';
 import AppCardLocation from './components/AppCardLocation.vue';
-import WithoutAgent from './components/WithoutAgent.vue';
+import AppWithoutAgent from './components/AppWithoutAgent.vue';
 
-import TestMovie from './components/TestMovie.vue';
+import AppTestMovie from './components/AppTestMovie.vue';
 import { useMovieStore } from './stores/MovieStore';
 
 
@@ -176,29 +170,28 @@ import { useMovieStore } from './stores/MovieStore';
 export default {
   name: 'App',
   components: {
-    VComponents, 
-    VFooter,
-    VMenuTop,
-    VYourLocation,
-    VAgent,
-    VWork,
-    VQuestions,
-    VPurpose,
-    VObject,
-    VCardObject,
-    VPass,
-    VSwiperSlider,
+    AppComponent, 
+    AppFooter,
+    AppMenuTop,
+    AppYourLocation,
+    AppAgent,
+    AppWork,
+    AppQuestions,
+    AppPurpose,
+    AppObject,
+    AppInformationObject,
+    AppPass,
     Swiper,
     SwiperSlide,
-    HeaderBlock,
+    AppHeaderBlock,
     AppButton,
-    CardItem,
+    AppCardItem,
     AppInput,
-    CardObject,
+    AppCardObject,
     AppCardLocation,
-    WithoutAgent,
-    TestMovie,
-    AddressOffice,
+    AppWithoutAgent,
+    AppTestMovie,
+    AppAddressOffice,
   },
   data() {
     return {
