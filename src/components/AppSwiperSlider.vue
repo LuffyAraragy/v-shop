@@ -38,11 +38,6 @@ export default {
         Swiper,
         SwiperSlide,
     },
-    data() {
-      return {
-
-      }
-    },
     setup() {
       return {
         modules: [Navigation, Pagination, A11y, Thumbs],

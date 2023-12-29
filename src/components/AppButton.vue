@@ -12,11 +12,6 @@
     <script>
     export default {
         name: 'AppButton',
-        data() {
-            return {
-                
-            }
-        },
         props: {
             disabled: Boolean,
             hasOutline: Boolean,
@@ -54,9 +49,11 @@
     
     <style lang="scss">
     @import '../assets/variables.scss';
+
     @mixin app-transition($time: 0.1s) {
         transition: $time ease-in-out;
     }
+
     .app-button {
         align-items: center;
         background-color: $color-green;
@@ -68,101 +65,68 @@
         justify-content: center;
         padding: 20px;
         cursor: pointer;
+
         @include app-transition();
+
         &.--white:hover {
-            border: 4px solid #2A7D03;
+            border: $border-size-4 solid $color-green;
             // @include app-transition();
         }
+
         &.--white:focus {
-            color: #fff;
-            background: #226702;
+            color: $color-white;
+            background: $color-green-black;
         }
+
         &.--green:hover {
-            background: #309003;
-            // @include app-transition();
+            background: $color-green-bright;
         }
+
         &.--green:focus {
-            color: #fff;
-            background: #226702;
+            color: $color-white;
+            background: $color-green-black;
         }
+
         &.--small:focus {
-            background-color: #2A7D03;
+            background-color: $color-green;
         }
+
         &.--black:focus {
-            background: #2A7D03;  
+            background: $color-green;  
         }
+
         &.--border-around {
-            border-radius: 5px 5px 0px 0px;
+            border-radius: $radius-top;
         }
+
         &.--custom-width {
             min-width: v-bind('width');
         }
+
         &.--outline {
-            border: 2px solid #2A7D03;
+            border: $border-size-2 solid $color-green;
         }
+
         &.--black {
-            background-color: #2F2D2D;
+            background-color: $color-gray;
         }
+
         &.--white {
-            background-color: #fff;
-            color: #226702;
+            background-color: $color-white;
+            color: $color-green-black;
         }
+
         &.--green {
-            background: #2A7D03;
+            background: $color-green;
         }
-    //TODO это просто для пометки по размерам блоков в кнопках
-    // width: 160px;
-    // height: 39px;
-    // width: 185px;
-    // height: 36px;
-    // width: 200px;
-    // height: 50px;
-    // width: 220px;
-    // height: 36px;
-    // width: 251px;
-    // height: 36px;
-    // width: 255px;
-    // height: 60px;
-    // width: 270px;
-    // height: 50px;
-        
-    // 100%
-    // 310 стандрат
-    // TODO подумать что с этим делать
-        // &.--size-xl {
-        //     width: 185px;
-        //     height: 36px;
-        // }
-        // &.--size-2xl {
-        //     width: 200px;
-        //     height: 50px;
-        // }
-        // &.--size-3xl {
-        //     width: 220px;
-        //     height: 36px;
-        // }
-        // &.--size-4xl {
-        //     width: 250px;
-        //     height: 36px;
-        // }
-        // &.--size-5xl {
-        //     width: 255px;
-        //     height: 60px;
-        // }
-        // &.--size-6xl {
-        //     width: 270px;
-        //     height: 50px;
-        // }
-        // &.--size-7xl {
-        //     width: 100%;
-        //     height: 100%;
-        // }
+    
         &.--rounded {
-            border-radius: 5px 5px 0px 0px;
+            border-radius: $radius-top;
         }
+
         &:disabled {
-            border: 2px solid #C4C4C4;
-            color: #C4C4C4;
+            border: $border-size-2 solid $color-white-gray;
+            color: $color-white-gray;
         }
     }
     </style>

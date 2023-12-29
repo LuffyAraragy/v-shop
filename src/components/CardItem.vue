@@ -1,6 +1,5 @@
 <template>
     <div class="card-item" v-if="isLoad">
-        <!-- Передаём массив с изображениями -->
         <app-swiper-slider :arrayImgCards="card.img">
             
         </app-swiper-slider>
@@ -16,7 +15,6 @@
                     v-for="(text, index) in card.characteristics"
                     :key="index"
                 >
-                <!-- TODO(Ponosonik): Не правильно применяются стили -->
                 {{ text }}
                 </div>
             </div>
