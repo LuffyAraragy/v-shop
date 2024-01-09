@@ -4,7 +4,7 @@
             Этапы работ
         </div>
         <div class="v-work__content-all">
-            <div class="v-work__content" v-for="(array, index) in arrayBank2" :key="index">
+            <div class="v-work__content" v-for="(array, index) in arrayBank" :key="index">
                 <div class="v-work__all-stages">
                     <div class="v-work__circle">
                         {{ index+1 }}
@@ -36,7 +36,7 @@ export default {
     },
     data() {
         return {
-            arrayBank2: []
+            arrayBank: []
         }
     },
     
@@ -44,14 +44,13 @@ export default {
         check() {   
             vBank2().then(result =>
                 {
-                    this.arrayBank2 = result
-                    console.log(this.arrayBank2);
+                    this.arrayBank = result
+                    console.log(this.arrayBank);
                 })
         }
     },
     mounted() {
         this.check();
-        
     }
     
 }

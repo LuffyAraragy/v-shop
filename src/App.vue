@@ -171,8 +171,6 @@ import WithoutAgent from './components/WithoutAgent.vue';
 import TestMovie from './components/TestMovie.vue';
 import { useMovieStore } from './stores/MovieStore';
 
-
-
 export default {
   name: 'App',
   components: {
@@ -210,6 +208,11 @@ export default {
       arrayCard: [],
     }
   },
+  provide() {
+    return {
+      sharedData: this.testProvide,
+    }
+  },
   setup() {
       const onSwiper = (swiper) => {
         console.log(swiper);
@@ -217,7 +220,6 @@ export default {
       const onSlideChange = () => {
         console.log('slide change');
       };
-      
       return {
         onSwiper,
         onSlideChange,
@@ -246,7 +248,7 @@ export default {
                 this.arrayCard = result
                 console.log(this.arrayCard);
             });
-        }, 
+        },
     },
     mounted() {
         this.check();

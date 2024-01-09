@@ -1,6 +1,6 @@
 <!--TODO Доделать футер поменять у соцеальных сетей отступы и подуцмать как расположить конент -->
 <template>
-    <div class="v-footer" v-if="this.let">
+    <div class="v-footer" v-if="isLoad">
         <div class="v-footer__block-content container">
             <div class="v-footer__content">
                 <div class="v-footer__menu content-options" 
@@ -50,9 +50,6 @@ import {fetchFooterData, fetchFooterDataSocialNetwork, fetchFooterDataContacts} 
 
     export default {
         name: 'v-footer',
-        components: {
-
-        },
         data() {
             return {
                 arrayFooterData: [],
@@ -60,7 +57,7 @@ import {fetchFooterData, fetchFooterDataSocialNetwork, fetchFooterDataContacts} 
                 test4: [],
                 arrayFooterSocialContacts: [],
                 content: [],
-                let: false,
+                isLoad: false,
             }
         },
         methods: {
@@ -86,7 +83,7 @@ import {fetchFooterData, fetchFooterDataSocialNetwork, fetchFooterDataContacts} 
         mounted() {
             this.loadData();
             setTimeout(() => {
-                this.let = true;
+                this.isLoad = true;
             }, 2000);
         },
 

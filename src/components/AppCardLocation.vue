@@ -2,12 +2,13 @@
     <div id="container" class="app-card-location">
         
     </div>
-     <p v-if="error">Ошибка: {{ error }}</p>
+    <!-- TODO Убрать на поздних стадиях доработки карты -->
+    <!-- <p v-if="error">Ошибка: {{ error }}</p>
     <p v-else-if="position">Широта: {{ left=position.coords.latitude }}, Долгота: {{ right=position.coords.longitude }}</p>
     <p v-else>Определение местоположения…</p>
     <p>
         GHbdtn vbh: {{ this.left }} {{ this.right }}
-    </p>
+    </p> -->
 </template>
 
 <script>
@@ -23,7 +24,6 @@ export default {
             left: "55.31878",
             right: "25.23584",
             arrayCenter: [],
-
         }
     },
 

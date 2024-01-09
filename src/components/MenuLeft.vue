@@ -1,5 +1,5 @@
-<template>
-    <div class="menu-left" v-if="let2">
+<!-- <template>
+    <div class="menu-left" v-if="isLoad">
         <div class="content" v-for="(array, index) in menuLeft" :key="index">
             <img
                 v-if="index <= 4"
@@ -19,7 +19,7 @@ export default {
     name: "MenuLeft",
     data() {
         return {
-            let2: false
+            isLoad: false
         }
     },
     props: {
@@ -27,7 +27,7 @@ export default {
     },
     mounted() {
         setTimeout(() => {
-            this.let2 = true;
+            this.isLoad = true;
         }, 3000);
     },
 }
@@ -59,4 +59,4 @@ export default {
         font-weight: 400;
         line-height: 24px; 
     }
-</style>
+</style> -->

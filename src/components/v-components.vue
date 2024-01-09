@@ -1,5 +1,5 @@
 <template>
-    <div class="v-component" v-if="let2">
+    <div class="v-component" v-if="isLoad">
         <button class="button">
             Привет коля
         </button>
@@ -56,15 +56,16 @@
 
         <div class="menu-left">
             <div class="content" v-for="(array, index) in menuLeft" :key="index">
-                <img
-                    v-if="index <= 4"
-                    :src="require(`@/img/leftMenu/${array[0]}`)" 
-                >
-                <div class="content__text" v-if="index <= 5">
-                    {{ menuLeft[index][1] }}
+                <div class="menu-left__block-content" v-if="Object.keys(array).length >= 2">
+                    <img
+                        :src="require(`@/img/leftMenu/${array.img}`)" 
+                    >
+                    <div class="content__text">
+                        {{ array.dropdownButton }}
+                    </div>
                 </div>
-                <div class="text" v-if="index >= 5">
-                    {{ menuLeft[index][0] }}
+                <div class="text" v-if="Object.keys(array).length == 1">
+                    {{ array.dropdownButton }}
                 </div>
             </div>
         </div>
@@ -114,6 +115,12 @@
         background: rgba(0, 0, 0, 0.40);
         backdrop-filter: blur(7px);
     }
+
+    .menu-left__block-content {
+        display: flex;
+        gap: 8px;
+    }
+
 </style>
 
 <script>
@@ -121,7 +128,7 @@ export default {
     name: 'v-component',
     data() {
         return {
-            let2: false
+            isLoad: false
         }
     },
     props: {
@@ -129,7 +136,7 @@ export default {
     },
     mounted() {
         setTimeout(() => {
-            this.let2 = true;
+            this.isLoad = true;
         }, 3000);
     },
 }

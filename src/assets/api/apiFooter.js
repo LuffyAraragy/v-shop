@@ -75,7 +75,7 @@ export async function vServiceCardList() {
   return delayResponse(serviceCardList);
 }
 
-
+// TODO Убрать в поздних версиях проекта, после отладки ветвей git (Не использую)
 export async function vCardService() {
   let cardService = [
     [
@@ -103,27 +103,47 @@ export async function vCardService() {
   return delayResponse(cardService);
 }
 
+// TODO Убрать в поздних версиях проекта, после отладки ветвей git (Не использую)
+// export async function vMenuLeft() {
+//   let menuContent = [
+//     ["Rectangle 5.svg", "Купить"],
+//     ["Rectangle 2.svg", "Продать"],
+//     ["Rectangle 1.svg", "Сдать"],
+//     ["Rectangle 4.svg", "Снять"],
+//     ["Rectangle 3.svg", "Без агента"],
+//     ["О компании"],
+//     ["Вакансии"],
+//     ["Ремонт"],
+//     ["Дизайн"],
+//     ["Отзывы"],
+//     ["Сотрудничество"],
+//     ["Сдать в управление"],
+//     ["Контакты"],
+//   ]
+//   return delayResponse(menuContent);
+// }
+
 export async function vMenuLeft() {
   let menuContent = [
-    ["Rectangle 5.svg", "Купить"],
-    ["Rectangle 2.svg", "Продать"],
-    ["Rectangle 1.svg", "Сдать"],
-    ["Rectangle 4.svg", "Снять"],
-    ["Rectangle 3.svg", "Без агента"],
-    ["О компании"],
-    ["Вакансии"],
-    ["Ремонт"],
-    ["Дизайн"],
-    ["Отзывы"],
-    ["Сотрудничество"],
-    ["Сдать в управление"],
-    ["Контакты"],
+    {img: "Rectangle 5.svg", dropdownButton: "Купить"},
+    {img: "Rectangle 5.svg", dropdownButton: "Продать"},
+    {img: "Rectangle 5.svg", dropdownButton: "Сдать"},
+    {img: "Rectangle 5.svg", dropdownButton: "Снять"},
+    {img: "Rectangle 5.svg", dropdownButton: "Без агента"},
+    {dropdownButton: "О компании"},
+    {dropdownButton: "Вакансии"},
+    {dropdownButton: "Ремонт"},
+    {dropdownButton: "Дизайн"},
+    {dropdownButton: "Отзывы"},
+    {dropdownButton: "Сотрудничество"},
+    {dropdownButton: "Сдать в управление"},
+    {dropdownButton: "Контакты"},
   ]
   return delayResponse(menuContent);
 }
 
+// TODO Убрать весь контент vAddObject и сделать формы статическими
 export async function vAddObject() {
-
   let addObject = [
     ["Добавить Объект"],
     ["Продать", "Сдать"],
@@ -142,7 +162,6 @@ export async function vAddObject() {
     ["Электронная почта"],
     ["Разместить объявление"],
   ]
-
   return delayResponse(addObject);
 }
 

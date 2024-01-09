@@ -1,5 +1,5 @@
 <template >
-    <div class="without-agent" v-if="let1">
+    <div class="without-agent" v-if="isLoad">
         <div class="without-agent__card-services" v-for="(array, index) in arrayWithoutAgent[0]" :key="index">
             <img :src="require(`@/img/cardAgent/${arrayWithoutAgent[0][index]}`)" alt="" class="without-agent__img">
             <div class="text text--font-weight-700 text--font-size-normalx2 without-agent__title">
@@ -28,7 +28,7 @@ export default {
     name: 'WithoutAgent',
     data() {
         return {
-            let1: false,
+            isLoad: false,
             arrayWithoutAgent: []
         }
     },
@@ -47,7 +47,7 @@ export default {
     mounted() {
         this.check();
         setTimeout(() => {
-            this.let1 = true;
+            this.isLoad = true;
         }, 3000);
     },
 }

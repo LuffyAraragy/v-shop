@@ -77,19 +77,13 @@
 <script>
 
 import {vBank} from '@/assets/api/apiFooter'
-// import Slider from '@vueform/slider'
-// import { vCardObject } from '@/assets/api/apiFooter'
 
 export default {
-    components: {
-        // Slider
-    },
     data() {
         return {
             value: [0,0,0,0],
             valueMax: [4000000, 500000, 240, 100],
             arrayBank: []
-            // valueMax: [],
         }
     },
     methods: {
@@ -98,13 +92,11 @@ export default {
             vBank().then(result =>
                 {
                     this.arrayBank = result
-                    console.log(this.arrayBank);
                 });
         }
     },
     mounted() {
         this.check();
-        
     }  
 }
 </script>

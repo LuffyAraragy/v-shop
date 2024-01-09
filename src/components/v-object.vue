@@ -1,5 +1,5 @@
 <template>
-    <div class="v-object" v-if="this.let1">
+    <div class="v-object" v-if="isLoad">
         <div class="v-object__title text__h2 text__h2--black">
             {{ arrayVObjectItem[0][0] }}
         </div>
@@ -118,7 +118,7 @@ export default {
     name: 'v-object',
     data() {
         return {
-            let1: false,
+            isLoad: false,
             number: [
                 [],
                 [],
@@ -145,17 +145,14 @@ export default {
     methods: {
         saveData() {
             this.number1 = this.number;
-            console.log("Проверка "+this.number1);
-            console.log(this.number1[8][0]);
         },
         saveNumber(number, arrayItem) {
             this.number[number] = arrayItem;
-            console.log(this.number);
         }
     },
     mounted() {
         setTimeout(() => {
-            this.let1 = true;
+            this.isLoad = true;
         }, 3000);
     },
 }

@@ -25,10 +25,10 @@
             Бесплатная консультация
         </AppButton>
         <div class="v-menu-top__like">
-            <button class="testButton" @click="consoleLog">
+            <button class="testButton">
                 <img src="@/img/menu/love-and-romance 1.svg" alt="" class="contact">
             </button>
-            <button class="testButton" @click="consoleLog">
+            <button class="testButton">
                 <img src="@/img/menu/user 1.svg" alt="" class="contact">
             </button>
         </div>
@@ -47,11 +47,6 @@ import AppButton from './AppButton.vue';
                 
             }
         },
-        methods: {
-            consoleLog() {
-                console.log("consoleLog()");
-            }
-        }
     }
 
 </script>
