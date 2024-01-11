@@ -40,7 +40,15 @@
     </div>
 </template>
 
-<style>
+<script>
+
+export default {
+    name: "AppPurpose"
+}
+
+</script>
+
+<style lang="scss" scoped>
 
 .v-purpose {
     padding: 100px 0;
@@ -86,7 +94,3 @@
     width: 255px;
 }
 </style>
-
-<script>
-
-</script>

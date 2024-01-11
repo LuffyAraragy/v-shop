@@ -1,79 +1,79 @@
 <template>
   <div class="app">
-    <v-menu-top>
+    <AppMenuTop>
 
-    </v-menu-top>
-    <address-office>
+    </AppMenuTop>
+    <AppAddressOffice>
 
-    </address-office>
+    </AppAddressOffice>
     <menu-left>
 
     </menu-left>
-    <card-item
+    <AppCardItem
       v-for="(array, index) in arrayCard"
       :key="index"
       :card="array"
     >
 
-    </card-item>
+    </AppCardItem>
     <!-- <app-swiper-slider>
       
     </app-swiper-slider> -->
     <app-input :placeholder="placeholder" width="200px">
       
     </app-input>
-    <AppButton :hasWhite="true" width="270px" :hasOutline="true" :hasSmall="true" class="">
+    <app-button :hasWhite="true" width="270px" :hasOutline="true" :hasSmall="true" class="">
       hello world
-    </AppButton>
-    <AppButton :hasWhite="true" width="310px" :hasOutline="true" class="">
+    </app-button>
+    <app-button :hasWhite="true" width="310px" :hasOutline="true" class="">
       hello world
-    </AppButton>
-    <AppButton :hasGreen="true" width="255px" class="">
+    </app-button>
+    <app-button :hasGreen="true" width="255px" class="">
       hello world
-    </AppButton>
-    <AppButton :hasGreen="true" width="270px" class="">
+    </app-button>
+    <app-button :hasGreen="true" width="270px" class="">
       hello world
-    </AppButton>
-    <AppButton :hasBlack="true" :hasAround="true" width="270px" class="">
+    </app-button>
+    <app-button :hasBlack="true" :hasAround="true" width="270px" class="">
       hello world
-    </AppButton>
-    <v-components v-if="isLoad" :menuLeft="appMenuLeft">
+    </app-button>
+    <AppComponents v-if="isLoad" :menuLeft="appMenuLeft">
 
-    </v-components>
+    </AppComponents>
     
     
-    <v-footer>
+    <AppFooter>
 
-    </v-footer>
+    </AppFooter>
     
-    <v-your-location>
+    <AppYourLocation>
 
-    </v-your-location>
-    <v-agent>
+    </AppYourLocation>
+    <AppAgent>
 
-    </v-agent>
-    <v-work>
+    </AppAgent>
+    <AppWork>
 
-    </v-work>
-    <v-questions>
+    </AppWork>
+    <AppQuestions>
       
-    </v-questions>
-    <v-purpose>
+    </AppQuestions>
+    <AppPurpose>
 
-    </v-purpose>
-    <v-object :arrayVObjectItem="arrayVObject">
+    </AppPurpose>
+    <AppObject :arrayVObjectItem="arrayVObject">
 
-    </v-object>
-    <v-card-object>
+    </AppObject>
+    <AppInformationObject>
 
-    </v-card-object>
-    <v-pass>
+    </AppInformationObject>
+    <AppPass>
 
-    </v-pass>
+    </AppPass>
     
-    <card-object>
+    <AppCardObject>
 
-    </card-object>
+    </AppCardObject>
 
 <div class="swiper-content-1">
   
@@ -106,49 +106,43 @@
     </div>                                                              
   </div>  -->
 </div>
-    
-    <v-swiper-slider>
-      
-    </v-swiper-slider>
+    <AppHeaderBlock>
 
-    <header-block>
+    </AppHeaderBlock>
+    <AppCardLocation>
 
-    </header-block>
-    <app-card-location>
+    </AppCardLocation>
 
-    </app-card-location>
+    <AppWithoutAgent>
 
-    <without-agent>
-
-    </without-agent>
+    </AppWithoutAgent>
     <div class="movies">
       
     </div>
-    <test-movie v-for="movie in movieStore.movies" :key="movie.id" :movie="movie">
+    <AppTestMovie v-for="movie in movieStore.movies" :key="movie.id" :movie="movie">
       
-    </test-movie>
+    </AppTestMovie>
   </div>
   
 </template> 
 
 <script>
 
-import vComponents from './components/v-components.vue';
-import vFooter from './components/v-footer.vue';
-import vMenuTop from './components/v-menu-top.vue';
-import vYourLocation from './components/v-your-location.vue';
-import vAgent from './components/v-agent.vue';
-import vWork from './components/v-work.vue';
-import vQuestions from './components/v-questions.vue';
-import vPurpose from './components/v-purpose.vue';
-import vObject from './components/v-object.vue';
-import vCardObject from './components/v-card-object.vue';
-import vPass from './components/v-pass.vue';
-import vSwiperSlider from './components/v-swiper-slider.vue';
-import AddressOffice from './components/AddressOffice .vue';
+import AppComponents from './components/AppComponents.vue';
+import AppFooter from './components/AppFooter.vue';
+import AppMenuTop from './components/AppMenuTop.vue';
+import AppYourLocation from './components/AppYourLocation.vue';
+import AppAgent from './components/AppAgent.vue';
+import AppWork from './components/AppWork.vue';
+import AppQuestions from './components/AppQuestions.vue';
+import AppPurpose from './components/AppPurpose.vue';
+import AppObject from './components/AppObject.vue';
+import AppInformationObject from './components/AppInformationObject.vue';
+import AppPass from './components/AppPass.vue';
+import AppAddressOffice from './components/AppAddressOffice .vue';
 
 
-import headerBlock from './components/HeaderBlock.vue'
+import AppHeaderBlock from './components/AppHeaderBlock.vue'
 import { Navigation, Pagination, A11y, Thumbs } from 'swiper/modules';
 
 // Import Swiper Vue.js components
@@ -160,43 +154,42 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import AppButton from './components/AppButton.vue';
-import CardItem from './components/CardItem.vue';
+import AppCardItem from './components/AppCardItem.vue';
 import AppInput from './components/AppInput.vue';
 // import AppSwiperSlider from './components/AppSwiperSlider.vue';
 import {vCardService, vMenuLeft, vAddObject, vServiceCardList} from '@/assets/api/apiFooter'
-import CardObject from './components/CardObject.vue';
+import AppCardObject from './components/AppCardObject.vue';
 import AppCardLocation from './components/AppCardLocation.vue';
-import WithoutAgent from './components/WithoutAgent.vue';
+import AppWithoutAgent from './components/AppWithoutAgent.vue';
 
-import TestMovie from './components/TestMovie.vue';
+import AppTestMovie from './components/AppTestMovie.vue';
 import { useMovieStore } from './stores/MovieStore';
 
 export default {
   name: 'App',
   components: {
-    vComponents, 
-    vFooter,
-    vMenuTop,
-    vYourLocation,
-    vAgent,
-    vWork,
-    vQuestions,
-    vPurpose,
-    vObject,
-    vCardObject,
-    vPass,
-    vSwiperSlider,
+    AppComponents, 
+    AppFooter,
+    AppMenuTop,
+    AppYourLocation,
+    AppAgent,
+    AppWork,
+    AppQuestions,
+    AppPurpose,
+    AppObject,
+    AppInformationObject,
+    AppPass,
     Swiper,
     SwiperSlide,
-    headerBlock,
+    AppHeaderBlock,
     AppButton,
-    CardItem,
+    AppCardItem,
     AppInput,
-    CardObject,
+    AppCardObject,
     AppCardLocation,
-    WithoutAgent,
-    TestMovie,
-    AddressOffice,
+    AppWithoutAgent,
+    AppTestMovie,
+    AppAddressOffice,
   },
   data() {
     return {
