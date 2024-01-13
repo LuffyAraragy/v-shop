@@ -1,15 +1,15 @@
 <template>
-    <div class="app-menu-left" v-if="let2">
+    <div class="app-menu-left">
         <div class="content" v-for="(array, index) in menuLeft" :key="index">
             <img
                 v-if="index <= 4"
-                :src="require(`@/img/leftMenu/${array[0]}`)" 
+                :src="require(`@/img/leftMenu/${array.img}`)" 
             >
-            <div class="content__text" v-if="index <= 5">
-                {{ menuLeft[index][1] }}
+            <div class="content__text" v-if="index < 5">
+                {{ array.dropdownButton }}
             </div>
             <div class="text" v-if="index >= 5">
-                {{ menuLeft[index][0] }}
+                {{ array.dropdownButton }}
             </div>
         </div>
     </div>
@@ -19,7 +19,7 @@ export default {
     name: "AppMenuLeft",
     data() {
         return {
-            let2: false
+            isLoad: false
         }
     },
     props: {
@@ -27,13 +27,15 @@ export default {
     },
     mounted() {
         setTimeout(() => {
-            this.let2 = true;
+            this.isLoad = true;
         }, 3000);
     },
 }
 </script>
 <style lang="scss">
+
     .app-menu-left {
+        position: absolute;
         display: flex;
         flex-flow: column;
         width: 180px;

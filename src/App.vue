@@ -1,5 +1,11 @@
 <template>
   <div class="app">
+    <AppMenuLeft :menuLeft="appMenuLeft">
+
+    </AppMenuLeft>
+    <AppObjectWebsite>
+
+    </AppObjectWebsite>
     <AppMenuTop>
 
     </AppMenuTop>
@@ -140,6 +146,7 @@ import AppObject from './components/AppObject.vue';
 import AppInformationObject from './components/AppInformationObject.vue';
 import AppPass from './components/AppPass.vue';
 import AppAddressOffice from './components/AppAddressOffice .vue';
+import AppMenuLeft from './components/AppMenuLeft.vue';
 
 
 import AppHeaderBlock from './components/AppHeaderBlock.vue'
@@ -161,6 +168,7 @@ import {vCardService, vMenuLeft, vAddObject, vServiceCardList} from '@/assets/ap
 import AppCardObject from './components/AppCardObject.vue';
 import AppCardLocation from './components/AppCardLocation.vue';
 import AppWithoutAgent from './components/AppWithoutAgent.vue';
+import AppObjectWebsite from './components/AppObjectWebsite.vue'
 
 import AppTestMovie from './components/AppTestMovie.vue';
 import { useMovieStore } from './stores/MovieStore';
@@ -190,6 +198,8 @@ export default {
     AppWithoutAgent,
     AppTestMovie,
     AppAddressOffice,
+    AppObjectWebsite,
+    AppMenuLeft,
   },
   data() {
     return {
@@ -204,6 +214,7 @@ export default {
   provide() {
     return {
       sharedData: this.testProvide,
+      arrayCard: this.arrayCard
     }
   },
   setup() {
@@ -330,14 +341,17 @@ export default {
 }
 
 .app {
+  position: relative;
   width: 100%;
   height: 100%;
   background: #F8F7F7;
 }
 
 .block {
+  margin: 40px 0;
   padding: 40px 0;
   border-bottom: 1px solid #C4C4C4;
+  border-top: 1px solid #C4C4C4;
 }
 
 .button123 {

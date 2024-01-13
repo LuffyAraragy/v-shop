@@ -1,75 +1,78 @@
 <template>
-    <div class="app-information-object">
-        <div class="app-information-object__block">
-            <div class="app-information-object__title">
-                Нужна помощь специалиста?
-            </div>
-            <img src="@/img/cardObject/5c9b5dd452e03_woman_in_mirror 1.svg" alt="" class="app-information-object__img">
-            <div class="app-information-object__name">
-                Татьяна
-            </div>
-            <div class="app-information-object__text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            </div>
-            <button class="button app-information-object__button button--green">
-                Заказать звонок
-            </button>
-            <button class="button app-information-object__button-block">
-                <img src="@/img/cardObject/communications 2.svg" alt="">
-                <!-- Может этот блок лишний -->
-                <div class="app-information-object__text-telephone">
-                    Показать телефон
+    <div class="all-content">
+        <div class="app-information-object">
+            <div class="app-information-object__block">
+                <div class="app-information-object__title">
+                    Нужна помощь специалиста?
                 </div>
-            </button>
+                <img src="@/img/cardObject/5c9b5dd452e03_woman_in_mirror 1.svg" alt="" class="app-information-object__img">
+                <div class="app-information-object__name">
+                    Татьяна
+                </div>
+                <div class="app-information-object__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                </div>
+                <button class="button app-information-object__button button--green">
+                    Заказать звонок
+                </button>
+                <button class="button app-information-object__button-block">
+                    <img src="@/img/cardObject/communications 2.svg" alt="">
+                    <!-- Может этот блок лишний -->
+                    <div class="app-information-object__text-telephone">
+                        Показать телефон
+                    </div>
+                </button>
+            </div>
         </div>
-    </div>
 
 
-    <div class="app-bank">
-        <div class="app-bank__content" v-for="(arrays, index) in arrayBank" :key="index">
-            <img :src="require(`@/img/bank/${ arrays[0] }`)" alt="" class="app-bank__img">
-            <div class="app-bank__date-content">
-                <div class="app-bank__percent">
-                    {{ arrays[1] }}
+        <div class="app-bank">
+            <div class="app-bank__content" v-for="(arrays, index) in arrayBank" :key="index">
+                <img :src="require(`@/img/bank/${ arrays[0] }`)" alt="" class="app-bank__img">
+                <div class="app-bank__date-content">
+                    <div class="app-bank__percent">
+                        {{ arrays[1] }}
+                    </div>
+                    <div class="app-bank__date">
+                        {{ arrays[2] }}
+                    </div>
                 </div>
-                <div class="app-bank__date">
-                    {{ arrays[2] }}
+            </div>
+            
+        </div>
+    <!-- Следующий контент блок -->
+        <div class="app-online-calculator">
+            <button class="app-online-calculator__button">
+                Свернуть
+            </button>
+            <div class="app-online-calculator__description">
+                Онлайн-калькулятор ипотеки
+            </div>
+            <div class="app-online-calculator__block-price" v-for="( blockPrice, blockPriceIndex ) in 4" :key="blockPriceIndex">
+                <div class="app-online-calculator__price-description">
+                    Срок кредитования
+                </div>
+                <div class="field">
+                    <input v-model="value[blockPriceIndex]" type="range" min="0" :max="valueMax[blockPriceIndex]" class="slider" />
+                    <span :v-model="value[blockPriceIndex]">
+                        {{ value[blockPriceIndex] }}
+                    </span>
                 </div>
             </div>
+            <div class="app-online-calculator__block-payment">
+                <div class="app-online-calculator__monthly-payment">
+                    Ежемесячный платёж:
+                </div>
+                <div class="app-online-calculator__payment-amount">
+                    50 000 ₽ / мес
+                </div>
+            </div>
+            <button class="button button--green">
+                Получить ипотеку
+            </button>
         </div>
-        
     </div>
-<!-- Следующий контент блок -->
-    <div class="app-online-calculator">
-        <button class="app-online-calculator__button">
-            Свернуть
-        </button>
-        <div class="app-online-calculator__description">
-            Онлайн-калькулятор ипотеки
-        </div>
-        <div class="app-online-calculator__block-price" v-for="( blockPrice, blockPriceIndex ) in 4" :key="blockPriceIndex">
-            <div class="app-online-calculator__price-description">
-                Срок кредитования
-            </div>
-            <div class="field">
-                <input v-model="value[blockPriceIndex]" type="range" min="0" :max="valueMax[blockPriceIndex]" class="slider" />
-                <span :v-model="value[blockPriceIndex]">
-                    {{ value[blockPriceIndex] }}
-                </span>
-            </div>
-        </div>
-        <div class="app-online-calculator__block-payment">
-            <div class="app-online-calculator__monthly-payment">
-                Ежемесячный платёж:
-            </div>
-            <div class="app-online-calculator__payment-amount">
-                50 000 ₽ / мес
-            </div>
-        </div>
-        <button class="button button--green">
-            Получить ипотеку
-        </button>
-    </div>
+    
 </template>
 
 <script>
@@ -105,6 +108,11 @@ export default {
 </script>
 
 <style>
+
+.all-content {
+    display: grid;
+    gap: 40px;
+}
 
 .app-information-object {
     background-color: #FFFFFF;

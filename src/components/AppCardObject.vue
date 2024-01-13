@@ -4,9 +4,6 @@
             <div class="app-card-object__title">
 
             </div>
-            <app-property>
-
-            </app-property>
         </div>
         <div class="app-card-object__card-block">
             <div class="app-card-object__title">
@@ -26,9 +23,6 @@
                 velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </div>
         </div>
-        <AppProperty>
-
-        </AppProperty>
         <div class="alax">
             <!-- <card-item
                 v-for="(array, index) in arrayFromCard"
@@ -39,7 +33,7 @@
             </card-item> -->
         </div>
         
-        <div class="app-card-object__location-block block">
+        <div class="app-card-object__location-block">
             <div class="title">
 
             </div>
@@ -51,14 +45,12 @@
 </template>
 
 <script>
-import AppProperty from './AppProperty.vue'
 // import CardItem from './CardItem.vue'
 import {vCardService} from '@/assets/api/apiFooter'
 
 export default {
     name: "AppCardObject",
     components: {
-        AppProperty,
         // CardItem,
     },
     data() {
@@ -89,8 +81,6 @@ export default {
     max-width: 730px;
     margin: 0 auto;
     padding: 0 15px;
-    background-color: rgb(252, 172, 252);
-    height: 100%;
 }
 
 </style>
