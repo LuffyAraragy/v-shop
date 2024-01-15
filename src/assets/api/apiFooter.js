@@ -175,3 +175,10 @@ export async function vCardAgent() {
   ]
   return delayResponse(cardItem);
 }
+
+export async function vAppComponentAnyPage() {
+  let componentAnyPage = [
+    {mainDescription: "Нам доверяют свою недвижимость Управляем объектами более 34 собственников Доверьтесь и Вы", imgMain: "WithoutAgent.svg",  imgIcon: "Group.svg", descriptionCapabilities: ["Гибкая система вознаграджения", "Индивидуальный подход к каждому клиенту", "Прозрачное сотрудничество"], dropdownButton: "Сдать в управление"},
+  ]
+  return delayResponse(componentAnyPage);
+}

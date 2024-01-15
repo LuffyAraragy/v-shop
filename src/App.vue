@@ -1,5 +1,12 @@
 <template>
   <div class="app">
+    <AppComponentAnyPage 
+      v-for="(array, index) in appComponentAnyPage"
+      :key="index"
+      :arrayAnyPages="array"
+    >
+      
+    </AppComponentAnyPage>
     <AppMenuLeft :menuLeft="appMenuLeft">
 
     </AppMenuLeft>
@@ -147,7 +154,7 @@ import AppInformationObject from './components/AppInformationObject.vue';
 import AppPass from './components/AppPass.vue';
 import AppAddressOffice from './components/AppAddressOffice .vue';
 import AppMenuLeft from './components/AppMenuLeft.vue';
-
+import AppComponentAnyPage from './components/AppComponentAnyPage.vue';
 
 import AppHeaderBlock from './components/AppHeaderBlock.vue'
 import { Navigation, Pagination, A11y, Thumbs } from 'swiper/modules';
@@ -164,7 +171,7 @@ import AppButton from './components/AppButton.vue';
 import AppCardItem from './components/AppCardItem.vue';
 import AppInput from './components/AppInput.vue';
 // import AppSwiperSlider from './components/AppSwiperSlider.vue';
-import {vCardService, vMenuLeft, vAddObject, vServiceCardList} from '@/assets/api/apiFooter'
+import {vCardService, vMenuLeft, vAddObject, vServiceCardList, vAppComponentAnyPage} from '@/assets/api/apiFooter'
 import AppCardObject from './components/AppCardObject.vue';
 import AppCardLocation from './components/AppCardLocation.vue';
 import AppWithoutAgent from './components/AppWithoutAgent.vue';
@@ -200,6 +207,7 @@ export default {
     AppAddressOffice,
     AppObjectWebsite,
     AppMenuLeft,
+    AppComponentAnyPage,
   },
   data() {
     return {
@@ -209,6 +217,7 @@ export default {
       arrayVObject: [],
       movieStore: useMovieStore(),
       arrayCard: [],
+      appComponentAnyPage: []
     }
   },
   provide() {
@@ -251,6 +260,11 @@ export default {
             {
                 this.arrayCard = result
                 console.log(this.arrayCard);
+            });
+            vAppComponentAnyPage().then(result =>
+            {
+                this.appComponentAnyPage = result
+                console.log(this.appComponentAnyPage);
             });
         },
     },
