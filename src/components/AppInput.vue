@@ -2,7 +2,7 @@
     <input 
         class="app-input"
         :class="innerClass"
-        :placeholder="textPlaceholder"
+        :placeholder="placeholder"
     />
 
 </template>
@@ -12,7 +12,7 @@ export default {
     name: 'AppInput',
     data() {
         return {
-            textPlaceholder: "Передаю привет"
+            textPlaceholder: ""
         }
     },
     props: {

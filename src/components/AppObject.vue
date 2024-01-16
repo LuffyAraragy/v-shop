@@ -1,124 +1,150 @@
 <template>
-    <div class="app-object" v-if="this.let1">
+    <div class="app-object" v-if="isLoad">
         <div class="app-object__title text__h2 text__h2--black">
-            {{ arrayVObjectItem[0][0] }}
+            Добавить Объект
         </div>
         <div class="app-object__button-controller">
-            <button class=" button app-object__sell">
-                {{ arrayVObjectItem[1][0] }}
-            </button>
-            <button class="button app-object__rent">
-                {{ arrayVObjectItem[1][1] }}
-            </button>
+            <AppButton width="164px" :hasWhite="true" :hasOutline="true" class="app-object__button-rounded-left">
+                Продать
+            </AppButton>
+            <AppButton width="164px" :hasWhite="true" :hasOutline="true" class="app-object__button-rounded-right">
+                Сдать
+            </AppButton>
         </div>
         <div class="app-object__input-city">
             <div class="app-object__text">
-                {{ arrayVObjectItem[2][0] }}
+                Город
             </div>
-            <input type="text" class="app-object__input" v-model="number[0][0]"> 
-            {{ this.number[0][0] }} 
+            <AppInput type="text" class="app-object__input" v-model="number[0][0]">
+                {{ this.number[0][0] }}
+            </AppInput>
         </div>
         <div class="app-object__input-district">
             <div class="app-object__text">
-                {{ arrayVObjectItem[3][0] }}
+                Район
             </div>
-            <input type="text" class="app-object__input" v-model="number[1][0]">
+            <AppInput type="text" class="app-object__input" v-model="number[1][0]">
+
+            </AppInput>
         </div>
         <div class="app-object__count-room">
             <div class="app-object__text">
-                {{ arrayVObjectItem[4][0] }}
+                Количество комнат
             </div>
-            <button  @click="saveNumber(2, arrayVObjectItem[5][0])">
-                {{ arrayVObjectItem[5][0] }}
-            </button>
-            <button  @click="saveNumber(2, arrayVObjectItem[5][1])">
-                {{ arrayVObjectItem[5][1] }}
-            </button>
-            <button  @click="saveNumber(2, arrayVObjectItem[5][2])">
-                {{ arrayVObjectItem[5][2] }}
-            </button>
-            <button  @click="saveNumber(2, arrayVObjectItem[5][3])">
-                {{ arrayVObjectItem[5][3] }}
-            </button>
-            <button  @click="saveNumber(2, arrayVObjectItem[5][4])">
-                {{ arrayVObjectItem[5][4] }}
-            </button>
-            <button  @click="saveNumber(2, arrayVObjectItem[5][5])">
-                {{ arrayVObjectItem[5][5] }}
-            </button>
+            <div class="app-object__button-information">
+                <AppButton :hasWhite="true" class="app-object__button" @click="saveNumber(2, arrayVObjectItem[5][0])">
+                    {{ arrayVObjectItem[5][0] }}
+                </AppButton>
+                <AppButton :hasWhite="true" class="app-object__button" @click="saveNumber(2, arrayVObjectItem[5][1])">
+                    {{ arrayVObjectItem[5][1] }}
+                </AppButton>
+                <AppButton :hasWhite="true" class="app-object__button" @click="saveNumber(2, arrayVObjectItem[5][2])">
+                    {{ arrayVObjectItem[5][2] }}
+                </AppButton>
+                <AppButton :hasWhite="true" class="app-object__button" @click="saveNumber(2, arrayVObjectItem[5][3])">
+                    {{ arrayVObjectItem[5][3] }}
+                </AppButton>
+                <AppButton :hasWhite="true" class="app-object__button" @click="saveNumber(2, arrayVObjectItem[5][4])">
+                    {{ arrayVObjectItem[5][4] }}
+                </AppButton>
+                <AppButton :hasWhite="true" class="app-object__button" @click="saveNumber(2, arrayVObjectItem[5][5])">
+                    {{ arrayVObjectItem[5][5] }}
+                </AppButton>
+            </div>  
         </div>
         <div class="app-object__input-floor">
             <div class="app-object__text">
-                {{ arrayVObjectItem[6][0] }}
+                Этаж
             </div>
-            <input type="text" class="app-object__input" v-model="number[3][0]">
+            <AppInput type="text" class="app-object__input" v-model="number[3][0]">
+
+            </AppInput>
         </div>
         <div class="app-object__condition-room">
             <div class="app-object__text">
-                {{ arrayVObjectItem[7][0] }}
+                Состояние
             </div>
-            <button @click="saveNumber(4, arrayVObjectItem[8][0])">
-                {{ arrayVObjectItem[8][0] }}
-            </button>
-            <button @click="saveNumber(4, arrayVObjectItem[8][1])">
-                {{ arrayVObjectItem[8][1] }}
-            </button>
-            <button @click="saveNumber(4, arrayVObjectItem[8][2])">
-                {{ arrayVObjectItem[8][2] }}
-            </button>
+            <div class="app-object__button-information">
+                <AppButton :hasWhite="true" class="app-object__button" @click="saveNumber(4, arrayVObjectItem[8][0])">
+                    {{ arrayVObjectItem[8][0] }}
+                </AppButton>
+                <AppButton :hasWhite="true" class="app-object__button" @click="saveNumber(4, arrayVObjectItem[8][1])">
+                    {{ arrayVObjectItem[8][1] }}
+                </AppButton>
+                <AppButton :hasWhite="true" class="app-object__button" @click="saveNumber(4, arrayVObjectItem[8][2])">
+                    {{ arrayVObjectItem[8][2] }}
+                </AppButton>
+            </div> 
         </div>
         <div class="app-object__input-floor">
             <div class="app-object__text">
-                {{ arrayVObjectItem[9][0] }}
+                Предполагаемая стоимость продажи
             </div>
-            <input type="text" class="app-object__input-small" v-model="number[5][0]">
-            <input type="text" class="app-object__input-small" v-model="number[6][0]">
+            <div class="app-object__button-information">
+                <AppInput width="158px" type="text" class="app-object__input-small" v-model="number[5][0]" :placeholder="beforePlaceholder">
+
+                </AppInput>
+                <AppInput width="158px" type="text" class="app-object__input-small" v-model="number[6][0]" :placeholder="fromPlaceholder">
+
+                </AppInput>
+            </div>
         </div>
         <div class="app-object__input-floor">
             <div class="app-object__text">
-                {{ arrayVObjectItem[10][0] }}
+                Фамилия
             </div>
-            <input type="text" class="app-object__input" v-model="number[7][0]">
+            <AppInput type="text" class="app-object__input" v-model="number[7][0]">
+            
+            </AppInput>
         </div>
         <div class="app-object__input-floor">
             <div class="app-object__text">
-                {{ arrayVObjectItem[11][0] }}
+                Имя
             </div>
-            <input type="text" class="app-object__input" v-model="number[8][0]">
+            <AppInput type="text" class="app-object__input" v-model="number[8][0]">
+
+            </AppInput>
         </div>
         <div class="app-object__input-floor">
             <div class="app-object__text">
-                {{ arrayVObjectItem[12][0] }}
+                Отчество
             </div>
-            <input type="text" class="app-object__input" v-model="number[9][0]">
+            <AppInput type="text" class="app-object__input" v-model="number[9][0]">
+            
+            </AppInput>
         </div>
         <div class="app-object__input-floor">
             <div class="app-object__text">
-                {{ arrayVObjectItem[13][0] }}
+                Телефон
             </div>
-            <input type="text" class="app-object__input" v-model="number[10][0]">
+            <AppInput type="text" class="app-object__input" v-model="number[10][0]">
+
+            </AppInput>
         </div>
         <div class="app-object__input-floor">
             <div class="app-object__text">
-                {{ arrayVObjectItem[14][0] }}
+                Электронная почта
             </div>
-            <input type="text" class="app-object__input" v-model="number[11][0]">
+            <AppInput type="text" class="app-object__input" v-model="number[11][0]">
+
+            </AppInput>
         </div>
-        <app-button :hasWhite="true" width="270px" :hasOutline="true" :hasSmall="true" class="" @click="saveData">
-            {{ arrayVObjectItem[15][0] }}
-        </app-button>
+        <AppButton :hasWhite="true" width="270px" :hasOutline="true" :hasSmall="true" class="" @click="saveData">
+            Разместить объявление
+        </AppButton>
     </div>
 </template>
 
 <script>
 
 import AppButton from './AppButton.vue';
+import AppInput from './AppInput.vue';
 
 export default {
     name: 'AppObject',
     data() {
         return {
-            let1: false,
+            isLoad: false,
             number: [
                 [],
                 [],
@@ -133,11 +159,14 @@ export default {
                 [],
                 [],
             ],
-            number1: []
+            number1: [],
+            beforePlaceholder: "От                      ₽",
+            fromPlaceholder: "До                      ₽",
         }
     },
     components: {
-        AppButton
+        AppButton,
+        AppInput
     },
     props: {
         arrayVObjectItem: Array
@@ -155,14 +184,27 @@ export default {
     },
     mounted() {
         setTimeout(() => {
-            this.let1 = true;
+            this.isLoad = true;
         }, 3000);
     },
 }
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+.app-object__button {
+    padding: 21px 12px;
+    color: #000000;
+}
+
+.app-object__button-rounded-left {
+    border-radius: $radius-left;
+}
+
+.app-object__button-rounded-right {
+    border-radius: $radius-right;
+}
+
 .app-object {
     display: flex;
     flex-direction: column;
@@ -188,7 +230,9 @@ export default {
     width: 328px;
     height: 52px;
     flex-shrink: 0;
+    padding: 0;
 }
+
 .app-object__text {
     margin-bottom: 15px;
 
@@ -199,5 +243,16 @@ export default {
     font-weight: 500;
     line-height: normal;
 }
+
+.app-object__input-small {
+    padding: 0;
+    height: 52px;
+}
+
+.app-object__button-information {
+    display: flex;
+    gap: 10px;
+}
+
 </style>
 
