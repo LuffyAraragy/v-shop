@@ -1,66 +1,33 @@
 <template>
     <div class="app-pass">
-        <div class="app-pass__title text__h2">
+        <div class="app-pass__title text text--font-weight-800 text--font-size-big">
             Сдать объект в управление
+        </div>
+        <div class="app-pass__text text text--font-size-normalx2">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
         </div>
         <div class="app-pass__all-input">
             <input class="app-pass__input" placeholder="Имя"/>
             <input class="app-pass__input" placeholder="Номер телефона"/>
             <input class="app-pass__input" placeholder="Тип объекта"/>
         </div>
-        <button class="button button--green">
-            Сдать в управление
-        </button>
-    </div>
-
-    <div class="app-in-numbers">
-        <div class="app-in-numbers__title text__h2">
-            О компании в цифрах
-        </div>
-        <div class="app-in-numbers__all-content">
-            <div class="app-in-numbers__all-numbers">
-                <div class="app-in-numbers__block-number">
-                    <div class="app-in-numbers__number">
-                        1537
-                    </div>
-                    <div class="app-in-numbers__text">
-                        Успешно проведенных сделок
-                    </div>
-                </div>
-                <div class="app-in-numbers__block-number">
-                    <div class="app-in-numbers__number">
-                        1537
-                    </div>
-                    <div class="app-in-numbers__text">
-                        Довольных клиентов
-                    </div>
-                </div>
-                <div class="app-in-numbers__block-number">
-                    <div class="app-in-numbers__number">
-                        153
-                    </div>
-                    <div class="app-in-numbers__text">
-                        Клиента инвестируют с нами
-                    </div>
-                </div>
-                <div class="app-in-numbers__block-number">
-                    <div class="app-in-numbers__number">
-                        34
-                    </div>
-                    <div class="app-in-numbers__text">
-                        Объекта в управлении
-                    </div>
-                </div>
-            </div>
-            <img src="@/img/numbers/17926 1.svg" alt="" class="app-in-numbers__img">
+        <div class="app-pass__button">
+            <AppButton width="310px">
+                Сдать в управление
+            </AppButton>
         </div>
     </div>
 </template>
 
 <script>
+import AppButton from './AppButton.vue';
+
 
 export default {
-    name: "AppPass"
+    name: "AppPass",
+    components: { 
+        AppButton 
+    }
 }
 
 </script>
@@ -68,7 +35,28 @@ export default {
 <style lang="scss" scoped>
 .app-pass {
     display: grid;
+    justify-content: center;
     gap: 40px;
+}
+
+.app-pass__title {
+    text-align: center;
+}
+
+.app-pass__text {
+    max-width: 920px;
+    text-align: center;
+}
+
+.app-pass__button {
+    display: flex;
+    justify-content: center;
+}
+
+.app-pass__all-input {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 .app-pass__input {
@@ -78,41 +66,9 @@ export default {
     border-radius: 5px;
     background: #FFF;
 }
-    .app-pass__input::placeholder {
-        padding-left: 20px;
-    }
+.app-pass__input::placeholder {
+    padding-left: 20px;
+}
 
-.app-in-numbers__title {
-    margin-top: 100px;
-    display: flex;
-    justify-content: center;
-}
-.app-in-numbers__all-content {
-    margin-top: 60px;
-    display: flex;
-    gap: 40px;
-    justify-content: center;
-    align-items: center;
-}
-.app-in-numbers__block-number {
-    height: 100%;
-}
-.app-in-numbers__number {
-    color: #2A7D03;
-    font-family: Geometria;
-    font-size: 60px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: 60px; /* 100% */
-    text-align: center;
-}
-.app-in-numbers__all-numbers {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: 350px;
-    gap: 30px;
-}
-.app-in-numbers__text {
-    text-align: center;
-}
+
 </style>

@@ -175,3 +175,15 @@ export async function vCardAgent() {
   ]
   return delayResponse(cardItem);
 }
+
+export async function vOurEmployees() {
+  let ourEmployees = [
+    {img: "ourEmployees/11867_original 1.svg", name: "Иван Иванов", descriptio: "Риелтор с 10-летним стажем"},
+    {img: "ourEmployees/11867_original 1.svg", name: "Иван Иванов", descriptio: "Риелтор с 10-летним стажем"},
+    {img: "ourEmployees/11867_original 1.svg", name: "Иван Иванов", descriptio: "Риелтор с 10-летним стажем"},
+    {img: "ourEmployees/11867_original 1.svg", name: "Иван Иванов", descriptio: "Риелтор с 10-летним стажем"},
+    {img: "ourEmployees/11867_original 1.svg", name: "Иван Иванов", descriptio: "Риелтор с 10-летним стажем"},
+    {img: "ourEmployees/11867_original 1.svg", name: "Иван Иванов", descriptio: "Риелтор с 10-летним стажем"},
+  ]
+  return delayResponse(ourEmployees);
+}

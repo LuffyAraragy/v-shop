@@ -6,6 +6,9 @@
     <AppObjectWebsite>
 
     </AppObjectWebsite>
+    <AppAboutCompany>
+
+    </AppAboutCompany>
     <AppMenuTop>
 
     </AppMenuTop>
@@ -103,14 +106,6 @@
     <swiper-slide>Slide 2</swiper-slide>
     <swiper-slide>Slide 3</swiper-slide>
   </swiper>
-
-  <!-- <div class="swiper swiper_thumbnail">                                   
-    <div class="swiper-wrapper">                                        
-        <div class="swiper-slide"><img src="@/img/agent/information-2 1.svg"></div>   
-        <div class="swiper-slide"><img src="@/img/agent/information-2 1.svg"></div>   
-        <div class="swiper-slide"><img src="@/img/agent/information-2 1.svg"></div>   
-    </div>                                                              
-  </div>  -->
 </div>
     <AppHeaderBlock>
 
@@ -134,6 +129,10 @@
 
 <script>
 
+// Основные страницы
+import AppAboutCompany from './components/AppAboutCompany.vue';
+import AppObjectWebsite from './components/AppObjectWebsite.vue';
+
 import AppComponents from './components/AppComponents.vue';
 import AppFooter from './components/AppFooter.vue';
 import AppMenuTop from './components/AppMenuTop.vue';
@@ -147,7 +146,6 @@ import AppInformationObject from './components/AppInformationObject.vue';
 import AppPass from './components/AppPass.vue';
 import AppAddressOffice from './components/AppAddressOffice .vue';
 import AppMenuLeft from './components/AppMenuLeft.vue';
-
 
 import AppHeaderBlock from './components/AppHeaderBlock.vue'
 import { Navigation, Pagination, A11y, Thumbs } from 'swiper/modules';
@@ -168,7 +166,6 @@ import {vCardService, vMenuLeft, vAddObject, vServiceCardList} from '@/assets/ap
 import AppCardObject from './components/AppCardObject.vue';
 import AppCardLocation from './components/AppCardLocation.vue';
 import AppWithoutAgent from './components/AppWithoutAgent.vue';
-import AppObjectWebsite from './components/AppObjectWebsite.vue'
 
 import AppTestMovie from './components/AppTestMovie.vue';
 import { useMovieStore } from './stores/MovieStore';
@@ -200,6 +197,7 @@ export default {
     AppAddressOffice,
     AppObjectWebsite,
     AppMenuLeft,
+    AppAboutCompany,
   },
   data() {
     return {
