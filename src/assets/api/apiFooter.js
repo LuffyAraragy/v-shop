@@ -178,12 +178,32 @@ export async function vCardAgent() {
 
 export async function vOurEmployees() {
   let ourEmployees = [
-    {img: "ourEmployees/11867_original 1.svg", name: "Иван Иванов", descriptio: "Риелтор с 10-летним стажем"},
-    {img: "ourEmployees/11867_original 1.svg", name: "Иван Иванов", descriptio: "Риелтор с 10-летним стажем"},
-    {img: "ourEmployees/11867_original 1.svg", name: "Иван Иванов", descriptio: "Риелтор с 10-летним стажем"},
-    {img: "ourEmployees/11867_original 1.svg", name: "Иван Иванов", descriptio: "Риелтор с 10-летним стажем"},
-    {img: "ourEmployees/11867_original 1.svg", name: "Иван Иванов", descriptio: "Риелтор с 10-летним стажем"},
-    {img: "ourEmployees/11867_original 1.svg", name: "Иван Иванов", descriptio: "Риелтор с 10-летним стажем"},
+    {img: "ourEmployees/11867_original 1.svg", name: "Иван Иванов", description: "Риелтор с 10-летним стажем"},
+    {img: "ourEmployees/11867_original 1.svg", name: "Иван Иванов", description: "Риелтор с 10-летним стажем"},
+    {img: "ourEmployees/11867_original 1.svg", name: "Иван Иванов", description: "Риелтор с 10-летним стажем"},
+    {img: "ourEmployees/11867_original 1.svg", name: "Иван Иванов", description: "Риелтор с 10-летним стажем"},
+    {img: "ourEmployees/11867_original 1.svg", name: "Иван Иванов", description: "Риелтор с 10-летним стажем"},
+    {img: "ourEmployees/11867_original 1.svg", name: "Иван Иванов", description: "Риелтор с 10-летним стажем"},
   ]
   return delayResponse(ourEmployees);
+}
+
+export async function vListOfVacancies() {
+  let listOfVacancies = [
+    {name: "Агент", money: "от 40 000 ₽", city: "Москва, Россия"},
+    {name: "Менеджер", money: "от 40 000 ₽", city: "Москва, Россия"},
+  ]
+  return delayResponse(listOfVacancies);
+}
+
+export async function vListBenefits() {
+  let listBenefits = [
+    {img: "listBenefits/marketing 1.svg", description: "Полная рекламная поддержка"},
+    {img: "listBenefits/company 1.svg", description: "Удобный офис"},
+    {img: "listBenefits/discount 1.svg", description: "Высокий % от сделки"},
+    {img: "listBenefits/goal 1.svg", description: "Карьерный рост"},
+    {img: "listBenefits/training 1.svg", description: "Обучение"},
+    {img: "listBenefits/information 1.svg", description: "Информационные базы"},
+  ]
+  return delayResponse(listBenefits);
 }

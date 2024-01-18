@@ -1,19 +1,42 @@
 <template>
-    <div class="app-list-benefits">
+    <div class="app-list-benefits" v-if="isLoad">
         <div class="app-list-benefits__content" 
-            v-for="(array, index) in 6"
+            v-for="(array, index) in arrayListBenefits"
             :key="index"
         >
-            <img src="@/img/listBenefits/company 1.svg" alt="" class="app-list-benefits__img">
+            <img :src="require(`@/img/${array.img}`)" alt="" class="app-list-benefits__img">
             <div class="app-list-benefits__description">
-                Высокий % от сделки
+                {{ array.description }}
             </div>
         </div>
     </div>
 </template>
 <script>
+import { vListBenefits } from '@/assets/api/apiFooter'
+
 export default {
     name: "AppListBenefits",
+    data() {
+        return {
+            isLoad: false,
+            arrayListBenefits: [],
+        }
+    },
+    methods: {
+        check() {
+            vListBenefits().then(result =>
+            {
+                this.arrayListBenefits = result
+                console.log(this.arrayListBenefits);
+            });
+        },
+    },
+    mounted() {
+        this.check();
+        setTimeout(() => {
+            this.isLoad = true;
+        }, 3000);
+    },
 }
 </script>
 <style lang="scss" scoped>
@@ -37,6 +60,11 @@ export default {
     &__description {
         display: flex;
         align-items: center;
+    }
+
+    &__img {
+        width: 30px;
+        height: 30px;
     }
 }
     

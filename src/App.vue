@@ -9,6 +9,9 @@
     <AppAboutCompany>
 
     </AppAboutCompany>
+    <AppVacancies>
+      
+    </AppVacancies>
     <AppMenuTop>
 
     </AppMenuTop>
@@ -169,11 +172,12 @@ import AppWithoutAgent from './components/AppWithoutAgent.vue';
 
 import AppTestMovie from './components/AppTestMovie.vue';
 import { useMovieStore } from './stores/MovieStore';
+import AppVacancies from './components/AppVacancies.vue';
 
 export default {
   name: 'App',
   components: {
-    AppComponents, 
+    AppComponents,
     AppFooter,
     AppMenuTop,
     AppYourLocation,
@@ -198,7 +202,8 @@ export default {
     AppObjectWebsite,
     AppMenuLeft,
     AppAboutCompany,
-  },
+    AppVacancies
+},
   data() {
     return {
       isLoad: false,
