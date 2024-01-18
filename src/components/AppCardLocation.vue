@@ -71,7 +71,8 @@ export default {
 <style lang="scss">
 
 #container {
-    width: 730px;
+    margin: 200px auto;
+    max-width: 1100px;
     height: 395px;
 }
 

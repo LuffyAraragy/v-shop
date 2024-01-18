@@ -12,6 +12,10 @@
     <AppVacancies>
       
     </AppVacancies>
+    <AppContact>
+
+
+    </AppContact>
     <AppMenuTop>
 
     </AppMenuTop>
@@ -113,10 +117,6 @@
     <AppHeaderBlock>
 
     </AppHeaderBlock>
-    <AppCardLocation>
-
-    </AppCardLocation>
-
     <AppWithoutAgent>
 
     </AppWithoutAgent>
@@ -167,12 +167,12 @@ import AppInput from './components/AppInput.vue';
 // import AppSwiperSlider from './components/AppSwiperSlider.vue';
 import {vCardService, vMenuLeft, vAddObject, vServiceCardList} from '@/assets/api/apiFooter'
 import AppCardObject from './components/AppCardObject.vue';
-import AppCardLocation from './components/AppCardLocation.vue';
 import AppWithoutAgent from './components/AppWithoutAgent.vue';
 
 import AppTestMovie from './components/AppTestMovie.vue';
 import { useMovieStore } from './stores/MovieStore';
 import AppVacancies from './components/AppVacancies.vue';
+import AppContact from './components/AppContact.vue';
 
 export default {
   name: 'App',
@@ -195,14 +195,14 @@ export default {
     AppCardItem,
     AppInput,
     AppCardObject,
-    AppCardLocation,
     AppWithoutAgent,
     AppTestMovie,
     AppAddressOffice,
     AppObjectWebsite,
     AppMenuLeft,
     AppAboutCompany,
-    AppVacancies
+    AppVacancies,
+    AppContact
 },
   data() {
     return {

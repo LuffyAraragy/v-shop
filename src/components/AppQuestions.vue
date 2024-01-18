@@ -1,5 +1,5 @@
 <template>
-    <div class="app-questions">
+    <div class="app-questions container">
         <div class="app-questions__information">
             <div class="app-questions__street text__20px">
                 191025, Российская Федерация, г. Санкт-Петербург, 
