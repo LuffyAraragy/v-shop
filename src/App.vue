@@ -16,6 +16,15 @@
 
 
     </AppContact>
+    <AppCooperationVue>
+      
+    </AppCooperationVue>
+    <AppCooperation>
+
+    </AppCooperation>
+    <AppRepair>
+
+    </AppRepair>
     <AppMenuTop>
 
     </AppMenuTop>
@@ -68,9 +77,6 @@
     <AppAgent>
 
     </AppAgent>
-    <AppWork>
-
-    </AppWork>
     <AppQuestions>
       
     </AppQuestions>
@@ -141,7 +147,6 @@ import AppFooter from './components/AppFooter.vue';
 import AppMenuTop from './components/AppMenuTop.vue';
 import AppYourLocation from './components/AppYourLocation.vue';
 import AppAgent from './components/AppAgent.vue';
-import AppWork from './components/AppWork.vue';
 import AppQuestions from './components/AppQuestions.vue';
 import AppPurpose from './components/AppPurpose.vue';
 import AppObject from './components/AppObject.vue';
@@ -173,6 +178,8 @@ import AppTestMovie from './components/AppTestMovie.vue';
 import { useMovieStore } from './stores/MovieStore';
 import AppVacancies from './components/AppVacancies.vue';
 import AppContact from './components/AppContact.vue';
+import AppCooperation from './components/AppCooperation.vue';
+import AppRepair from './components/AppRepair.vue';
 
 export default {
   name: 'App',
@@ -182,7 +189,6 @@ export default {
     AppMenuTop,
     AppYourLocation,
     AppAgent,
-    AppWork,
     AppQuestions,
     AppPurpose,
     AppObject,
@@ -202,7 +208,9 @@ export default {
     AppMenuLeft,
     AppAboutCompany,
     AppVacancies,
-    AppContact
+    AppContact,
+    AppCooperation,
+    AppRepair
 },
   data() {
     return {
@@ -339,7 +347,7 @@ export default {
   }
 
   &--color-black {
-    color: black;
+    color: #2F2D2D;
   }
 }
 

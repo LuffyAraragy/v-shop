@@ -1,51 +1,49 @@
 <template>
-    <div class="app-agent">
-        <div class="agent text__h2">
+    <div class="app-agent" v-if="isLoad">
+        <div class="app-agent__title text text--font-weight-800 text--font-size-big">
             Агент
         </div>
         <div class="block-content">
-            <div class="app-agent__content">
+            <div class="app-agent__content"
+                v-for="(array, index) in arrayAgent" 
+                :key="index"
+            >
                 <div class="circle">
-                    <img src="@/img/agent/reward 1.svg" alt="" class="app-agent-img">
+                    <img :src="require(`@/img/${array.img}`)" alt="">
                 </div>
-                <div class="text__20px">
-                    Привет
-                </div>
-            </div>
-            <div class="app-agent__content">
-                <div class="circle">
-                    <img src="@/img/agent/buildings 1.svg" alt="" class="app-agent-img">
-                </div>
-                <div class="text__20px">
-                    Привет
-                </div>
-            </div>
-            <div class="app-agent__content">
-                <div class="circle">
-                    <img src="@/img/agent/information-2 1.svg" alt="" class="app-agent-img">
-                </div>
-                <div class="text__20px">
-                    Привет
-                </div>
-            </div>
-            <div class="app-agent__content">
-                <div class="circle">
-                    <img src="@/img/agent/affiliate 1.svg" alt="" class="app-agent-img">
-                </div>
-                <div class="text__20px">
-                    Привет
+                <div class="app-agent__text text text--font-weight-500 text--font-size-normalx2 text--color-black">
+                    {{ array.description }}
                 </div>
             </div>
         </div>
-        <button class="button button--green app-agent__button">
-            Связаться
-        </button>
+        <div class="app-agent__button">
+            <AppButton width="310px">
+                Связаться
+            </AppButton>
+        </div>
     </div>
 </template>
 
 <script >
+import AppButton from './AppButton.vue'
 export default {
-    name: "AppAgent"
+    name: "AppAgent",
+    components: { 
+        AppButton 
+    },
+    data() {
+        return {
+            isLoad: false,
+        }
+    },
+    props: {
+        arrayAgent: Array
+    },
+    mounted() {
+        setTimeout(() => {
+            this.isLoad = true;
+        }, 3000);
+    },
 }
 </script>
 
@@ -55,22 +53,33 @@ export default {
     align-items: center;
     justify-content: center;
     gap: 40px;
-
-    &__button {
-        margin: auto;
-    }
+    margin: 100px auto;
 
     &__content {
         display: flex;
         align-items: center;
-        justify-content: center;
         gap: 19px;
+        box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.10);
+        border-radius: 5px;
+        background: #FFF;
+        padding: 15px 20px;
+        max-width: 540px;
+    }
+
+    &__img {
+        width: 20px;
+        height: 20px;
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    &__button {
+        margin: 0 auto;
     }
 }
 
-.agent {
-    text-align: center;
-}
 .block-content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -86,12 +95,6 @@ export default {
     height: 40px;
     background-color: #226702;
     border-radius: 50%;
-}
-
-.app-agent-img {
-    
-    width: 20px;
-    height: 20px;
 }
 
 </style>

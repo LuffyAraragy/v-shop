@@ -207,3 +207,33 @@ export async function vListBenefits() {
   ]
   return delayResponse(listBenefits);
 }
+
+export async function vAgent() {
+  let agent = [
+    {img: "agent/reward 1.svg", description: "Минимум себе, макисмум Вам"},
+    {img: "agent/information-2 1.svg", description: "Доступ к базам недвижимости"},
+    {img: "agent/buildings 1.svg", description: "Офис для переговоров"},
+    {img: "agent/affiliate 1.svg", description: "Партнерские программы"},
+  ]
+  return delayResponse(agent);
+}
+
+export async function vCompany() {
+  let agent = [
+    {img: "agent/reward 1.svg", description: "Минимум себе, макисмум Вам"},
+    {img: "agent/calendar 1.svg", description: "Доступ к базам недвижимости"},
+    {img: "agent/affiliate 1.svg", description: "Офис для переговоров"},
+    {img: "agent/individual 1.svg", description: "Партнерские программы"},
+  ]
+  return delayResponse(agent);
+}
+
+export async function vWork() {
+  let work = [
+    {icon: "work/multimedia-option 5.svg", title: "Вы оставляете заявку", description: "Вы оставляете заявку, мы связываемся с Вами для уточнения подробностей, согласовываем дату и время встречи"},
+    {icon: "work/multimedia-option 5.svg", title: "Заключение договора", description: "Составляем договор, подготавливаем техническое задание на производство работ вместе с Вами"},
+    {icon: "work/multimedia-option 5.svg", title: "Производство работ", description: "Выполняем работы с поэтапным отчетом"},
+    {icon: "work/multimedia-option 5.svg", title: "Прием работы", description: "Вы осматриваете результат работ, в случае выявление недостатков мы их устраняем и предъявляем объект к приемке"},
+  ]
+  return delayResponse(work);
+}
