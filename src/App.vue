@@ -1,5 +1,14 @@
 <template>
   <div class="app">
+    <AppRestorePassword>
+      
+    </AppRestorePassword>
+    <AppFormRegistration>
+
+    </AppFormRegistration>
+    <AppFormLogin>
+      
+    </AppFormLogin>
     <AppMenuLeft :menuLeft="appMenuLeft">
 
     </AppMenuLeft>
@@ -154,6 +163,10 @@ import AppInformationObject from './components/AppInformationObject.vue';
 import AppPass from './components/AppPass.vue';
 import AppAddressOffice from './components/AppAddressOffice .vue';
 import AppMenuLeft from './components/AppMenuLeft.vue';
+import AppFormLogin from './components/AppFormLogin.vue'
+import AppFormRegistration from './components/AppFormRegistration.vue'
+import AppRestorePassword from './components/AppRestorePassword.vue'
+
 
 import AppHeaderBlock from './components/AppHeaderBlock.vue'
 import { Navigation, Pagination, A11y, Thumbs } from 'swiper/modules';
@@ -178,8 +191,6 @@ import AppTestMovie from './components/AppTestMovie.vue';
 import { useMovieStore } from './stores/MovieStore';
 import AppVacancies from './components/AppVacancies.vue';
 import AppContact from './components/AppContact.vue';
-import AppCooperation from './components/AppCooperation.vue';
-import AppRepair from './components/AppRepair.vue';
 
 export default {
   name: 'App',
@@ -209,8 +220,9 @@ export default {
     AppAboutCompany,
     AppVacancies,
     AppContact,
-    AppCooperation,
-    AppRepair
+    AppFormLogin,
+    AppFormRegistration,
+    AppRestorePassword
 },
   data() {
     return {
