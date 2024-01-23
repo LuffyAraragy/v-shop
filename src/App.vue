@@ -1,5 +1,14 @@
 <template>
   <div class="app">
+    <AppRestorePassword>
+      
+    </AppRestorePassword>
+    <AppFormRegistration>
+
+    </AppFormRegistration>
+    <AppFormLogin>
+      
+    </AppFormLogin>
     <AppMenuLeft :menuLeft="appMenuLeft">
 
     </AppMenuLeft>
@@ -173,6 +182,9 @@ import AppTestMovie from './components/AppTestMovie.vue';
 import { useMovieStore } from './stores/MovieStore';
 import AppVacancies from './components/AppVacancies.vue';
 import AppContact from './components/AppContact.vue';
+import AppFormLogin from './components/AppFormLogin.vue';
+import AppFormRegistration from './components/AppFormRegistration.vue';
+import AppRestorePassword from './components/AppRestorePassword.vue'
 
 export default {
   name: 'App',
@@ -202,7 +214,10 @@ export default {
     AppMenuLeft,
     AppAboutCompany,
     AppVacancies,
-    AppContact
+    AppContact,
+    AppFormLogin,
+    AppFormRegistration,
+    AppRestorePassword
 },
   data() {
     return {
