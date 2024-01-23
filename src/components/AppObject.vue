@@ -1,124 +1,148 @@
 <template>
-    <div class="app-object" v-if="this.let1">
-        <div class="app-object__title text__h2 text__h2--black">
-            {{ arrayVObjectItem[0][0] }}
+    <div class="app-object" v-if="isLoad">
+        <div class="app-object__title text text--font-size-big text--font-weight-700 text--color-black">
+            Добавить объект
         </div>
         <div class="app-object__button-controller">
-            <button class=" button app-object__sell">
-                {{ arrayVObjectItem[1][0] }}
-            </button>
-            <button class="button app-object__rent">
-                {{ arrayVObjectItem[1][1] }}
-            </button>
+            <AppButton class="app-object__sell" width="50%">
+                Продать
+            </AppButton>
+            <AppButton class="app-object__rent" width="50%">
+                Сдать
+            </AppButton>
         </div>
         <div class="app-object__input-city">
-            <div class="app-object__text">
-                {{ arrayVObjectItem[2][0] }}
+            <div class="app-object__text text text--font-size-normal text--font-weight-500 text--color-black">
+                Город
             </div>
-            <input type="text" class="app-object__input" v-model="number[0][0]"> 
-            {{ this.number[0][0] }} 
+            <AppInput v-model="number[0][0]"> 
+                {{ this.number[0][0] }}
+            </AppInput> 
         </div>
         <div class="app-object__input-district">
-            <div class="app-object__text">
-                {{ arrayVObjectItem[3][0] }}
+            <div class="app-object__text text text--font-size-normal text--font-weight-500 text--color-black">
+                Район
             </div>
-            <input type="text" class="app-object__input" v-model="number[1][0]">
+            <AppInput v-model="number[1][0]">
+
+            </AppInput>
         </div>
         <div class="app-object__count-room">
-            <div class="app-object__text">
-                {{ arrayVObjectItem[4][0] }}
+            <div class="app-object__text text text--font-size-normal text--font-weight-500 text--color-black">
+                Количество комнат
             </div>
-            <button  @click="saveNumber(2, arrayVObjectItem[5][0])">
-                {{ arrayVObjectItem[5][0] }}
-            </button>
-            <button  @click="saveNumber(2, arrayVObjectItem[5][1])">
-                {{ arrayVObjectItem[5][1] }}
-            </button>
-            <button  @click="saveNumber(2, arrayVObjectItem[5][2])">
-                {{ arrayVObjectItem[5][2] }}
-            </button>
-            <button  @click="saveNumber(2, arrayVObjectItem[5][3])">
-                {{ arrayVObjectItem[5][3] }}
-            </button>
-            <button  @click="saveNumber(2, arrayVObjectItem[5][4])">
-                {{ arrayVObjectItem[5][4] }}
-            </button>
-            <button  @click="saveNumber(2, arrayVObjectItem[5][5])">
-                {{ arrayVObjectItem[5][5] }}
-            </button>
+            <div class="app-object__container-for-button">
+                <AppButton  @click="saveNumber(2, arrayVObjectItem[5][0])">
+                    {{ arrayVObjectItem[5][0] }}
+                </AppButton>
+                <AppButton  @click="saveNumber(2, arrayVObjectItem[5][1])">
+                    {{ arrayVObjectItem[5][1] }}
+                </AppButton>
+                <AppButton  @click="saveNumber(2, arrayVObjectItem[5][2])">
+                    {{ arrayVObjectItem[5][2] }}
+                </AppButton>
+                <AppButton  @click="saveNumber(2, arrayVObjectItem[5][3])">
+                    {{ arrayVObjectItem[5][3] }}
+                </AppButton>
+                <AppButton  @click="saveNumber(2, arrayVObjectItem[5][4])">
+                    {{ arrayVObjectItem[5][4] }}
+                </AppButton>
+                <AppButton  @click="saveNumber(2, arrayVObjectItem[5][5])">
+                    {{ arrayVObjectItem[5][5] }}
+                </AppButton>
+            </div>
         </div>
         <div class="app-object__input-floor">
-            <div class="app-object__text">
-                {{ arrayVObjectItem[6][0] }}
+            <div class="app-object__text text text--font-size-normal text--font-weight-500 text--color-black">
+                Этаж
             </div>
-            <input type="text" class="app-object__input" v-model="number[3][0]">
+            <AppInput v-model="number[3][0]">
+
+            </AppInput>
         </div>
         <div class="app-object__condition-room">
-            <div class="app-object__text">
-                {{ arrayVObjectItem[7][0] }}
+            <div class="app-object__text text text--font-size-normal text--font-weight-500 text--color-black">
+                Состояние
             </div>
-            <button @click="saveNumber(4, arrayVObjectItem[8][0])">
-                {{ arrayVObjectItem[8][0] }}
-            </button>
-            <button @click="saveNumber(4, arrayVObjectItem[8][1])">
-                {{ arrayVObjectItem[8][1] }}
-            </button>
-            <button @click="saveNumber(4, arrayVObjectItem[8][2])">
-                {{ arrayVObjectItem[8][2] }}
-            </button>
+            <div class="app-object__container-for-button">
+                <AppButton @click="saveNumber(4, arrayVObjectItem[8][0])">
+                    {{ arrayVObjectItem[8][0] }}
+                </AppButton>
+                <AppButton @click="saveNumber(4, arrayVObjectItem[8][1])">
+                    {{ arrayVObjectItem[8][1] }}
+                </AppButton>
+                <AppButton @click="saveNumber(4, arrayVObjectItem[8][2])">
+                    {{ arrayVObjectItem[8][2] }}
+                </AppButton>
+            </div>
         </div>
         <div class="app-object__input-floor">
-            <div class="app-object__text">
-                {{ arrayVObjectItem[9][0] }}
+            <div class="app-object__text text text--font-size-normal text--font-weight-500 text--color-black">
+                Предполагаемая стоимость продажи
             </div>
-            <input type="text" class="app-object__input-small" v-model="number[5][0]">
-            <input type="text" class="app-object__input-small" v-model="number[6][0]">
+            <AppInput v-model="number[5][0]">
+
+            </AppInput>
+            <AppInput v-model="number[6][0]">
+
+            </AppInput>
         </div>
         <div class="app-object__input-floor">
-            <div class="app-object__text">
-                {{ arrayVObjectItem[10][0] }}
+            <div class="app-object__text text text--font-size-normal text--font-weight-500 text--color-black">
+                Фамилия
             </div>
-            <input type="text" class="app-object__input" v-model="number[7][0]">
+            <AppInput v-model="number[7][0]">
+
+            </AppInput>
         </div>
         <div class="app-object__input-floor">
-            <div class="app-object__text">
-                {{ arrayVObjectItem[11][0] }}
+            <div class="app-object__text text text--font-size-normal text--font-weight-500 text--color-black">
+                Имя
             </div>
-            <input type="text" class="app-object__input" v-model="number[8][0]">
+            <AppInput v-model="number[8][0]">
+
+            </AppInput>
         </div>
         <div class="app-object__input-floor">
-            <div class="app-object__text">
-                {{ arrayVObjectItem[12][0] }}
+            <div class="app-object__text text text--font-size-normal text--font-weight-500 text--color-black">
+                Отчество
             </div>
-            <input type="text" class="app-object__input" v-model="number[9][0]">
+            <AppInput v-model="number[9][0]">
+
+            </AppInput>
         </div>
         <div class="app-object__input-floor">
-            <div class="app-object__text">
-                {{ arrayVObjectItem[13][0] }}
+            <div class="app-object__text text text--font-size-normal text--font-weight-500 text--color-black">
+                Телефон
             </div>
-            <input type="text" class="app-object__input" v-model="number[10][0]">
+            <AppInput v-model="number[10][0]">
+
+            </AppInput>
         </div>
         <div class="app-object__input-floor">
-            <div class="app-object__text">
-                {{ arrayVObjectItem[14][0] }}
+            <div class="app-object__text text text--font-size-normal text--font-weight-500 text--color-black">
+                Электронная почта
             </div>
-            <input type="text" class="app-object__input" v-model="number[11][0]">
+            <AppInput v-model="number[11][0]">
+
+            </AppInput>
         </div>
-        <app-button :hasWhite="true" width="270px" :hasOutline="true" :hasSmall="true" class="" @click="saveData">
-            {{ arrayVObjectItem[15][0] }}
-        </app-button>
+        <AppButton :hasWhite="true" width="270px" :hasOutline="true" :hasSmall="true" class="" @click="saveData">
+            Разместить объявление
+        </AppButton>
     </div>
 </template>
 
 <script>
 
 import AppButton from './AppButton.vue';
+import AppInput from './AppInput.vue';
 
 export default {
     name: 'AppObject',
     data() {
         return {
-            let1: false,
+            isLoad: false,
             number: [
                 [],
                 [],
@@ -137,8 +161,9 @@ export default {
         }
     },
     components: {
-        AppButton
-    },
+    AppButton,
+    AppInput
+},
     props: {
         arrayVObjectItem: Array
     },
@@ -155,49 +180,56 @@ export default {
     },
     mounted() {
         setTimeout(() => {
-            this.let1 = true;
+            this.isLoad = true;
         }, 3000);
     },
 }
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .app-object {
     display: flex;
     flex-direction: column;
     margin: auto;
     gap: 30px;
     max-width: 448px;
-    width: 100%;
-    height: 100%;
+    // width: 100%;
+    // height: 100%;
     flex-shrink: 0;
     border-radius: 5px;
     background: #F8F7F7;
     padding: 60px;
-}
 
-.app-object__button-controller {
-    display: flex;
-}
+    &__container-for-button {
+        display: flex;
+        gap: 10px;
+    }
 
-.app-object__input {
-    border-radius: 5px;
-    border: 2px solid #F3F3F3;
-    background: #FFF;
-    width: 328px;
-    height: 52px;
-    flex-shrink: 0;
-}
-.app-object__text {
-    margin-bottom: 15px;
+    &__button-controller {
+        display: flex;
+    }
 
-    color: #2F2D2D;
-    font-family: Geometria;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
+    &__input {
+        border-radius: 5px;
+        border: 2px solid #F3F3F3;
+        background: #FFF;
+        width: 328px;
+        height: 52px;
+        flex-shrink: 0;
+    }
+
+    &__text {
+        margin-bottom: 15px;
+    }
+
+    &__sell {
+        border-radius: 5px 0px 0px 5px;
+    }
+
+    &__rent {
+        border-radius: 0px 5px 5px 0px;
+    }
 }
 </style>
 

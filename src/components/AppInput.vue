@@ -12,7 +12,7 @@ export default {
     name: 'AppInput',
     data() {
         return {
-            textPlaceholder: "Передаю привет"
+            textPlaceholder: ""
         }
     },
     props: {

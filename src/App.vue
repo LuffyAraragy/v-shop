@@ -1,5 +1,8 @@
 <template>
   <div class="app">
+    <AppObject :arrayVObjectItem="arrayVObject">
+
+    </AppObject>
     <AppRestorePassword>
       
     </AppRestorePassword>
@@ -92,9 +95,9 @@
     <AppPurpose>
 
     </AppPurpose>
-    <AppObject :arrayVObjectItem="arrayVObject">
+    <!-- <AppObject :arrayVObjectItem="arrayVObject">
 
-    </AppObject>
+    </AppObject> -->
     <AppInformationObject>
 
     </AppInformationObject>
