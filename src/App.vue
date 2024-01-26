@@ -1,5 +1,37 @@
 <template>
   <div class="app">
+    <h1>Nested Views</h1>
+    <p>
+      <router-link to="/users/eduardo">/users/eduardo</router-link>
+      <br />
+      <router-link to="/users/eduardo/profile"
+        >/users/eduardo/profile</router-link
+      >
+      <br />
+      <router-link to="/users/eduardo/post">/users/eduardo/posts</router-link>
+      <br />
+      <router-link to="/users/eduardo/AppAboutCompany">/users/eduardo/AppAboutCompany</router-link>
+      <br />
+      <router-link to="/users/eduardo/AppObjectWebsite">/users/eduardo/AppObjectWebsite</router-link>
+      <br />
+      <router-link to="/users/eduardo/AppContact">/users/eduardo/AppContact</router-link>
+      <br />
+      <router-link to="/users/eduardo/AppVacancies">/users/eduardo/AppVacancies</router-link>
+      <br />
+      <router-link to="/users/eduardo/AppCooperation">/users/eduardo/AppCooperation</router-link>
+      <br />
+      <router-link to="/users/eduardo/AppRepair">/users/eduardo/AppRepair</router-link>
+      <br />
+      <router-link to="/users/eduardo/AppWithoutAgentPage">/users/eduardo/AppWithoutAgentPage</router-link>
+      <br />
+      <router-link to="/users/eduardo/AppDeliveryManagementPage">/users/eduardo/AppDeliveryManagementPage</router-link>
+    </p>    
+    <!-- TODO это шаблон всех страниц, сюда передаються данные внутреннего контента через верхнии ссылки to="/users/eduardo/post" -->
+    <AppMainComponent>
+      
+    </AppMainComponent>
+
+    <!-- TODO формы сайта -->
     <AppObject :arrayVObjectItem="arrayVObject">
 
     </AppObject>
@@ -12,6 +44,8 @@
     <AppFormLogin>
       
     </AppFormLogin>
+    <!-- TODO конец форм сайта -->
+
     <AppMenuLeft :menuLeft="appMenuLeft">
 
     </AppMenuLeft>
@@ -28,21 +62,12 @@
 
 
     </AppContact>
-    <AppCooperationVue>
-      
-    </AppCooperationVue>
     <AppCooperation>
 
     </AppCooperation>
     <AppRepair>
 
     </AppRepair>
-    <AppMenuTop>
-
-    </AppMenuTop>
-    <AppAddressOffice>
-
-    </AppAddressOffice>
     <menu-left>
 
     </menu-left>
@@ -78,7 +103,6 @@
 
     </AppComponents>
     
-    
     <AppFooter>
 
     </AppFooter>
@@ -95,12 +119,6 @@
     <AppPurpose>
 
     </AppPurpose>
-    <!-- <AppObject :arrayVObjectItem="arrayVObject">
-
-    </AppObject> -->
-    <AppInformationObject>
-
-    </AppInformationObject>
     <AppPass>
 
     </AppPass>
@@ -132,12 +150,9 @@
     <swiper-slide>Slide 3</swiper-slide>
   </swiper>
 </div>
-    <AppHeaderBlock>
+    <AppHeaderBlock :imgContent="imgContent">
 
     </AppHeaderBlock>
-    <AppWithoutAgent>
-
-    </AppWithoutAgent>
     <div class="movies">
       
     </div>
@@ -156,15 +171,12 @@ import AppObjectWebsite from './components/AppObjectWebsite.vue';
 
 import AppComponents from './components/AppComponents.vue';
 import AppFooter from './components/AppFooter.vue';
-import AppMenuTop from './components/AppMenuTop.vue';
 import AppYourLocation from './components/AppYourLocation.vue';
 import AppAgent from './components/AppAgent.vue';
 import AppQuestions from './components/AppQuestions.vue';
 import AppPurpose from './components/AppPurpose.vue';
 import AppObject from './components/AppObject.vue';
-import AppInformationObject from './components/AppInformationObject.vue';
 import AppPass from './components/AppPass.vue';
-import AppAddressOffice from './components/AppAddressOffice .vue';
 import AppMenuLeft from './components/AppMenuLeft.vue';
 import AppFormLogin from './components/AppFormLogin.vue'
 import AppFormRegistration from './components/AppFormRegistration.vue'
@@ -186,27 +198,25 @@ import AppButton from './components/AppButton.vue';
 import AppCardItem from './components/AppCardItem.vue';
 import AppInput from './components/AppInput.vue';
 // import AppSwiperSlider from './components/AppSwiperSlider.vue';
-import {vCardService, vMenuLeft, vAddObject, vServiceCardList} from '@/assets/api/apiFooter'
+import {vCardService, vMenuLeft, vAddObject, vServiceCardList, vHeaderBlock} from '@/assets/api/apiFooter'
 import AppCardObject from './components/AppCardObject.vue';
-import AppWithoutAgent from './components/AppWithoutAgent.vue';
 
 import AppTestMovie from './components/AppTestMovie.vue';
 import { useMovieStore } from './stores/MovieStore';
 import AppVacancies from './components/AppVacancies.vue';
 import AppContact from './components/AppContact.vue';
+import AppMainComponent from './components/AppMainComponent.vue';
 
 export default {
   name: 'App',
   components: {
     AppComponents,
     AppFooter,
-    AppMenuTop,
     AppYourLocation,
     AppAgent,
     AppQuestions,
     AppPurpose,
     AppObject,
-    AppInformationObject,
     AppPass,
     Swiper,
     SwiperSlide,
@@ -215,9 +225,7 @@ export default {
     AppCardItem,
     AppInput,
     AppCardObject,
-    AppWithoutAgent,
     AppTestMovie,
-    AppAddressOffice,
     AppObjectWebsite,
     AppMenuLeft,
     AppAboutCompany,
@@ -225,8 +233,9 @@ export default {
     AppContact,
     AppFormLogin,
     AppFormRegistration,
-    AppRestorePassword
-},
+    AppRestorePassword,
+    AppMainComponent
+  },
   data() {
     return {
       isLoad: false,
@@ -235,6 +244,7 @@ export default {
       arrayVObject: [],
       movieStore: useMovieStore(),
       arrayCard: [],
+      imgContent: [],
     }
   },
   provide() {
@@ -277,6 +287,11 @@ export default {
             {
                 this.arrayCard = result
                 console.log(this.arrayCard);
+            });
+            vHeaderBlock().then(result =>
+            {
+                this.imgContent = result
+                console.log(this.imgContent);
             });
         },
     },

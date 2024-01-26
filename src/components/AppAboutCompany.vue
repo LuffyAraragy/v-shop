@@ -1,5 +1,8 @@
 <template>
     <div class="app-about-company">
+        <AppHeaderBlock :imgContent="imgContent">
+                    
+        </AppHeaderBlock>
         <AppSwiperSliderComponent>
             <AppCardEmployees>
 
@@ -85,28 +88,31 @@ import 'swiper/css/scrollbar';
 import { Navigation, A11y, Thumbs, EffectCoverflow } from 'swiper/modules';
 import AppSwiperSliderComponent from './AppSwiperSliderComponent.vue';
 
-import { vOurEmployees } from '@/assets/api/apiFooter'
+import { vOurEmployees, vHeaderBlock } from '@/assets/api/apiFooter'
 import AppCardEmployees from './AppCardEmployees.vue';
 import AppListBenefits from './AppListBenefits.vue';
+import AppHeaderBlock from './AppHeaderBlock.vue';
 
 
 export default {
     name: "AppAboutCompany",
     components: {
-    AppPass,
-    AppImgAndText,
-    AppPurpose,
-    AppInNumbers,
-    AppPhotoOffice,
-    Swiper,
-    SwiperSlide,
-    AppSwiperSliderComponent,
-    AppCardEmployees,
-    AppListBenefits
-},
+        AppPass,
+        AppImgAndText,
+        AppPurpose,
+        AppInNumbers,
+        AppPhotoOffice,
+        Swiper,
+        SwiperSlide,
+        AppSwiperSliderComponent,
+        AppCardEmployees,
+        AppListBenefits,
+        AppHeaderBlock
+    },
     data() {
         return {
             arrayOurEmployees: [],
+            imgContent: [],
         }
     },
     setup() {
@@ -128,6 +134,11 @@ export default {
             {
                 this.arrayFromCard = result
                 console.log(this.arrayFromCard);
+            });
+            vHeaderBlock().then(result =>
+            {
+                this.imgContent = result
+                console.log(this.imgContent);
             }); 
         },
     },

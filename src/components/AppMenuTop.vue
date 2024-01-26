@@ -1,23 +1,23 @@
 <template>
-    <div class="app-menu-top container">
-        <!-- <div class="app-menu-top__logo">
+    <div class="app-menu-top">
+        <div class="app-menu-top__logo">
 
-        </div> -->
+        </div>
         <div class="app-menu-top__city">
             <img src="@/img/menu/pin 1.svg" alt="" class="contact">
-            <div class="app-menu-top__city-name app-menu-top__text">
+            <div class="app-menu-top__city-name text text--font-size-normal text--color-black text--font-weight-400">
                 Екатеринбург
             </div>
         </div>
         <div class="app-menu-top__mail">
             <img src="@/img/menu/mail 1.svg" alt="" class="contact">
-            <div class="v-menu-mail-name app-menu-top__text">
+            <div class="v-menu-mail-name text text--font-size-normal text--color-black text--font-weight-400">
                 agentstvo@gmail.com
             </div>
         </div>
         <div class="app-menu-top__telephone">
             <img src="@/img/menu/Group.svg" alt="" class="contact">
-            <div class="app-menu-top__telephone-name app-menu-top__text">
+            <div class="app-menu-top__telephone-name text text--font-size-normal text--color-black text--font-weight-400">
                 +7 (777) 777-77-77
             </div>
         </div>
@@ -71,22 +71,13 @@ import AppButton from './AppButton.vue';
     background: #FFF;
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.05);
     backdrop-filter: blur(7.5px);
-    width: 1740px;
     height: 70px;
     flex-shrink: 0;
+    gap: 15px;
 }
 
 .app-menu-top__telephone-name {
     width: 130px;
-}
-
-.app-menu-top__text {
-    color: #2F2D2D;
-    font-family: Geometria;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
 }
 
 .app-menu-top__city {
@@ -99,13 +90,7 @@ import AppButton from './AppButton.vue';
 }
 .app-menu-top__telephone {
     display: flex;
-    gap: 15px;
-}
-
-.app-menu-top {
-    /* Расстояние между элементами */
-    display: flex;
-    gap: 50px;
+    
 }
 
 .app-menu-top__logo {

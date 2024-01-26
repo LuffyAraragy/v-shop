@@ -32,33 +32,32 @@ export default {
     },
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 
-    .app-menu-left {
-        position: absolute;
-        display: flex;
-        flex-flow: column;
-        width: 180px;
-        height: 864px;
-        flex-shrink: 0;
-        background: #FFF;
-        box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.05);
-        backdrop-filter: blur(7px);
-    }
-    
-    .content {
-        display: flex;
-        gap: 7px;
-        align-items: center;
-        padding: 15px 20px;
-        border-top: 2px solid #C4C4C4;
-        max-width: 100%;
-        height: 44px;
-        color: #2F2D2D;;
-        font-family: Geometria;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 24px; 
-    }
+.app-menu-left {
+    display: flex;
+    flex-flow: column;
+    width: 180px;
+    height: 864px;
+    flex-shrink: 0;
+    background: #FFF;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(7px);
+}
+
+.content {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    padding: 15px 20px;
+    border-top: 2px solid #C4C4C4;
+    max-width: 100%;
+    height: 44px;
+    color: #2F2D2D;;
+    font-family: Geometria;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; 
+}
 </style>

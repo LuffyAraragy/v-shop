@@ -1,35 +1,25 @@
 <template>
-    <div class="app-vacancies">
+    <div class="AppWithoutAgentPage">
         <AppHeaderBlock :imgContent="imgContent">
-                    
+            
         </AppHeaderBlock>
-        <AppImgAndText>
-            <AppListBenefits>
-                
-            </AppListBenefits>
-        </AppImgAndText>
-        <AppListOfVacancies>
+        <AppWithoutAgent>
 
-        </AppListOfVacancies>    
+        </AppWithoutAgent>
     </div>
 </template>
 
 <script>
-import AppImgAndText from './AppImgAndText.vue';
-import AppListBenefits from './AppListBenefits.vue';
-import AppListOfVacancies from './AppListOfVacancies.vue';
 import AppHeaderBlock from './AppHeaderBlock.vue';
+import AppWithoutAgent from './AppWithoutAgent.vue';
 
 import { vHeaderBlock } from '@/assets/api/apiFooter'
 
-
 export default {
-    name: "AppVacancies",
-    components: {
-        AppImgAndText,
-        AppListBenefits,
-        AppListOfVacancies,
-        AppHeaderBlock
+    name: "AppWithoutAgentPage",
+    components: { 
+        AppWithoutAgent, 
+        AppHeaderBlock 
     },
     data() {
         return {
@@ -56,7 +46,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.app-vacancies {
-    margin: 100px auto;
-}
+    
 </style>

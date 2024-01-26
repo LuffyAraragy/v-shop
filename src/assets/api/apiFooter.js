@@ -237,3 +237,10 @@ export async function vWork() {
   ]
   return delayResponse(work);
 }
+
+export async function vHeaderBlock() {
+  let headerBlock = [
+    {img: "work/multimedia-option 5.svg", title: "Нам доверяют свою недвижимость Управляем объектами более 34 собственников Доверьтесь и Вы", icon: ["headerBlock/Group222.svg", "headerBlock/Group222.svg", "headerBlock/Group222.svg"], description: ["Гибкая система вознаграджения", "Индивидуальный подход к каждому клиенту", "Прозрачное сотрудничество"], button: ["Сдать в управление", "Сдать в управление1"]},
+  ]
+  return delayResponse(headerBlock);
+}

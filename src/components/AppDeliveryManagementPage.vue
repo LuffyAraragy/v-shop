@@ -1,54 +1,48 @@
 <template>
-    <div class="app-cooperation" v-if="isLoad">
+    <div class="app-delivery-management-page">
         <AppHeaderBlock :imgContent="imgContent">
 
         </AppHeaderBlock>
-        <AppAgent :arrayAgent="arrayCooperation">
+        <AppPass>
 
-        </AppAgent>
+        </AppPass>
         <AppAgent :arrayAgent="arrayCooperationCompany">
 
         </AppAgent>
     </div>
 </template>
-
 <script>
-import AppAgent from './AppAgent.vue';
-
-import { vAgent, vCompany, vHeaderBlock } from '@/assets/api/apiFooter'
 import AppHeaderBlock from './AppHeaderBlock.vue';
+
+import { vHeaderBlock, vAgent } from '@/assets/api/apiFooter';
+import AppPass from './AppPass.vue';
+import AppAgent from './AppAgent.vue';
 
 
 export default {
-    name: "AppCooperation",
+    name: "AppDeliveryManagementPage",
     components: {
-    AppAgent,
-    AppHeaderBlock
+    AppHeaderBlock,
+    AppPass,
+    AppAgent
 },
     data() {
         return {
-            isLoad: false,
-            arrayCooperation: [],
-            arrayCooperationCompany: [],
             imgContent: [],
+            arrayCooperationCompany: [],
         }
     },
     methods: {
         check() {
-            vAgent().then(result =>
-            {
-                this.arrayCooperation = result
-                console.log(this.arrayCooperation);
-            });
-            vCompany().then(result =>
-            {
-                this.arrayCooperationCompany = result
-                console.log(this.arrayCooperationCompany);
-            });
             vHeaderBlock().then(result =>
             {
                 this.imgContent = result
                 console.log(this.imgContent);
+            });
+            vAgent().then(result =>
+            {
+                this.arrayCooperationCompany = result
+                console.log(this.arrayCooperationCompany);
             });
         },
     },
@@ -59,9 +53,7 @@ export default {
         }, 3000);
     },
 }
-
 </script>
-
 <style lang="scss" scoped>
     
 </style>

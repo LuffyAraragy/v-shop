@@ -1,5 +1,8 @@
 <template>
     <div class="app-repair" v-if="isLoad">
+        <AppHeaderBlock :imgContent="imgContent">
+                    
+        </AppHeaderBlock>
         <AppWork :arrayWork="arrayWork">
 
         </AppWork>
@@ -12,19 +15,22 @@
 <script>
 import AppExampleOfWork from './AppExampleOfWork.vue';
 import AppWork from './AppWork.vue';
-import { vWork } from '@/assets/api/apiFooter'
+import AppHeaderBlock from './AppHeaderBlock.vue';
 
+import { vWork, vHeaderBlock } from '@/assets/api/apiFooter'
 
 export default {
     name: "AppRepair",
     components: {
     AppWork,
-    AppExampleOfWork
+    AppExampleOfWork,
+    AppHeaderBlock
 },
     data() {
         return {
             arrayWork: [],
             isLoad: false,
+            imgContent: [],
         }
     },
     methods: {
@@ -34,6 +40,11 @@ export default {
                     this.arrayWork = result
                     console.log(this.arrayWork);
                 })
+            vHeaderBlock().then(result =>
+                {
+                    this.imgContent = result
+                    console.log(this.imgContent);
+                }); 
         }
     },
     mounted() {

@@ -1,5 +1,8 @@
 <template>
     <div class="app-contact container">
+        <AppHeaderBlock :imgContent="imgContent">
+                    
+        </AppHeaderBlock>
         <AppCardLocation>
 
         </AppCardLocation>
@@ -11,20 +14,34 @@
 <script>
 import AppCardLocation from './AppCardLocation.vue';
 import AppQuestions from './AppQuestions.vue';
+import AppHeaderBlock from './AppHeaderBlock.vue';
 
+import { vHeaderBlock } from '@/assets/api/apiFooter'
 
 export default {
     name: "AppContact",
     components: {
         AppQuestions,
-        AppCardLocation
+        AppCardLocation,
+        AppHeaderBlock
     },
     data() {
         return {
             isLoad: false,
+            imgContent: [],
         }
     },
+    methods: {
+        check() {
+            vHeaderBlock().then(result =>
+            {
+                this.imgContent = result
+                console.log(this.imgContent);
+            }); 
+        },
+    },
     mounted() {
+        this.check();
         setTimeout(() => {
             this.isLoad = true;
         }, 3000);

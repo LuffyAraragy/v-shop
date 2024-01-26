@@ -37,6 +37,7 @@ export default {
     display: grid;
     justify-content: center;
     gap: 40px;
+    padding: 100px 0;
 }
 
 .app-pass__title {

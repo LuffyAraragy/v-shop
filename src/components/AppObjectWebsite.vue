@@ -1,11 +1,5 @@
 <template>
-    <div class="app-object-website container" v-if="isLoad">
-        <AppMenuTop>
-
-        </AppMenuTop>
-        <AppAddressOffice>
-
-        </AppAddressOffice>
+    <div class="app-object-website" v-if="isLoad">
         <div class="app-object-website__controller-content">
             <div class="app-object-website__block-information">
                 <AppProperty>
@@ -38,8 +32,6 @@
 </template>
 
 <script>
-import AppMenuTop from './AppMenuTop.vue';
-import AppAddressOffice  from './AppAddressOffice .vue';
 import AppInformationObject from './AppInformationObject.vue'
 import AppCardObject from './AppCardObject.vue'
 import AppCardLocation from './AppCardLocation.vue'
@@ -58,8 +50,6 @@ export default {
         }
     },
     components: {
-        AppMenuTop,
-        AppAddressOffice,
         AppInformationObject,
         AppCardObject,
         AppCardLocation,
