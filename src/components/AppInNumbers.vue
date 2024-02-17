@@ -52,11 +52,12 @@ export default {
 
 <style lang="scss" scoped>
 
+
 .app-in-numbers {
+    padding: 100px 20px;
     background-color: #ffffff;
 }
 .app-in-numbers__title {
-    margin-top: 100px;
     display: flex;
     justify-content: center;
 }

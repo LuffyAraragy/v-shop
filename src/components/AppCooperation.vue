@@ -4,10 +4,10 @@
 
         </AppHeaderBlock>
         <AppAgent :arrayAgent="arrayCooperation">
-
+            Агентам
         </AppAgent>
         <AppAgent :arrayAgent="arrayCooperationCompany">
-
+            Компаниям
         </AppAgent>
     </div>
 </template>

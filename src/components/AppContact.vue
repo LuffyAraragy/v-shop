@@ -1,5 +1,5 @@
 <template>
-    <div class="app-contact container">
+    <div class="app-contact">
         <AppHeaderBlock :imgContent="imgContent">
                     
         </AppHeaderBlock>

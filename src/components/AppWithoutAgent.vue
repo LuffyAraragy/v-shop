@@ -1,5 +1,5 @@
 <template >
-    <div class="without-agent" v-if="isLoad">
+    <div class="without-agent container" v-if="isLoad">
         <div class="without-agent__card-services" v-for="(array, index) in arrayWithoutAgent[0]" :key="index">
             <img :src="require(`@/img/cardAgent/${arrayWithoutAgent[0][index]}`)" alt="" class="without-agent__img">
             <div class="text text--font-weight-700 text--font-size-normalx2 without-agent__title">
@@ -11,9 +11,9 @@
             <div class="text text--font-weight-800 text--font-size-normal  text--color-green without-agent__price">
                 1231231
             </div>
-            <app-button :hasGreen="true" :hasAround="true" width="270px" class="">
+            <AppButton :hasGreen="true" :hasAround="true" class="without-agent__button">
 
-            </app-button>
+            </AppButton>
         </div>
     </div>
 </template>
@@ -24,7 +24,9 @@ import AppButton from './AppButton.vue'
 import {vCardAgent} from '@/assets/api/apiFooter'
 
 export default {
-  components: { AppButton },
+  components: { 
+        AppButton 
+    },
     name: 'AppWithoutAgent',
     data() {
         return {
@@ -57,14 +59,20 @@ export default {
 .without-agent {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
     width: 100%;
     height: 100%;
+    padding: 100px 20px;
     
+    &__button {
+        
+    }
 }
 
 .without-agent__card-services {
     display: flex;
     flex-direction: column;
+    background: #ffffff;
     width: 255px;
     height: 351px;
     gap: 20px;

@@ -4,7 +4,6 @@ import UserHome from './views/UserHome.vue'
 import UserProfile from './views/UserProfile.vue'
 import UserPosts from './views/UserPosts.vue'
 // import AppMainComponent from './components/AppMainComponent.vue'
-// import AppObjectWebsite from './components/AppObjectWebsite.vue'
 
 import AppAboutCompany from './components/AppAboutCompany.vue'
 import AppObjectWebsite from './components/AppObjectWebsite.vue'
@@ -14,6 +13,12 @@ import AppCooperation from './components/AppCooperation.vue'
 import AppRepair from './components/AppRepair.vue'
 import AppWithoutAgentPage from './components/AppWithoutAgentPage.vue'
 import AppDeliveryManagementPage from './components/AppDeliveryManagementPage.vue'
+import AppReviewsPage from './components/AppReviewsPage.vue'
+import AppCatalogPage from './components/AppCatalogPage.vue'
+import AppTestInputConpoment from './components/AppTestInputConpoment'
+
+import AppHomePage from './components/AppHomePage'
+
 
 
 export const router = createRouter({
@@ -35,18 +40,31 @@ export const router = createRouter({
         // when /users/:username/posts is matched
         { path: 'post', component: UserPosts },
 
-
-        
         // { path: 'AppObjectWebsite', component: AppObjectWebsite },
 
         { path: 'AppAboutCompany', component: AppAboutCompany },
+
+        // TODO пока не исспользую 
         { path: 'AppObjectWebsite', component: AppObjectWebsite },
+
         { path: 'AppContact', component: AppContact },
         { path: 'AppVacancies', component: AppVacancies },
         { path: 'AppCooperation', component: AppCooperation },
+
+        // TODO пока 1 ссылка делиться на 2 страници по дизайну и ремонту
         { path: 'AppRepair', component: AppRepair },
+
         { path: 'AppWithoutAgentPage', component: AppWithoutAgentPage },
         { path: 'AppDeliveryManagementPage', component: AppDeliveryManagementPage },
+        { path: 'AppReviewsPage', component: AppReviewsPage },
+
+        // TODO пока не исспользую 
+        { path: 'AppCatalogPage', component: AppCatalogPage },
+
+        { path: 'AppTestInputConpoment', component: AppTestInputConpoment },
+
+        { path: 'AppHomePage', component: AppHomePage },
+
 
       ],
     },

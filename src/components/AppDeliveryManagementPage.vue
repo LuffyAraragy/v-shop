@@ -3,12 +3,12 @@
         <AppHeaderBlock :imgContent="imgContent">
 
         </AppHeaderBlock>
-        <AppPass>
-
-        </AppPass>
         <AppAgent :arrayAgent="arrayCooperationCompany">
 
         </AppAgent>
+        <AppPass>
+
+        </AppPass>
     </div>
 </template>
 <script>

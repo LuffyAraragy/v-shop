@@ -21,7 +21,7 @@
                 </div>
             </div>
         </div>
-        <AppButton class="app-list-of-vacancies__button">
+        <AppButton class="app-list-of-vacancies__button" width="310px" :hasGreen="true" :hasOutline="true">
             Прислать резюме
         </AppButton>
     </div>
@@ -64,7 +64,9 @@ export default {
 
 <style lang="scss" scoped>
     .app-list-of-vacancies {
-        
+        margin: 100px auto;
+
+
         &__block-cards {
             margin: 40px 0;
             display: grid;

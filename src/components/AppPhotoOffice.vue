@@ -1,5 +1,5 @@
 <template>
-    <div class="app-photo-office container">
+    <div class="app-photo-office">
         <div class="app-photo-office__title text text--font-weight-800 text--font-size-big">
             Наш офис
         </div>
@@ -21,7 +21,10 @@ export default {
 
 <style lang="scss" scoped>
     .app-photo-office {
-        margin: 100px auto;
+        display: grid;
+        justify-content: center;
+        padding: 100px 0;
+        background: #ffffff;
 
         &__block-content {
             margin: 40px 0;

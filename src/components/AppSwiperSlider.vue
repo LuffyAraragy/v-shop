@@ -53,7 +53,7 @@ export default {
 @import '../assets/variables.scss';
 .app-swiper-slider {
   width: 100%;
-  height: 100%;
+  // height: 100%;
 }
 
 .v-swiper {

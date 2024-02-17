@@ -1,5 +1,5 @@
 <template lang>
-    <div id="container" class="app-card-location">
+    <div id="container" class="app-card-location container">
         
     </div>
     <!-- TODO Убрать на поздних стадиях доработки карты -->
@@ -53,15 +53,14 @@ export default {
                 map.setCenter(this.arrayCenter);
                 map.setZoom(16);
                 console.log("this.arrayCenter " + this.arrayCenter);
-                
             },
             (error) => {
                 this.error = error.message;
             }
         );
-        } else {
-            this.error = "Геолокация недоступна";
-        }
+            } else {
+                this.error = "Геолокация недоступна";
+            }
         });
     }
 }
@@ -70,9 +69,10 @@ export default {
 
 <style lang="scss">
 
-#container {
-    margin: 200px auto;
-    max-width: 1100px;
+.app-card-location {
+    margin: 100px auto;
+    // width: 100%;
+    max-width: 1112px;
     height: 395px;
 }
 

@@ -2,11 +2,11 @@
     <div class="all-content">
         <div class="app-information-object">
             <div class="app-information-object__block">
-                <div class="app-information-object__title">
+                <div class="app-information-object__title text text--font-weight-800 text--font-size-normalx2">
                     Нужна помощь специалиста?
                 </div>
                 <img src="@/img/cardObject/5c9b5dd452e03_woman_in_mirror 1.svg" alt="" class="app-information-object__img">
-                <div class="app-information-object__name">
+                <div class="app-information-object__name text text--font-weight-700 text--font-size-normal">
                     Татьяна
                 </div>
                 <div class="app-information-object__text">
@@ -25,51 +25,51 @@
             </div>
         </div>
 
-
         <div class="app-bank">
             <div class="app-bank__content" v-for="(arrays, index) in arrayBank" :key="index">
                 <img :src="require(`@/img/bank/${ arrays[0] }`)" alt="" class="app-bank__img">
                 <div class="app-bank__date-content">
-                    <div class="app-bank__percent">
+                    <div class="app-bank__percent text text--font-weight-700">
                         {{ arrays[1] }}
                     </div>
-                    <div class="app-bank__date">
+                    <div class="app-bank__date text">
                         {{ arrays[2] }}
                     </div>
                 </div>
             </div>
-            
         </div>
     <!-- Следующий контент блок -->
         <div class="app-online-calculator">
-            <button class="app-online-calculator__button">
+            <AppButton class="app-online-calculator__button">
                 Свернуть
-            </button>
-            <div class="app-online-calculator__description">
-                Онлайн-калькулятор ипотеки
+            </AppButton>
+            <div class="app-online-calculator__block-content">
+                <div class="app-online-calculator__title text text--font-weight-700 text--font-size-normalx2">
+                    Онлайн-калькулятор ипотеки
+                </div>
+                <div class="app-online-calculator__block-price" v-for="( blockPrice, blockPriceIndex ) in 4" :key="blockPriceIndex">
+                    <div class="app-online-calculator__price-description text text--font-weight-500">
+                        Срок кредитования
+                    </div>
+                    <div class="field">
+                        <input v-model="value[blockPriceIndex]" type="range" min="0" :max="valueMax[blockPriceIndex]" class="slider" />
+                        <span :v-model="value[blockPriceIndex]" class="text text--font-weight-500">
+                            {{ value[blockPriceIndex] }}
+                        </span>
+                    </div>
+                </div>
+                <div class="app-online-calculator__block-payment">
+                    <div class="app-online-calculator__monthly-payment text text--font-weight-500">
+                        Ежемесячный платёж:
+                    </div>
+                    <div class="app-online-calculator__payment-amount text text--font-weight-500 text--color-green">
+                        50 000 ₽ / мес
+                    </div>
+                </div>
+                <AppButton class="button button--green">
+                    Получить ипотеку
+                </AppButton>
             </div>
-            <div class="app-online-calculator__block-price" v-for="( blockPrice, blockPriceIndex ) in 4" :key="blockPriceIndex">
-                <div class="app-online-calculator__price-description">
-                    Срок кредитования
-                </div>
-                <div class="field">
-                    <input v-model="value[blockPriceIndex]" type="range" min="0" :max="valueMax[blockPriceIndex]" class="slider" />
-                    <span :v-model="value[blockPriceIndex]">
-                        {{ value[blockPriceIndex] }}
-                    </span>
-                </div>
-            </div>
-            <div class="app-online-calculator__block-payment">
-                <div class="app-online-calculator__monthly-payment">
-                    Ежемесячный платёж:
-                </div>
-                <div class="app-online-calculator__payment-amount">
-                    50 000 ₽ / мес
-                </div>
-            </div>
-            <button class="button button--green">
-                Получить ипотеку
-            </button>
         </div>
     </div>
     
@@ -78,14 +78,15 @@
 <script>
 
 import {vBank} from '@/assets/api/apiFooter'
+import AppButton from './AppButton.vue';
 // import Slider from '@vueform/slider'
 // import { vCardObject } from '@/assets/api/apiFooter'
 
 export default {
     name: "AppInformationObject",
     components: {
-
-    },
+    AppButton
+},
     data() {
         return {
             value: [0,0,0,0],
@@ -107,11 +108,16 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 
 .all-content {
     display: grid;
     gap: 40px;
+}
+
+.app-online-calculator__block-content {
+    
+    
 }
 
 .app-information-object {
@@ -186,15 +192,29 @@ export default {
     justify-content: space-between;
 }
 
+
 .app-online-calculator {
-    display: grid;
-    text-align: center;
-    justify-content: center;
+    
     width: 350px;
     height: 798px;
     border-radius: 5px 5px 0px 0px;
     background: #FFF;
     box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.10);
+
+    &__block-content {
+        display: grid;
+        text-align: center;
+        justify-content: center;
+    }
+
+    &__title {
+        margin-top: 50px;
+        margin-bottom: 28px;
+    }
+
+    &__block-payment {
+        margin: 20px 0 30px 0;
+    }
 }
 
 .app-online-calculator__button {

@@ -9,9 +9,11 @@
                     <div class="app-restore-password__telephone text text--font-size-normal text--color-black text--font-weight-500">
                         {{ array.text }}
                     </div>
-                    <AppInput class="app-restore-password__input">
-
-                    </AppInput>
+                    <input 
+                        type="text" 
+                        class="app-restore-password__input"
+                        v-model="vModel[index].name"
+                    >
                 </div>
             </div>
             <AppButton width="100%" class="app-restore-password__button">
@@ -27,20 +29,20 @@
 
 <script>
 import AppButton from './AppButton.vue';
-import AppInput from './AppInput.vue';
-
 
 export default {
     name: "AppRestorePassword",
     components: {
         AppButton,
-        AppInput,
     },
     data() {
         return {
             textInput: [
                 {text: "Телефон"},
-            ]
+            ],
+            vModel: [
+                {name: ""},
+            ],
         }
     }
 }

@@ -1,7 +1,22 @@
 <template>
-    <div class="app-test-movie">
+    <!-- <div class="app-test-movie">
         {{ movie.id }}
-    </div>  
+    </div> -->
+    <div class="test-relative">
+        <div>
+            ghjbsdgokrtl
+            ghjbsdgokrtl
+            ghjbsdgokrtl
+            ghjbsdgokrtl
+            ghjbsdgokrtl
+            ghjbsdgokrtl
+            ghjbsdgokrtl
+            ghjbsdgokrtl
+        </div>
+        <div class="test-absolute">
+            Огурецццццццццццццццццццццццццц
+        </div>
+    </div> 
 </template>
 
 <script>
@@ -23,5 +38,7 @@ export default {
 </script>
 
 <style lang="scss">
-    
+.test-absolute {
+    position: absolute;
+}
 </style>

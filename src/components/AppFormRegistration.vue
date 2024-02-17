@@ -9,9 +9,11 @@
                     <div class="app-form-registration__telephone text text--font-size-normal text--color-black text--font-weight-500">
                         {{ array.text }}
                     </div>
-                    <AppInput class="app-form-registration__input">
-
-                    </AppInput>
+                    <input 
+                        type="text" 
+                        class="app-form-registration__input" 
+                        v-model="vModel[index].name"
+                    >
                 </div>
             </div>
             <div class="app-form-registration__block-save-forgot-password">
@@ -55,14 +57,12 @@
 <script>
 import AppButton from './AppButton.vue';
 import AppCheckboxComponent from './AppCheckboxComponent.vue';
-import AppInput from './AppInput.vue';
 
 
 export default {
     name: "AppFormRegistration",
     components: {
     AppButton,
-    AppInput,
     AppCheckboxComponent
 },
     data() {
@@ -77,7 +77,12 @@ export default {
                 {text: "Телефон"},
                 {text: "Пароль"},
                 {text: "Повторить пароль"},
-            ]
+            ],
+            vModel: [
+                {name: ""},
+                {name: ""},
+                {name: ""},
+            ],
         }
     }
 }

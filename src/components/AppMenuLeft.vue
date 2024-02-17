@@ -6,10 +6,10 @@
                 :src="require(`@/img/leftMenu/${array.img}`)" 
             >
             <div class="content__text" v-if="index < 5">
-                {{ array.dropdownButton }}
+                <router-link :to="array.link" class="app-menu-left__link" :class="innerClass">{{ array.dropdownButton }}</router-link>
             </div>
             <div class="text" v-if="index >= 5">
-                {{ array.dropdownButton }}
+                <router-link :to="array.link" class="app-menu-left__link" :class="innerClass">{{ array.dropdownButton }}</router-link>
             </div>
         </div>
     </div>
@@ -19,11 +19,23 @@ export default {
     name: "AppMenuLeft",
     data() {
         return {
-            isLoad: false
+            isLoad: false,
+            tst: '/users/eduardo/AppDeliveryManagementPage'
         }
     },
     props: {
-        menuLeft: Array
+        menuLeft: Array,
+        hasWhite: {
+            type: Boolean,
+            default: false
+        },
+    },
+    computed: {
+        innerClass() {
+            return {
+                '--white': this.hasWhite,
+            }
+        }
     },
     mounted() {
         setTimeout(() => {
@@ -34,6 +46,14 @@ export default {
 </script>
 <style lang="scss" scoped>
 
+.app-menu-left__link {
+    text-decoration: none;
+    color: #2F2D2D;
+}
+
+.--white {
+    color: #ffffff;
+}
 .app-menu-left {
     display: flex;
     flex-flow: column;

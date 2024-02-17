@@ -12,12 +12,14 @@
                 <img :src="require(`@/img/cardItem/${card.icon}`)" alt="">
             </div>
             <div class="app-card-item__info">
-                <div class="text text--color-black card-item__text" 
-                    v-for="(text, index) in card.characteristics"
-                    :key="index"
-                >
-                <!-- TODO(Ponosonik): Не правильно применяются стили -->
-                {{ text }}
+                <div class="text text--color-black card-item__text">
+                    {{ card.characteristicsFaceCard.roomsNumber }}
+                </div>
+                <div class="text text--color-black card-item__text">
+                    {{ card.characteristicsFaceCard.maxArea }}
+                </div>
+                <div class="text text--color-black card-item__text">
+                    {{ card.characteristicsFaceCard.minNumberFloor }}/{{ card.characteristicsFaceCard.maxNumberFloor }}
                 </div>
             </div>
             <div class="text app-card-item__street">
@@ -26,7 +28,9 @@
             <div class="text text--font-weight-300 text--font-size-sm2 app-card-item__text-small">
                 {{ card.metro }}
             </div>
-            <AppButton width="310px" :hasWhite="true" :hasOutline="true">
+            <!-- <router-link to="/users/eduardo/AppReviewsPage">/users/eduardo/AppReviewsPage</router-link> -->
+            <AppButton width="310px" :hasWhite="true" :hasOutline="true" @click="apply(card.id)" class="app-card-item__button">
+            <!-- <AppButton width="310px" :hasWhite="true" :hasOutline="true" @click="testClickVueRouter"> -->
                 <div>
                     Показать телефон
                 </div>
@@ -38,6 +42,8 @@
 <script>
 import AppSwiperSlider from './AppSwiperSlider.vue';
 import AppButton from './AppButton.vue';
+
+import { useTodos } from '@/assets/api/apiFooter';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -58,6 +64,29 @@ export default {
     props: {
         card: Array
     },
+    setup() {
+        // let movieStore = useMovieStore();
+        let cardObject = useTodos();
+        return {
+            // movieStore,
+            cardObject
+        };
+    },
+    methods: {
+        testClick(element) {
+            this.cardObject.bufferCounterId = element
+            console.log("Кликнул джестко=: " + this.cardObject.bufferCounterId);
+            console.log("Кликнул element=: " + element);
+        },
+        testClickVueRouter() {
+
+            this.$router.push('/users/eduardo/AppObjectWebsite');
+        },
+        apply(element){
+            this.testClick(element)
+            this.testClickVueRouter()
+        }
+    },
     mounted() {
         setTimeout(() => {
             this.isLoad = true;
@@ -70,6 +99,7 @@ export default {
 
 .app-card-item {
     max-width: $size-block-350;
+    background: $color-white;
 
     &__img {
         width: $size-block-20;
@@ -110,6 +140,10 @@ export default {
         gap: $gap-20;
         justify-content: space-between;
         
+    }
+
+    &__button {
+        margin-bottom: 20px;
     }
 }
 

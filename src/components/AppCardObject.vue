@@ -1,18 +1,5 @@
 <template>
     <div class="app-card-object">
-        <div class="app-card-object__property-block">
-            <div class="app-card-object__title">
-
-            </div>
-        </div>
-        <div class="app-card-object__card-block">
-            <div class="app-card-object__title">
-
-            </div>
-            <div class="app-card-object__card">
-
-            </div>
-        </div>
         <div class="app-card-object__description-block block">
             <div class="app-card-object__title">
                 Описание
@@ -21,24 +8,6 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
                 velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </div>
-        </div>
-        <div class="alax">
-            <!-- <card-item
-                v-for="(array, index) in arrayFromCard"
-                :key="index"
-                :card="array"
-            >
-
-            </card-item> -->
-        </div>
-        
-        <div class="app-card-object__location-block">
-            <div class="title">
-
-            </div>
-            <div class="app-card-object__location">
-                
             </div>
         </div>
     </div>

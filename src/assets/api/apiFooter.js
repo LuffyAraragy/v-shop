@@ -1,5 +1,7 @@
 import {delayResponse} from '@/assets/utils/utilsPromis'
 
+import {defineStore} from 'pinia'
+
 export async function fetchFooterData() {
     let footerData = [    
         ["Меню","Купить","Продать","Сдать","Снять","Без агента"],
@@ -54,7 +56,6 @@ export async function vBank() {
   return delayResponse(bankContent);
 }
 
-
 export async function vCardItem() {
   let cardItem = [
     ["VladaSteblina.png", "5206 1.png", "23184 1.png"],
@@ -103,41 +104,21 @@ export async function vCardService() {
   return delayResponse(cardService);
 }
 
-// TODO Убрать в поздних версиях проекта, после отладки ветвей git (Не использую)
-// export async function vMenuLeft() {
-//   let menuContent = [
-//     ["Rectangle 5.svg", "Купить"],
-//     ["Rectangle 2.svg", "Продать"],
-//     ["Rectangle 1.svg", "Сдать"],
-//     ["Rectangle 4.svg", "Снять"],
-//     ["Rectangle 3.svg", "Без агента"],
-//     ["О компании"],
-//     ["Вакансии"],
-//     ["Ремонт"],
-//     ["Дизайн"],
-//     ["Отзывы"],
-//     ["Сотрудничество"],
-//     ["Сдать в управление"],
-//     ["Контакты"],
-//   ]
-//   return delayResponse(menuContent);
-// }
-
 export async function vMenuLeft() {
   let menuContent = [
-    {img: "Rectangle 5.svg", dropdownButton: "Купить"},
-    {img: "Rectangle 5.svg", dropdownButton: "Продать"},
-    {img: "Rectangle 5.svg", dropdownButton: "Сдать"},
-    {img: "Rectangle 5.svg", dropdownButton: "Снять"},
-    {img: "Rectangle 5.svg", dropdownButton: "Без агента"},
-    {dropdownButton: "О компании"},
-    {dropdownButton: "Вакансии"},
-    {dropdownButton: "Ремонт"},
-    {dropdownButton: "Дизайн"},
-    {dropdownButton: "Отзывы"},
-    {dropdownButton: "Сотрудничество"},
-    {dropdownButton: "Сдать в управление"},
-    {dropdownButton: "Контакты"},
+    {img: "Rectangle 5.svg", dropdownButton: "Купить", link:"/users/eduardo/AppDeliveryManagementPage"},
+    {img: "Rectangle 5.svg", dropdownButton: "Продать", link:"/users/eduardo/AppDeliveryManagementPage"},
+    {img: "Rectangle 5.svg", dropdownButton: "Сдать", link:"/users/eduardo/AppDeliveryManagementPage"},
+    {img: "Rectangle 5.svg", dropdownButton: "Снять", link:"/users/eduardo/AppDeliveryManagementPage"},
+    {img: "Rectangle 5.svg", dropdownButton: "Без агента", link:"/users/eduardo/AppWithoutAgentPage"},
+    {dropdownButton: "О компании", link:"/users/eduardo/AppAboutCompany"},
+    {dropdownButton: "Вакансии", link:"/users/eduardo/AppVacancies"},
+    {dropdownButton: "Ремонт", link:"/users/eduardo/AppRepair"},
+    {dropdownButton: "Дизайн", link:"/users/eduardo/AppRepair"},
+    {dropdownButton: "Отзывы", link:"/users/eduardo/AppReviewsPage"},
+    {dropdownButton: "Сотрудничество", link:"/users/eduardo/AppCooperation"},
+    {dropdownButton: "Сдать в управление", link:"/users/eduardo/AppDeliveryManagementPage"},
+    {dropdownButton: "Контакты", link:"/users/eduardo/AppContact"},
   ]
   return delayResponse(menuContent);
 }
@@ -244,3 +225,413 @@ export async function vHeaderBlock() {
   ]
   return delayResponse(headerBlock);
 }
+
+export async function vAppAboutCompanySwiperImg() {
+  let headerBlock = [
+    {img: "ourPartners/logo-pik 1.svg"},
+    {img: "ourPartners/LSR_newlogo-png 1.svg"},
+    {img: "ourPartners/Setl City 1.svg"},
+    {img: "ourPartners/75d37926-d1ac-4d71-902c-c55a857399e8 1.svg"},
+    {img: "ourPartners/unnamed 1.svg"},
+    {img: "ourPartners/3278709 1.svg"},
+    
+  ]
+  return delayResponse(headerBlock);
+}
+
+export async function vTestCardObject() {
+  let testCard = [
+    { 
+      img: ["VladaSteblina.png", "5206 1.png", "23184 1.png"], 
+      price: "3 900 000 ₽", 
+      icon: "love.svg",
+      characteristicsTitle: "Характеристики",
+      characteristics: [
+        {name:"Этаж:", description: "7"},
+        {name:"Всего этажей:", description: "15"},
+        {name:"Тип дома: ", description: "Монолитный"},
+        {name:"Год постройки ", description: "2019"},
+        {name:"Количество комнат: ", description: "2"},
+        {name:"Общая площадь: ", description: "73 кв. м."},
+        {name:"Жилая площадь: ", description: "56 кв. м."},
+        {name:"Площадь кухни: ", description: "12 кв. м."},
+      ],
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      additionalCharacteristicsTitle: "Дополнительные характеристики",
+      additionalCharacteristics: [ 
+        {name:"Этаж:", description: "7"},
+        {name:"Всего этажей:", description: "15"},
+        {name:"Тип дома: ", description: "Монолитный"},
+        {name:"Год постройки ", description: "2019"},
+        {name:"Количество комнат: ", description: "2"},
+        {name:"Общая площадь: ", description: "73 кв. м."},
+        {name:"Жилая площадь: ", description: "56 кв. м."},
+        {name:"Площадь кухни: ", description: "12 кв. м."},
+      ], 
+      address: "ул. Воскресенская 12А", 
+      metro: "м. Сокольники", 
+      onLiked: false
+    },
+  ]
+  return delayResponse(testCard);
+}
+
+export let useCardObject = defineStore("movieStore2", {
+  state: () =>({
+    movies:[
+      {
+        id: 1,
+        img: ["VladaSteblina.png", "5206 1.png", "23184 1.png"],
+        price: "3 900 000 ₽", 
+        icon: "love.svg",
+        characteristicsTitle: "Характеристики",
+        characteristicsFaceCard: {
+          roomsNumber: "2-ком. квартира",
+          maxArea: "73 кв. м.",
+          minNumberFloor: "2",
+          maxNumberFloor: "15",
+        },
+        characteristics: [
+          {name:"Этаж:", description: "2"},
+          {name:"Всего этажей:", description: "15"},
+          {name:"Тип дома: ", description: "Монолитный"},
+          {name:"Год постройки ", description: "2019"},
+          {name:"Количество комнат: ", description: "2"},
+          {name:"Общая площадь: ", description: "73 кв. м."},
+          {name:"Жилая площадь: ", description: "56 кв. м."},
+          {name:"Площадь кухни: ", description: "12 кв. м."},
+        ],
+        descriptionTitle: "Описание",
+        descriptionText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        additionalCharacteristicsTitle: "Дополнительные характеристики",
+        additionalCharacteristics: [
+          {name:"Этаж:", description: "2"},
+          {name:"Всего этажей:", description: "15"},
+          {name:"Тип дома: ", description: "Монолитный"},
+          {name:"Год постройки ", description: "2019"},
+          {name:"Количество комнат: ", description: "2"},
+          {name:"Общая площадь: ", description: "73 кв. м."},
+          {name:"Жилая площадь: ", description: "56 кв. м."},
+          {name:"Площадь кухни: ", description: "12 кв. м."},
+        ],
+        address: "ул. Воскресенская 12А", 
+        metro: "м. Сокольники", 
+        onLiked: false,
+        isFinished: false,
+      },
+    ]
+  })
+}) 
+
+
+
+export let useTodos = defineStore('todos', {
+  state: () => ({
+    /** @type {{ text: string, id: number, img: Array, price: string, icon: string, characteristicsTitle: string, characteristics: Array, descriptionText: string, additionalCharacteristicsTitle: string, additionalCharacteristics: Array, address: string, metro: string, onLiked: boolean, name: string, description: string, isFinished: boolean }[]} */
+    todos: [
+      {
+        id: 0,
+        img: ["VladaSteblina.png", "5206 1.png", "23184 1.png"],
+        price: "32 900 000 ₽",
+        icon: "love.svg",
+        characteristicsTitle: "Характеристики",
+        characteristicsFaceCard: {
+          roomsNumber: "4-ком. квартира",
+          maxArea: "666 кв. м.",
+          minNumberFloor: "2",
+          maxNumberFloor: "15",
+        },
+        characteristics: [
+          {name:"Этаж:", description: "2"},
+          {name:"Всего этажей:", description: "15"},
+          {name:"Тип дома: ", description: "Монолитный"},
+          {name:"Год постройки ", description: "2019"},
+          {name:"Количество комнат: ", description: "2"},
+          {name:"Общая площадь: ", description: "73 кв. м."},
+          {name:"Жилая площадь: ", description: "56 кв. м."},
+          {name:"Площадь кухни: ", description: "12 кв. м."},
+        ],
+        descriptionTitle: "Описание",
+        descriptionText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        additionalCharacteristicsTitle: "Дополнительные характеристики",
+        additionalCharacteristics: [
+          {name:"Этаж:", description: "2"},
+          {name:"Всего этажей:", description: "15"},
+          {name:"Тип дома: ", description: "Монолитный"},
+          {name:"Год постройки ", description: "2019"},
+          {name:"Количество комнат: ", description: "2"},
+          {name:"Общая площадь: ", description: "73 кв. м."},
+          {name:"Жилая площадь: ", description: "56 кв. м."},
+          {name:"Площадь кухни: ", description: "12 кв. м."},
+        ],
+        address: "ул. Воскресенская 12А", 
+        metro: "м. Сокольники", 
+        onLiked: false,
+        isFinished: false,
+      },
+      {
+        id: 1,
+        img: ["VladaSteblina.png", "5206 1.png", "23184 1.png"],
+        price: "31 900 000 ₽", 
+        icon: "love.svg",
+        characteristicsTitle: "Характеристики",
+        characteristicsFaceCard: {
+          roomsNumber: "3-ком. квартира",
+          maxArea: "777 кв. м.",
+          minNumberFloor: "2",
+          maxNumberFloor: "15",
+        },
+        characteristics: [
+          {name:"Этаж:", description: "2"},
+          {name:"Всего этажей:", description: "15"},
+          {name:"Тип дома: ", description: "Монолитный"},
+          {name:"Год постройки ", description: "2019"},
+          {name:"Количество комнат: ", description: "2"},
+          {name:"Общая площадь: ", description: "73 кв. м."},
+          {name:"Жилая площадь: ", description: "56 кв. м."},
+          {name:"Площадь кухни: ", description: "12 кв. м."},
+        ],
+        descriptionTitle: "Описание",
+        descriptionText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        additionalCharacteristicsTitle: "Дополнительные характеристики",
+        additionalCharacteristics: [
+          {name:"Этаж:", description: "2"},
+          {name:"Всего этажей:", description: "15"},
+          {name:"Тип дома: ", description: "Монолитный"},
+          {name:"Год постройки ", description: "2019"},
+          {name:"Количество комнат: ", description: "2"},
+          {name:"Общая площадь: ", description: "73 кв. м."},
+          {name:"Жилая площадь: ", description: "56 кв. м."},
+          {name:"Площадь кухни: ", description: "12 кв. м."},
+        ],
+        address: "ул. Воскресенская 12А", 
+        metro: "м. Сокольники", 
+        onLiked: false,
+        isFinished: false,
+      },
+      {
+        id: 1,
+        img: ["VladaSteblina.png", "5206 1.png", "23184 1.png"],
+        price: "31 900 000 ₽", 
+        icon: "love.svg",
+        characteristicsTitle: "Характеристики",
+        characteristicsFaceCard: {
+          roomsNumber: "3-ком. квартира",
+          maxArea: "777 кв. м.",
+          minNumberFloor: "2",
+          maxNumberFloor: "15",
+        },
+        characteristics: [
+          {name:"Этаж:", description: "2"},
+          {name:"Всего этажей:", description: "15"},
+          {name:"Тип дома: ", description: "Монолитный"},
+          {name:"Год постройки ", description: "2019"},
+          {name:"Количество комнат: ", description: "2"},
+          {name:"Общая площадь: ", description: "73 кв. м."},
+          {name:"Жилая площадь: ", description: "56 кв. м."},
+          {name:"Площадь кухни: ", description: "12 кв. м."},
+        ],
+        descriptionTitle: "Описание",
+        descriptionText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        additionalCharacteristicsTitle: "Дополнительные характеристики",
+        additionalCharacteristics: [
+          {name:"Этаж:", description: "2"},
+          {name:"Всего этажей:", description: "15"},
+          {name:"Тип дома: ", description: "Монолитный"},
+          {name:"Год постройки ", description: "2019"},
+          {name:"Количество комнат: ", description: "2"},
+          {name:"Общая площадь: ", description: "73 кв. м."},
+          {name:"Жилая площадь: ", description: "56 кв. м."},
+          {name:"Площадь кухни: ", description: "12 кв. м."},
+        ],
+        address: "ул. Воскресенская 12А", 
+        metro: "м. Сокольники", 
+        onLiked: false,
+        isFinished: false,
+      },
+      {
+        id: 1,
+        img: ["VladaSteblina.png", "5206 1.png", "23184 1.png"],
+        price: "31 900 000 ₽", 
+        icon: "love.svg",
+        characteristicsTitle: "Характеристики",
+        characteristicsFaceCard: {
+          roomsNumber: "3-ком. квартира",
+          maxArea: "777 кв. м.",
+          minNumberFloor: "2",
+          maxNumberFloor: "15",
+        },
+        characteristics: [
+          {name:"Этаж:", description: "2"},
+          {name:"Всего этажей:", description: "15"},
+          {name:"Тип дома: ", description: "Монолитный"},
+          {name:"Год постройки ", description: "2019"},
+          {name:"Количество комнат: ", description: "2"},
+          {name:"Общая площадь: ", description: "73 кв. м."},
+          {name:"Жилая площадь: ", description: "56 кв. м."},
+          {name:"Площадь кухни: ", description: "12 кв. м."},
+        ],
+        descriptionTitle: "Описание",
+        descriptionText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        additionalCharacteristicsTitle: "Дополнительные характеристики",
+        additionalCharacteristics: [
+          {name:"Этаж:", description: "2"},
+          {name:"Всего этажей:", description: "15"},
+          {name:"Тип дома: ", description: "Монолитный"},
+          {name:"Год постройки ", description: "2019"},
+          {name:"Количество комнат: ", description: "2"},
+          {name:"Общая площадь: ", description: "73 кв. м."},
+          {name:"Жилая площадь: ", description: "56 кв. м."},
+          {name:"Площадь кухни: ", description: "12 кв. м."},
+        ],
+        address: "ул. Воскресенская 12А", 
+        metro: "м. Сокольники", 
+        onLiked: false,
+        isFinished: false,
+      },
+      {
+        id: 1,
+        img: ["VladaSteblina.png", "5206 1.png", "23184 1.png"],
+        price: "31 900 000 ₽", 
+        icon: "love.svg",
+        characteristicsTitle: "Характеристики",
+        characteristicsFaceCard: {
+          roomsNumber: "3-ком. квартира",
+          maxArea: "777 кв. м.",
+          minNumberFloor: "2",
+          maxNumberFloor: "15",
+        },
+        characteristics: [
+          {name:"Этаж:", description: "2"},
+          {name:"Всего этажей:", description: "15"},
+          {name:"Тип дома: ", description: "Монолитный"},
+          {name:"Год постройки ", description: "2019"},
+          {name:"Количество комнат: ", description: "2"},
+          {name:"Общая площадь: ", description: "73 кв. м."},
+          {name:"Жилая площадь: ", description: "56 кв. м."},
+          {name:"Площадь кухни: ", description: "12 кв. м."},
+        ],
+        descriptionTitle: "Описание",
+        descriptionText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        additionalCharacteristicsTitle: "Дополнительные характеристики",
+        additionalCharacteristics: [
+          {name:"Этаж:", description: "2"},
+          {name:"Всего этажей:", description: "15"},
+          {name:"Тип дома: ", description: "Монолитный"},
+          {name:"Год постройки ", description: "2019"},
+          {name:"Количество комнат: ", description: "2"},
+          {name:"Общая площадь: ", description: "73 кв. м."},
+          {name:"Жилая площадь: ", description: "56 кв. м."},
+          {name:"Площадь кухни: ", description: "12 кв. м."},
+        ],
+        address: "ул. Воскресенская 12А", 
+        metro: "м. Сокольники", 
+        onLiked: false,
+        isFinished: false,
+      },
+    ],
+    /** @type {'all' | 'finished' | 'unfinished'} */
+    filter: 'all',
+    // type will be automatically inferred to number
+    nextId: 2,
+    arrayBufferFilter: [],
+    bufferCounterId: 0,
+  }),
+  getters: {
+    finishedTodos(state) {
+      // autocompletion! ✨
+      return state.todos.filter((todo) => todo.isFinished)
+    },
+    // unfinishedTodos(state) {
+    //   return state.todos.filter((todo) => !todo.isFinished)
+    // },
+    // TODO Начал разрабатывать фильтр
+    // unfinishedTodos(state) {
+    //   return state.todos.filter(function(todo) {
+    //     if(todo.id==0 && todo.rooms=="2") {
+    //       return !todo.isFinished;
+    //     }
+        
+    //   })
+    // },
+    unfinishedTodos(state) {
+      return state.todos.filter(function(todo) {
+        // TODO 1 заменить первый элемент на "вторичку"
+        // if(todo.id==0 && todo.rooms=="4-ком. квартира" && todo.price=="32 900 000 ₽" && todo.address=="ул. Воскресенская 12А") {
+        if(todo.id == state.arrayBufferFilter[0] && todo.characteristicsFaceCard.roomsNumber==state.arrayBufferFilter[1] && todo.price == state.arrayBufferFilter[2] && todo.address==state.arrayBufferFilter[3]) {
+          return !todo.isFinished;
+        }
+      })
+    },
+    /**
+     * @returns {{ text: string, id: number, city: string, img: Array, price: string, icon: string, characteristicsTitle: string, characteristics: Array, descriptionText: string, additionalCharacteristicsTitle: string, additionalCharacteristics: Array, address: string, metro: string, onLiked: boolean, name: string, description: string, isFinished: boolean }[]}
+     */
+    filteredTodos() {
+      if (this.filter === 'finished') {
+        // call other getters with autocompletion ✨
+        return this.finishedTodos
+      } else if (this.filter === 'unfinished') {
+        return this.unfinishedTodos
+      }
+      return this.todos
+    },
+  },
+  actions: {
+    // any amount of arguments, return a promise or not
+    // Поставить данные параметры , area, floor, minPrice, maxPrice, surname, name, patronymic, telephone, email
+    addTodo(text, pCity, pAddress, pFloor, pMinPrice, pMaxPrice, pSurname, pName, pPatronymic, pTelephone, pEmail) {
+      // you can directly mutate the state
+      this.todos.push({ 
+        text,
+        // кастыль сверху
+        id: this.nextId++,
+        // TODO сделать динамическим
+        img: ["VladaSteblina.png", "5206 1.png", "23184 1.png"],
+        price: pMaxPrice,
+        // TODO сделать динамическим
+        onLiked: false,
+        characteristics: [
+          {name:"Этаж:", description: "2"},
+          {name:"Всего этажей:", description: "15"},
+          {name:"Тип дома: ", description: "Монолитный"},
+          {name:"Год постройки ", description: "2019"},
+          {name:"Количество комнат: ", description: "2"},
+          {name:"Общая площадь: ", description: "73 кв. м."},
+          {name:"Жилая площадь: ", description: "56 кв. м."},
+          {name:"Площадь кухни: ", description: "12 кв. м."},
+        ],
+        additionalCharacteristics: [
+          {name:"Этаж:", description: pFloor},
+          {name:"Всего этажей:", description: "15"},
+          {name:"Тип дома: ", description: "Монолитный"},
+          {name:"Год пост ройки ", description: "2019"},
+          {name:"Количество комнат: ", description: "2"},
+          {name:"Общая площадь: ", description: "73 кв. м."},
+          {name:"Жилая площадь: ", description: "56 кв. м."},
+          {name:"Площадь кухни: ", description: "12 кв. м."},
+        ],
+        city: pCity,
+        address: pAddress,
+        descriptionTitle: "Описание",
+        descriptionText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        // TODO сделать динамическим
+        rooms: "2",
+        floor: pFloor,
+        // TODO сделать динамическим
+        state: "Хорошо",
+        minPrice: pMinPrice,
+        maxPrice: pMaxPrice,
+        surname: pSurname,
+        name: pName,
+        patronymic: pPatronymic,
+        telephone: pTelephone,
+        email: pEmail,
+        isFinished: false,
+      })
+    },
+    addBufferNumber(element) {
+      this.bufferCounterId = element;
+      console.log(this.bufferCounterId);
+    }
+  },
+})

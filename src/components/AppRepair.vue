@@ -6,7 +6,7 @@
         <AppWork :arrayWork="arrayWork">
 
         </AppWork>
-        <AppExampleOfWork>
+        <AppExampleOfWork class="container">
             
         </AppExampleOfWork>
     </div>

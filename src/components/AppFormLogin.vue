@@ -9,9 +9,7 @@
                     <div class="app-form-login__telephone text text--font-size-normal text--color-black text--font-weight-500">
                         {{ array.text }}
                     </div>
-                    <AppInput class="app-form-login__input">
-
-                    </AppInput>
+                    <input type="text" class="app-form-login__input" v-model="vModel[index].name">
                 </div>
             </div>
             <div class="app-form-login__block-save-forgot-password">
@@ -55,14 +53,12 @@
 <script>
 import AppButton from './AppButton.vue';
 import AppCheckboxComponent from './AppCheckboxComponent.vue';
-import AppInput from './AppInput.vue';
 
 
 export default {
     name: "AppFormLogin",
     components: {
     AppButton,
-    AppInput,
     AppCheckboxComponent
 },
     data() {
@@ -76,7 +72,11 @@ export default {
             textInput: [
                 {text: "Телефон"},
                 {text: "Пароль"},
-            ]
+            ],
+            vModel: [
+                {name: ""},
+                {name: ""},
+            ],
         }
     }
 }

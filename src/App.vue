@@ -1,5 +1,14 @@
 <template>
   <div class="app">
+    <!-- <AppLocationComponent>
+      
+    </AppLocationComponent>
+    <AppFilter>
+
+    </AppFilter> -->
+    <AppHomePage>
+      
+    </AppHomePage>
     <h1>Nested Views</h1>
     <p>
       <router-link to="/users/eduardo">/users/eduardo</router-link>
@@ -25,6 +34,13 @@
       <router-link to="/users/eduardo/AppWithoutAgentPage">/users/eduardo/AppWithoutAgentPage</router-link>
       <br />
       <router-link to="/users/eduardo/AppDeliveryManagementPage">/users/eduardo/AppDeliveryManagementPage</router-link>
+      <br />
+      <router-link to="/users/eduardo/AppReviewsPage">/users/eduardo/AppReviewsPage</router-link>
+      <br />
+      <router-link to="/users/eduardo/AppCatalogPage">/users/eduardo/AppCatalogPage</router-link>
+      <br />
+      <router-link to="/users/eduardo/AppTestInputConpoment">/users/eduardo/AppTestInputConpoment</router-link>
+      <br />
     </p>    
     <!-- TODO это шаблон всех страниц, сюда передаються данные внутреннего контента через верхнии ссылки to="/users/eduardo/post" -->
     <AppMainComponent>
@@ -32,10 +48,10 @@
     </AppMainComponent>
 
     <!-- TODO формы сайта -->
-    <AppObject :arrayVObjectItem="arrayVObject">
+    <!-- <AppObject :arrayVObjectItem="arrayVObject">
 
-    </AppObject>
-    <AppRestorePassword>
+    </AppObject> -->
+    <!-- <AppRestorePassword>
       
     </AppRestorePassword>
     <AppFormRegistration>
@@ -43,10 +59,10 @@
     </AppFormRegistration>
     <AppFormLogin>
       
-    </AppFormLogin>
+    </AppFormLogin> -->
     <!-- TODO конец форм сайта -->
 
-    <AppMenuLeft :menuLeft="appMenuLeft">
+    <!-- <AppMenuLeft :menuLeft="appMenuLeft">
 
     </AppMenuLeft>
     <AppObjectWebsite>
@@ -70,18 +86,18 @@
     </AppRepair>
     <menu-left>
 
-    </menu-left>
-    <AppCardItem
+    </menu-left> -->
+    <!-- <AppCardItem
       v-for="(array, index) in arrayCard"
       :key="index"
       :card="array"
     >
 
-    </AppCardItem>
+    </AppCardItem> -->
     <!-- <app-swiper-slider>
       
     </app-swiper-slider> -->
-    <app-input :placeholder="placeholder" width="200px">
+    <!-- <app-input :placeholder="placeholder" width="200px">
       
     </app-input>
     <app-button :hasWhite="true" width="270px" :hasOutline="true" :hasSmall="true" class="">
@@ -98,36 +114,36 @@
     </app-button>
     <app-button :hasBlack="true" :hasAround="true" width="270px" class="">
       hello world
-    </app-button>
-    <AppComponents v-if="isLoad" :menuLeft="appMenuLeft">
+    </app-button> -->
+    <!-- <AppComponents v-if="isLoad" :menuLeft="appMenuLeft">
 
-    </AppComponents>
+    </AppComponents> -->
     
-    <AppFooter>
+    <!-- <AppFooter>
 
-    </AppFooter>
+    </AppFooter> -->
     
-    <AppYourLocation>
+    <!-- <AppYourLocation>
 
-    </AppYourLocation>
-    <AppAgent>
+    </AppYourLocation> -->
+    <!-- <AppAgent>
 
-    </AppAgent>
-    <AppQuestions>
+    </AppAgent> -->
+    <!-- <AppQuestions>
       
-    </AppQuestions>
-    <AppPurpose>
+    </AppQuestions> -->
+    <!-- <AppPurpose>
 
-    </AppPurpose>
-    <AppPass>
+    </AppPurpose> -->
+    <!-- <AppPass>
 
-    </AppPass>
+    </AppPass> -->
     
-    <AppCardObject>
+    <!-- <AppCardObject>
 
-    </AppCardObject>
+    </AppCardObject> -->
 
-<div class="swiper-content-1">
+<!-- <div class="swiper-content-1">
   
   <swiper class="v-swiper swiper-thumbs"
     :modules="modules"
@@ -149,16 +165,16 @@
     <swiper-slide>Slide 2</swiper-slide>
     <swiper-slide>Slide 3</swiper-slide>
   </swiper>
-</div>
-    <AppHeaderBlock :imgContent="imgContent">
+</div> -->
+    <!-- <AppHeaderBlock :imgContent="imgContent">
 
-    </AppHeaderBlock>
-    <div class="movies">
+    </AppHeaderBlock> -->
+    <!-- <div class="movies">
       
     </div>
     <AppTestMovie v-for="movie in movieStore.movies" :key="movie.id" :movie="movie">
       
-    </AppTestMovie>
+    </AppTestMovie> -->
   </div>
   
 </template> 
@@ -166,76 +182,81 @@
 <script>
 
 // Основные страницы
-import AppAboutCompany from './components/AppAboutCompany.vue';
-import AppObjectWebsite from './components/AppObjectWebsite.vue';
+// import AppAboutCompany from './components/AppAboutCompany.vue';
+// import AppObjectWebsite from './components/AppObjectWebsite.vue';
 
-import AppComponents from './components/AppComponents.vue';
-import AppFooter from './components/AppFooter.vue';
-import AppYourLocation from './components/AppYourLocation.vue';
-import AppAgent from './components/AppAgent.vue';
-import AppQuestions from './components/AppQuestions.vue';
-import AppPurpose from './components/AppPurpose.vue';
-import AppObject from './components/AppObject.vue';
-import AppPass from './components/AppPass.vue';
-import AppMenuLeft from './components/AppMenuLeft.vue';
-import AppFormLogin from './components/AppFormLogin.vue'
-import AppFormRegistration from './components/AppFormRegistration.vue'
-import AppRestorePassword from './components/AppRestorePassword.vue'
+// import AppComponents from './components/AppComponents.vue';
+// import AppFooter from './components/AppFooter.vue';
+// import AppYourLocation from './components/AppYourLocation.vue';
+// import AppAgent from './components/AppAgent.vue';
+// import AppQuestions from './components/AppQuestions.vue';
+// import AppPurpose from './components/AppPurpose.vue';
+// import AppObject from './components/AppObject.vue';
+// import AppPass from './components/AppPass.vue';
+// import AppMenuLeft from './components/AppMenuLeft.vue';
+// import AppFormLogin from './components/AppFormLogin.vue'
+// import AppFormRegistration from './components/AppFormRegistration.vue'
+// import AppRestorePassword from './components/AppRestorePassword.vue'
 
 
-import AppHeaderBlock from './components/AppHeaderBlock.vue'
+// import AppHeaderBlock from './components/AppHeaderBlock.vue'
 import { Navigation, Pagination, A11y, Thumbs } from 'swiper/modules';
 
 // Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from 'swiper/vue';
+// import { Swiper, SwiperSlide } from 'swiper/vue';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import AppButton from './components/AppButton.vue';
-import AppCardItem from './components/AppCardItem.vue';
-import AppInput from './components/AppInput.vue';
+// import AppButton from './components/AppButton.vue';
+// import AppCardItem from './components/AppCardItem.vue';
+// import AppInput from './components/AppInput.vue';
 // import AppSwiperSlider from './components/AppSwiperSlider.vue';
 import {vCardService, vMenuLeft, vAddObject, vServiceCardList, vHeaderBlock} from '@/assets/api/apiFooter'
-import AppCardObject from './components/AppCardObject.vue';
+// import AppCardObject from './components/AppCardObject.vue';
 
-import AppTestMovie from './components/AppTestMovie.vue';
+// import AppTestMovie from './components/AppTestMovie.vue';
 import { useMovieStore } from './stores/MovieStore';
-import AppVacancies from './components/AppVacancies.vue';
-import AppContact from './components/AppContact.vue';
+// import AppVacancies from './components/AppVacancies.vue';
+// import AppContact from './components/AppContact.vue';
 import AppMainComponent from './components/AppMainComponent.vue';
+import AppHomePage from './components/AppHomePage.vue';
+// import AppFilter from './components/AppFilter.vue';
+// import AppLocationComponent from './components/AppLocationComponent.vue';
+
 
 export default {
   name: 'App',
   components: {
-    AppComponents,
-    AppFooter,
-    AppYourLocation,
-    AppAgent,
-    AppQuestions,
-    AppPurpose,
-    AppObject,
-    AppPass,
-    Swiper,
-    SwiperSlide,
-    AppHeaderBlock,
-    AppButton,
-    AppCardItem,
-    AppInput,
-    AppCardObject,
-    AppTestMovie,
-    AppObjectWebsite,
-    AppMenuLeft,
-    AppAboutCompany,
-    AppVacancies,
-    AppContact,
-    AppFormLogin,
-    AppFormRegistration,
-    AppRestorePassword,
-    AppMainComponent
-  },
+    // AppComponents,
+    // AppFooter,
+    // AppYourLocation,
+    // AppAgent,
+    // AppQuestions,
+    // AppPurpose,
+    // AppObject,
+    // AppPass,
+    // Swiper,
+    // SwiperSlide,
+    // AppHeaderBlock,
+    // AppButton,
+    // AppCardItem,
+    // AppInput,
+    // AppCardObject,
+    // AppTestMovie,
+    // AppObjectWebsite,
+    // AppMenuLeft,
+    // AppAboutCompany,
+    // AppVacancies,
+    // AppContact,
+    // AppFormLogin,
+    // AppFormRegistration,
+    // AppRestorePassword,
+    AppMainComponent,
+    AppHomePage
+},
   data() {
     return {
       isLoad: false,
@@ -381,11 +402,36 @@ export default {
   }
 }
 
+.app-input {
+    max-width: 100%;
+    padding: 16px 20px;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+    background: #949494;
+    // background: aqua;
+    color: #000;
+
+    &--outline {
+        border: 2px solid #F3F3F3;
+    }
+
+    &--gray {
+        background-color: #F6F6F6;
+    }
+
+    &--size {
+      width: 310px;
+    }
+}
+
 .app {
   position: relative;
   width: 100%;
   height: 100%;
   background: #F8F7F7;
+  // background: aqua;
+
 }
 
 .block {
@@ -425,7 +471,6 @@ export default {
 
 .v-swiper {
   width: 300px;
-  height: 300px;
 }
 
 .button {
@@ -483,18 +528,38 @@ export default {
   }
 
 .input {
-  width: 200px;
-  height: 50px;
+  // TODO Кастыль
+  width: 300px;
+
+  padding: 10px;
+  max-width: 100%;
   border-radius: 5px;
   border: 2px solid #F3F3F3;
-  background: #FFF;
+  background: #ffffff;
   color: #2F2D2D;
-  text-align: center;
   font-family: Geometria;
-  font-size: 14px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 300;
   line-height: 40px;
+
+  &--border-none {
+    border: none;
+  }
+
+  &--text-center {
+    text-align: center;
+  }
+
+  &--italics:focus {
+    font-weight: 800;
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  &--width-size {
+    max-width: 310px;
+  }
+  
 }
 
 .text__h2 {

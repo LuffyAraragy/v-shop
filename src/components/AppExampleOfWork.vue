@@ -1,9 +1,10 @@
 <template>
-    <div class="app-example-of-work container" v-if="isLoad">
+    <div class="app-example-of-work" v-if="isLoad">
         <div class="app-example-of-work__title text text--font-weight-800 text--font-size-big text--color-black">
             Примеры наших работ
         </div>
-        <swiper class="v-swiper swiper-thumbs app-example-of-work__top-swiper"
+        <div class="app-example-of-work__block-all-swiper container">
+            <swiper class="v-swiper swiper-thumbs app-example-of-work__top-swiper"
                 :modules="modules"
                 :slides-per-view="1"
                 navigation
@@ -43,6 +44,10 @@
                 >
             </swiper-slide>
         </swiper>
+        </div>
+        <!-- <AppButton class="app-example-of-work__button" width="310px">
+
+        </AppButton> -->
     </div>
 </template>
 
@@ -56,13 +61,15 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+// import AppButton from './AppButton.vue';
 
 export default {
     name: "AppExampleOfWork",
     components: {
-        Swiper,
-        SwiperSlide,
-    },
+    Swiper,
+    SwiperSlide,
+    // AppButton
+},
     data() {
         return {
             isLoad: false,
@@ -94,9 +101,8 @@ export default {
 <style lang="scss" scoped>
 
 .app-example-of-work {
-    width: 100%;
-    height: 100%;
-    margin: 100px auto;
+    max-width: 700px;
+    padding: 100px 20px;
 
     &__title {
         text-align: center;
@@ -105,9 +111,8 @@ export default {
     &__top-swiper {
         margin-top: 40px;
         margin-bottom: 16px;
-        width: 729px;
-        height: 486px;
-
+        max-width: 729px;
+        max-height: 486px;
     }
 
     &__img {
@@ -122,6 +127,10 @@ export default {
         height: 100%;
         max-width: 729px;
         max-height: 486px;
+    }
+
+    &__button {
+        margin: 40px auto 0 auto;
     }
 }
 

@@ -57,6 +57,6 @@ export default {
 
 <style lang="scss" scoped>
 .app-vacancies {
-    margin: 100px auto;
+    
 }
 </style>

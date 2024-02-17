@@ -1,7 +1,9 @@
 <template>
     <div class="app-agent" v-if="isLoad">
         <div class="app-agent__title text text--font-weight-800 text--font-size-big">
-            Агент
+            <slot>
+                
+            </slot>
         </div>
         <div class="block-content">
             <div class="app-agent__content"

@@ -80,8 +80,9 @@ export default {
     }
 
     &__title {
-        text-align: center;
+        margin: 0 auto;
         width: 920px;
+        text-align: center;
     }
     
     &__background-img {
@@ -91,7 +92,7 @@ export default {
 
     &__content-text-img {
         display: flex;
-        // justify-content: space-around;
+        justify-content: center;
         gap: 70px;
     }
 
@@ -111,9 +112,10 @@ export default {
         gap: 15px;
     }
 
-    // &__text {
-    //     width: 258px;
-    // }
+    &__text {
+        display: flex;
+        align-items: center;
+    }
 }
 
 

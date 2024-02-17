@@ -1,21 +1,21 @@
 <template>
-    <div class="app-about-company">
+    <div class="app-about-company" v-if="isLoad">
         <AppHeaderBlock :imgContent="imgContent">
                     
         </AppHeaderBlock>
-        <AppSwiperSliderComponent>
-            <AppCardEmployees>
+            <AppSwiperSliderComponent class="container">
+                <AppCardEmployees>
 
-            </AppCardEmployees>
-        </AppSwiperSliderComponent>
+                </AppCardEmployees>
+            </AppSwiperSliderComponent>
         <AppPass>
 
         </AppPass>
-        <AppImgAndText>
+        <!-- <AppImgAndText>
             <AppListBenefits>
 
             </AppListBenefits>
-        </AppImgAndText>
+        </AppImgAndText> -->
         <AppImgAndText>
             <div class="text">
                 Как для каждого охотника, наш трофей - это удовлетворённый клиент, получивший желаемое. 
@@ -30,7 +30,7 @@
         <AppInNumbers>
 
         </AppInNumbers>
-        <AppSwiperSliderComponent>
+        <AppSwiperSliderComponent class="container" :swiperEffect="dataSwiperEffect" swiperCenteredSlides="false">
             <AppCardEmployees>
 
             </AppCardEmployees>
@@ -38,38 +38,32 @@
         <AppPhotoOffice>
 
         </AppPhotoOffice>
-        <Swiper class="v-swiper swiper-thumbs container"
-            :modules="modules"
-            :slides-per-view="3"
-            :space-between="50"
-            centered-slides="true"
-            grab-cursor="true"
-            loop="true"
-            :freeMode="true"
-
-            :watchSlidesProgress="true"
-            :watch-slides-visibility="true"
-
-            effect="coverflow"
-            :coverflowEffect="{
-                rotate: 0,
-                stretch: 0,
-                depth: 0,
-                modifier: 1,
-                slideShadows: true,
-            }"
-
-            navigation
-            @swiper="onSwiper"
-            @slideChange="onSlideChange"
-        >
-            <SwiperSlide 
-                v-for="(array, index) in 12"
-                :key="index"
-            >
-                <img src="@/img/ourPartners/logo-pik 1.svg" class="app-about-company__img">
-            </SwiperSlide>
-        </Swiper>
+        <div class="app-about-company__block">
+            <div class="app-about-company__block2 container">
+                <div class="app-about-company__title text text--font-weight-800 text--font-size-big">
+                    Наши партнёры
+                </div>
+                <Swiper class="v-swiper swiper-thumbs"
+                    :modules="modules"
+                    :slides-per-view="6"
+                    :space-between="10"
+                    :centered-slides="false"
+                    :grab-cursor="true"
+                    :loop="true"
+                    :freeMode="true"
+                    navigation
+                >
+                    <SwiperSlide 
+                        v-for="(array, index) in imgSwiperContent"
+                        :key="index"
+                    >
+                        <img
+                            :src="require(`@/img/${array.img}`)"
+                            class="app-about-company__img">
+                    </SwiperSlide>
+                </Swiper>
+            </div>
+        </div>
     </div>
 </template>
 <script>
@@ -88,9 +82,9 @@ import 'swiper/css/scrollbar';
 import { Navigation, A11y, Thumbs, EffectCoverflow } from 'swiper/modules';
 import AppSwiperSliderComponent from './AppSwiperSliderComponent.vue';
 
-import { vOurEmployees, vHeaderBlock } from '@/assets/api/apiFooter'
+import { vOurEmployees, vHeaderBlock, vAppAboutCompanySwiperImg } from '@/assets/api/apiFooter'
 import AppCardEmployees from './AppCardEmployees.vue';
-import AppListBenefits from './AppListBenefits.vue';
+// import AppListBenefits from './AppListBenefits.vue';
 import AppHeaderBlock from './AppHeaderBlock.vue';
 
 
@@ -106,13 +100,16 @@ export default {
         SwiperSlide,
         AppSwiperSliderComponent,
         AppCardEmployees,
-        AppListBenefits,
+        // AppListBenefits,
         AppHeaderBlock
     },
     data() {
         return {
+            isLoad: false,
             arrayOurEmployees: [],
             imgContent: [],
+            imgSwiperContent: [],
+            dataSwiperEffect: "coverflow",
         }
     },
     setup() {
@@ -139,7 +136,12 @@ export default {
             {
                 this.imgContent = result
                 console.log(this.imgContent);
-            }); 
+            });
+            vAppAboutCompanySwiperImg().then(result =>
+            {
+                this.imgSwiperContent = result
+                console.log(this.imgSwiperContent);
+            });
         },
     },
     mounted() {
@@ -161,26 +163,43 @@ export default {
 // .swiper-slide-next {
 //     opacity: 0.5;
 // }
+.swiper-slide {
+    // background: #F8F7F7;
+}
+.app-about-company {
+    &__block {
+        background: #ffffff;
+    }
+
+    &__title {
+        text-align: center;
+    }
+}
+.testeses {
+
+}
 
 .v-swiper {
-  width: 100%;
-  height: 100%;
-}
-.swiper-thumbs {
+    padding-top: 40px;
+    padding-bottom: 100px;
     width: 100%;
+
+    // background: #ffffff;
 }
 
-.swiper-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+// .swiper-wrapper {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+// }
 
 .swiper-slide {
     display: flex;
     align-items: center;
     justify-content: center;
     background: #F8F7F7;
+    width: 160px;
+    height: 100px;
 }
 
 .app-about-company__img {

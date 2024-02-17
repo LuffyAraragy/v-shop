@@ -3,22 +3,19 @@
         <AppMenuTop>
 
         </AppMenuTop>
-        <div class="app-main-component__block">
-            <div class="app-main-component__left-menu">
-                <AppMenuLeft>
+        <div class="app-main-component__left-menu">
+            <AppMenuLeft :menuLeft="appMenuLeft">
 
-                </AppMenuLeft>
-            </div>
+            </AppMenuLeft>
+        </div>
+        <div class="app-main-component__block">
             <div class="app-main-component__main-content">
                 <AppAddressOffice>
             
                 </AppAddressOffice>
                 <!-- TODO ponosonik: Сюда передавать данные блоков -->
-                <!-- <AppAboutCompany>
-
-                </AppAboutCompany> -->
                 <router-view>
-                    
+                
                 </router-view>
             </div>
         </div>
@@ -34,6 +31,7 @@ import AppAddressOffice from './AppAddressOffice .vue';
 import AppFooter from './AppFooter.vue';
 import AppMenuLeft from './AppMenuLeft.vue';
 import AppMenuTop from './AppMenuTop.vue';
+import { vMenuLeft } from '@/assets/api/apiFooter'
 
 
 export default {
@@ -48,9 +46,20 @@ export default {
     data() {
         return {
             isLoad: false,
+            appMenuLeft: [],
         }
     },
+    methods: {
+        check() {
+            vMenuLeft().then(result =>
+            {
+                this.appMenuLeft = result
+                console.log(this.appMenuLeft);
+            });  
+        },
+    },
     mounted() {
+        this.check();
         setTimeout(() => {
             this.isLoad = true;
         }, 3000);
@@ -60,11 +69,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .app-main-component {
     // margin: 0 auto;
+    position: relative;
 
     &__block {
         // display: flex;
+        // position: relative;
     }
 // Чёт подсказывает что это костыль
     &__main-content {
@@ -77,6 +89,7 @@ export default {
     }
 
     &__left-menu {
+        z-index: 2;
         position: absolute;
     }
 }
