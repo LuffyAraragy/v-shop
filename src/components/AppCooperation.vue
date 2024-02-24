@@ -15,7 +15,7 @@
 <script>
 import AppAgent from './AppAgent.vue';
 
-import { vAgent, vCompany, vHeaderBlock } from '@/assets/api/apiFooter'
+import { vAgent, vCompany, vHeaderBlockCooperation } from '@/assets/api/apiFooter'
 import AppHeaderBlock from './AppHeaderBlock.vue';
 
 
@@ -45,7 +45,7 @@ export default {
                 this.arrayCooperationCompany = result
                 console.log(this.arrayCooperationCompany);
             });
-            vHeaderBlock().then(result =>
+            vHeaderBlockCooperation().then(result =>
             {
                 this.imgContent = result
                 console.log(this.imgContent);

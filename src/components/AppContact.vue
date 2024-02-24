@@ -16,7 +16,7 @@ import AppCardLocation from './AppCardLocation.vue';
 import AppQuestions from './AppQuestions.vue';
 import AppHeaderBlock from './AppHeaderBlock.vue';
 
-import { vHeaderBlock } from '@/assets/api/apiFooter'
+import { vHeaderBlockContact } from '@/assets/api/apiFooter'
 
 export default {
     name: "AppContact",
@@ -33,7 +33,7 @@ export default {
     },
     methods: {
         check() {
-            vHeaderBlock().then(result =>
+            vHeaderBlockContact().then(result =>
             {
                 this.imgContent = result
                 console.log(this.imgContent);

@@ -9,7 +9,16 @@
                 <div class="text text--font-weight-800 text--font-size-normalx2 price">
                     {{ card.price }}
                 </div>
-                <img :src="require(`@/img/cardItem/${card.icon}`)" alt="">
+                <button class="app-card-item__button-like" @click="clickIconLickController(card.onLiked, card.id)">
+                    <div v-if="card.onLiked == true">
+                        <img :src="require(`@/img/cardItem/${card.iconLike}`)" alt="">
+                        <!-- {{ card.onLiked }} -->
+                    </div>
+                    <div v-if="card.onLiked == false">
+                        <img :src="require(`@/img/cardItem/${card.icon}`)" alt="">
+                        <!-- {{ card.onLiked }} -->
+                    </div>
+                </button>
             </div>
             <div class="app-card-item__info">
                 <div class="text text--color-black card-item__text">
@@ -51,11 +60,11 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 export default {
-  components: { 
+    name: "AppCardItem",
+    components: { 
         AppButton,
         AppSwiperSlider,
     },
-    name: "AppCardItem",
     data() {
         return {
             isLoad: false,
@@ -79,12 +88,18 @@ export default {
             console.log("Кликнул element=: " + element);
         },
         testClickVueRouter() {
-
             this.$router.push('/users/eduardo/AppObjectWebsite');
         },
         apply(element){
             this.testClick(element)
             this.testClickVueRouter()
+        },
+        clickIconLickController(onLikedCard,idCard) {
+            // this.cardObject.todos[idCard].onLiked = !this.cardObject.todos[idCard].onLiked;
+            // console.log(this.cardObject.todos[idCard])
+            this.cardObject.todos[idCard].onLiked = !onLikedCard;
+            // alert(this.cardObject.todos[idCard].onLiked)
+            
         }
     },
     mounted() {
@@ -144,6 +159,12 @@ export default {
 
     &__button {
         margin-bottom: 20px;
+    }
+
+    &__button-like {
+        background: none;
+        border: none;
+        cursor: pointer;
     }
 }
 

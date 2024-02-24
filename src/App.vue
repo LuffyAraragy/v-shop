@@ -1,9 +1,9 @@
 <template>
-  <div class="app">
-    <!-- <AppLocationComponent>
+  <div class="app" id="#app">
+    <AppLocationComponent>
       
     </AppLocationComponent>
-    <AppFilter>
+    <!-- <AppFilter>
 
     </AppFilter> -->
     <AppHomePage>
@@ -13,8 +13,7 @@
     <p>
       <router-link to="/users/eduardo">/users/eduardo</router-link>
       <br />
-      <router-link to="/users/eduardo/profile"
-        >/users/eduardo/profile</router-link
+      <router-link to="/users/eduardo/profile">/users/eduardo/profile</router-link
       >
       <br />
       <router-link to="/users/eduardo/post">/users/eduardo/posts</router-link>
@@ -31,6 +30,8 @@
       <br />
       <router-link to="/users/eduardo/AppRepair">/users/eduardo/AppRepair</router-link>
       <br />
+      <router-link to="/users/eduardo/AppDesign">/users/eduardo/AppDesign</router-link>
+      <br />
       <router-link to="/users/eduardo/AppWithoutAgentPage">/users/eduardo/AppWithoutAgentPage</router-link>
       <br />
       <router-link to="/users/eduardo/AppDeliveryManagementPage">/users/eduardo/AppDeliveryManagementPage</router-link>
@@ -41,25 +42,33 @@
       <br />
       <router-link to="/users/eduardo/AppTestInputConpoment">/users/eduardo/AppTestInputConpoment</router-link>
       <br />
-    </p>    
+      <router-link to="/users/eduardo/AppPrivateOfficePage">/users/eduardo/AppPrivateOfficePage</router-link>
+      <br />
+    </p>
     <!-- TODO это шаблон всех страниц, сюда передаються данные внутреннего контента через верхнии ссылки to="/users/eduardo/post" -->
-    <AppMainComponent>
+    <!-- <AppMainComponent>
       
-    </AppMainComponent>
-
+    </AppMainComponent> -->
+    <router-view class="app__home-page" name="main">
+      
+    </router-view>
+    <router-view class="app__home-page" name="home">
+      
+    </router-view>
     <!-- TODO формы сайта -->
-    <!-- <AppObject :arrayVObjectItem="arrayVObject">
+    <AppFormLogin>
 
-    </AppObject> -->
-    <!-- <AppRestorePassword>
-      
-    </AppRestorePassword>
+    </AppFormLogin>
     <AppFormRegistration>
 
     </AppFormRegistration>
-    <AppFormLogin>
+    <AppRestorePassword>
       
-    </AppFormLogin> -->
+    </AppRestorePassword>
+    <AppObject>
+
+    </AppObject>
+    
     <!-- TODO конец форм сайта -->
 
     <!-- <AppMenuLeft :menuLeft="appMenuLeft">
@@ -191,12 +200,12 @@
 // import AppAgent from './components/AppAgent.vue';
 // import AppQuestions from './components/AppQuestions.vue';
 // import AppPurpose from './components/AppPurpose.vue';
-// import AppObject from './components/AppObject.vue';
+import AppObject from './components/AppObject.vue';
 // import AppPass from './components/AppPass.vue';
 // import AppMenuLeft from './components/AppMenuLeft.vue';
-// import AppFormLogin from './components/AppFormLogin.vue'
-// import AppFormRegistration from './components/AppFormRegistration.vue'
-// import AppRestorePassword from './components/AppRestorePassword.vue'
+import AppFormLogin from './components/AppFormLogin.vue'
+import AppFormRegistration from './components/AppFormRegistration.vue'
+import AppRestorePassword from './components/AppRestorePassword.vue'
 
 
 // import AppHeaderBlock from './components/AppHeaderBlock.vue'
@@ -221,10 +230,10 @@ import {vCardService, vMenuLeft, vAddObject, vServiceCardList, vHeaderBlock} fro
 import { useMovieStore } from './stores/MovieStore';
 // import AppVacancies from './components/AppVacancies.vue';
 // import AppContact from './components/AppContact.vue';
-import AppMainComponent from './components/AppMainComponent.vue';
+// import AppMainComponent from './components/AppMainComponent.vue';
 import AppHomePage from './components/AppHomePage.vue';
 // import AppFilter from './components/AppFilter.vue';
-// import AppLocationComponent from './components/AppLocationComponent.vue';
+import AppLocationComponent from './components/AppLocationComponent.vue';
 
 
 export default {
@@ -236,7 +245,6 @@ export default {
     // AppAgent,
     // AppQuestions,
     // AppPurpose,
-    // AppObject,
     // AppPass,
     // Swiper,
     // SwiperSlide,
@@ -251,10 +259,12 @@ export default {
     // AppAboutCompany,
     // AppVacancies,
     // AppContact,
-    // AppFormLogin,
-    // AppFormRegistration,
-    // AppRestorePassword,
-    AppMainComponent,
+    AppFormLogin,
+    AppFormRegistration,
+    AppRestorePassword,
+    AppObject,
+    AppLocationComponent,
+    // AppMainComponent,
     AppHomePage
 },
   data() {
@@ -331,6 +341,16 @@ export default {
 * {
   margin: 0;
   padding: 0;
+}
+
+.app-test {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10;
 }
 
 .text {
@@ -430,8 +450,6 @@ export default {
   width: 100%;
   height: 100%;
   background: #F8F7F7;
-  // background: aqua;
-
 }
 
 .block {

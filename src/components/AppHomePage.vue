@@ -18,15 +18,15 @@
                     <div class="app-home-page__block-filter">
                         <div class="app-home-page__block-button">
                             <AppButton width="160px" :hasBlack="true">
-                                Купить
+                                <router-link to="/users/eduardo/AppCatalogPage" class="link">Купить</router-link>
                             </AppButton>
-                            <AppButton width="160px" :hasBlack="true">
+                            <AppButton width="160px" :hasBlack="true" @click="testModalControllers.isVisibleFormObject=true">
                                 Продать
                             </AppButton>
                             <AppButton width="160px" :hasBlack="true">
-                                Снять
+                                <router-link to="/users/eduardo/AppCatalogPage" class="link">Снять</router-link>
                             </AppButton>
-                            <AppButton width="160px" :hasBlack="true">
+                            <AppButton width="160px" :hasBlack="true" @click="testModalControllers.isVisibleFormObject=true">
                                 Сдать
                             </AppButton>
                         </div>
@@ -55,6 +55,8 @@ import AppMenuTop from './AppMenuTop.vue';
 import AppPhoneImgComponent from './AppPhoneImgComponent.vue';
 import { vMenuLeft } from '@/assets/api/apiFooter'
 
+import { testModalController } from '@/assets/api/apiFooter';
+
 
 export default {
     name: "AppHomePage",
@@ -71,6 +73,13 @@ export default {
             isLoad: false,
             appMenuLeft: [],
         }
+    },
+    setup() {
+        let testModalControllers = testModalController();
+        
+        return {
+            testModalControllers
+        };
     },
     methods: {
         check() {
@@ -93,8 +102,9 @@ export default {
 
 <style lang="scss" scoped>
 
-.app-menu-left__link {
-    color: aqua;
+.link {
+    text-decoration: none;
+    color: #ffffff;
 }
 
 .app-home-page {

@@ -1,5 +1,5 @@
 <template>
-    <div class="app-repair" v-if="isLoad">
+    <div class="app-design" v-if="isLoad">
         <AppHeaderBlock :imgContent="imgContent">
                     
         </AppHeaderBlock>
@@ -9,11 +9,6 @@
         <AppExampleOfWork class="">
             
         </AppExampleOfWork>
-        <div class="app-repair__block-button">
-            <AppButton>
-                Заказать ремонт
-            </AppButton>
-        </div>
     </div>
 </template>
 
@@ -22,17 +17,15 @@ import AppExampleOfWork from './AppExampleOfWork.vue';
 import AppWork from './AppWork.vue';
 import AppHeaderBlock from './AppHeaderBlock.vue';
 
-import { vWork, vHeaderBlockRepair } from '@/assets/api/apiFooter'
-import AppButton from './AppButton.vue';
+import { vWorkDesign, vHeaderBlockDesign } from '@/assets/api/apiFooter'
 
 export default {
-    name: "AppRepair",
+    name: "AppDesign",
     components: {
-    AppWork,
-    AppExampleOfWork,
-    AppHeaderBlock,
-    AppButton
-},
+        AppWork,
+        AppExampleOfWork,
+        AppHeaderBlock
+    },
     data() {
         return {
             arrayWork: [],
@@ -42,12 +35,12 @@ export default {
     },
     methods: {
         check() {   
-            vWork().then(result =>
+            vWorkDesign().then(result =>
                 {
                     this.arrayWork = result
                     console.log(this.arrayWork);
                 })
-            vHeaderBlockRepair().then(result =>
+            vHeaderBlockDesign().then(result =>
                 {
                     this.imgContent = result
                     console.log(this.imgContent);
@@ -65,13 +58,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.app-repair {
-
-    &__block-button {
-        display: flex;
-        justify-content: center;
-        background: #ffffff;
-        padding: 40px 0 100px 0;
-    }
-}
+    
 </style>

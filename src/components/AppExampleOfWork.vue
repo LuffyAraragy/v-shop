@@ -101,11 +101,15 @@ export default {
 <style lang="scss" scoped>
 
 .app-example-of-work {
-    max-width: 700px;
     padding: 100px 20px;
+    background: #ffffff;
 
     &__title {
         text-align: center;
+    }
+
+    &__block-all-swiper {
+        max-width: 700px;
     }
 
     &__top-swiper {

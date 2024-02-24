@@ -19,16 +19,12 @@
                 </ul>
             </div>
         </div> -->
-        <div class="app-reviews-page__block-Employee">
-            <AppCardEmployee>
+        <div class="app-reviews-page__block-employee">
+            <AppSwiperSliderComponent :swiperSlidesPerView="3" class="app-reviews-page__swiper-slider">
+                <AppCardEmployee>
 
-            </AppCardEmployee>
-            <AppCardEmployee>
-
-            </AppCardEmployee>
-            <AppCardEmployee>
-
-            </AppCardEmployee>
+                </AppCardEmployee>
+            </AppSwiperSliderComponent>
         </div>
         
         <AppButton width="310px" class="app-reviews-page__button">
@@ -41,16 +37,18 @@ import AppButton from './AppButton.vue';
 import AppCardEmployee from './AppCardEmployee.vue';
 import AppHeaderBlock from './AppHeaderBlock.vue';
 
-import { vHeaderBlock } from '@/assets/api/apiFooter'
+import { vHeaderBlockReviews } from '@/assets/api/apiFooter'
+import AppSwiperSliderComponent from './AppSwiperSliderComponent.vue';
 
 
 export default {
     name: "AppReviewsPage",
     components: {
-        AppHeaderBlock,
-        AppCardEmployee,
-        AppButton
-    },
+    AppHeaderBlock,
+    AppCardEmployee,
+    AppButton,
+    AppSwiperSliderComponent
+},
     data() {
         return {
             imgContent: [],
@@ -66,7 +64,7 @@ export default {
     },
     methods: {
         check() {
-            vHeaderBlock().then(result =>
+            vHeaderBlockReviews().then(result =>
             {
                 this.imgContent = result
                 console.log(this.imgContent);
@@ -114,6 +112,11 @@ export default {
 <style lang="scss" scoped>
 .app-reviews-page {
     margin-bottom: 100px;
+
+    &__swiper-slider {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
     
     &__input {
         width: 200px;
@@ -132,7 +135,7 @@ export default {
         gap: 30px;
     }
 
-    &__block-Employee {
+    &__block-employee {
         // TODO Может тут ошибка по марджину
         margin: 100px 20px 0 20px; 
         display: flex;

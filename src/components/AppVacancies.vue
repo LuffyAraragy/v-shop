@@ -20,7 +20,7 @@ import AppListBenefits from './AppListBenefits.vue';
 import AppListOfVacancies from './AppListOfVacancies.vue';
 import AppHeaderBlock from './AppHeaderBlock.vue';
 
-import { vHeaderBlock } from '@/assets/api/apiFooter'
+import { vHeaderBlockVacancies } from '@/assets/api/apiFooter'
 
 
 export default {
@@ -38,7 +38,7 @@ export default {
     },
     methods: {
         check() {
-            vHeaderBlock().then(result =>
+            vHeaderBlockVacancies().then(result =>
             {
                 this.imgContent = result
                 console.log(this.imgContent);

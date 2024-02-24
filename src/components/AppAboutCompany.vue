@@ -3,11 +3,14 @@
         <AppHeaderBlock :imgContent="imgContent">
                     
         </AppHeaderBlock>
+        <div class="white-color-controller">
             <AppSwiperSliderComponent class="container">
                 <AppCardEmployees>
 
                 </AppCardEmployees>
             </AppSwiperSliderComponent>
+        </div>
+        
         <AppPass>
 
         </AppPass>
@@ -82,7 +85,7 @@ import 'swiper/css/scrollbar';
 import { Navigation, A11y, Thumbs, EffectCoverflow } from 'swiper/modules';
 import AppSwiperSliderComponent from './AppSwiperSliderComponent.vue';
 
-import { vOurEmployees, vHeaderBlock, vAppAboutCompanySwiperImg } from '@/assets/api/apiFooter'
+import { vOurEmployees, vHeaderBlockAboutCompany, vAppAboutCompanySwiperImg } from '@/assets/api/apiFooter'
 import AppCardEmployees from './AppCardEmployees.vue';
 // import AppListBenefits from './AppListBenefits.vue';
 import AppHeaderBlock from './AppHeaderBlock.vue';
@@ -132,7 +135,7 @@ export default {
                 this.arrayFromCard = result
                 console.log(this.arrayFromCard);
             });
-            vHeaderBlock().then(result =>
+            vHeaderBlockAboutCompany().then(result =>
             {
                 this.imgContent = result
                 console.log(this.imgContent);
@@ -163,6 +166,11 @@ export default {
 // .swiper-slide-next {
 //     opacity: 0.5;
 // }
+
+.white-color-controller {
+    background: #ffffff;
+
+}
 .swiper-slide {
     // background: #F8F7F7;
 }

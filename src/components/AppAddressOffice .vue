@@ -15,6 +15,7 @@
             :hasGreen="true" 
             width="185px" 
             class="address-office__button"
+            @click="testModalControllers.isVisibleFormObject=true"
         >
             <img src="../img/menuBottom/signs 1.svg" alt="" class="address-office__img">
             Добавить объект
@@ -23,9 +24,26 @@
 </template>
 <script>
 import AppButton from './AppButton.vue'
+
+import { testModalController } from '@/assets/api/apiFooter';
+
 export default {
-  components: { AppButton },
-    name: "AppAddressOffice"
+    name: "AppAddressOffice",
+    components: { 
+        AppButton 
+    },
+    data() {
+        return {
+
+        }
+    },
+    setup() {
+        let testModalControllers = testModalController();
+        return {
+            testModalControllers,
+        };
+    },
+    
 }
 </script>
 <style lang="scss">

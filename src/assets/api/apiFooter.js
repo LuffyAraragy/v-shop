@@ -106,15 +106,15 @@ export async function vCardService() {
 
 export async function vMenuLeft() {
   let menuContent = [
-    {img: "Rectangle 5.svg", dropdownButton: "Купить", link:"/users/eduardo/AppDeliveryManagementPage"},
+    {img: "Rectangle 5.svg", dropdownButton: "Купить", link:"/users/eduardo/AppCatalogPage"},
     {img: "Rectangle 5.svg", dropdownButton: "Продать", link:"/users/eduardo/AppDeliveryManagementPage"},
     {img: "Rectangle 5.svg", dropdownButton: "Сдать", link:"/users/eduardo/AppDeliveryManagementPage"},
-    {img: "Rectangle 5.svg", dropdownButton: "Снять", link:"/users/eduardo/AppDeliveryManagementPage"},
+    {img: "Rectangle 5.svg", dropdownButton: "Снять", link:"/users/eduardo/AppCatalogPage"},
     {img: "Rectangle 5.svg", dropdownButton: "Без агента", link:"/users/eduardo/AppWithoutAgentPage"},
     {dropdownButton: "О компании", link:"/users/eduardo/AppAboutCompany"},
     {dropdownButton: "Вакансии", link:"/users/eduardo/AppVacancies"},
     {dropdownButton: "Ремонт", link:"/users/eduardo/AppRepair"},
-    {dropdownButton: "Дизайн", link:"/users/eduardo/AppRepair"},
+    {dropdownButton: "Дизайн", link:"/users/eduardo/AppDesign"},
     {dropdownButton: "Отзывы", link:"/users/eduardo/AppReviewsPage"},
     {dropdownButton: "Сотрудничество", link:"/users/eduardo/AppCooperation"},
     {dropdownButton: "Сдать в управление", link:"/users/eduardo/AppDeliveryManagementPage"},
@@ -219,9 +219,109 @@ export async function vWork() {
   return delayResponse(work);
 }
 
+export async function vWorkDesign() {
+  let work = [
+    {icon: "work/multimedia-option 5.svg", title: "Вы оставляете заявку", description: "Вы оставляете заявку, мы связываемся с Вами для уточнения подробностей, согласовываем дату и время встречи"},
+    {icon: "work/multimedia-option 5.svg", title: "Заключение договора", description: "Составляем договор, вместе с Вами подготавливаем техническое задание на проектирование"},
+    {icon: "work/multimedia-option 5.svg", title: "Согласование проекта", description: "Совместно определяем применяемые материалы. Подготавливаем визуализацию и при необходимости корректируем"},
+    {icon: "work/multimedia-option 5.svg", title: "Выдача результата", description: "Вы получаете готовый дизайн-проект для передачи его исполнителю работ"},
+  ]
+  return delayResponse(work);
+}
+
 export async function vHeaderBlock() {
   let headerBlock = [
-    {img: "work/multimedia-option 5.svg", title: "Нам доверяют свою недвижимость Управляем объектами более 34 собственников Доверьтесь и Вы", icon: ["headerBlock/Group222.svg", "headerBlock/Group222.svg", "headerBlock/Group222.svg"], description: ["Гибкая система вознаграджения", "Индивидуальный подход к каждому клиенту", "Прозрачное сотрудничество"], button: ["Сдать в управление", "Сдать в управление1"]},
+    {
+      img: "work/multimedia-option 5.svg", 
+      title: "Нам доверяют свою недвижимость Управляем объектами более 34 собственников Доверьтесь и Вы", 
+      icon: ["headerBlock/Group222.svg", "headerBlock/Group222.svg", "headerBlock/Group222.svg"], 
+      description: ["Гибкая система вознаграджения", "Индивидуальный подход к каждому клиенту", "Прозрачное сотрудничество"], 
+      button: ["Сдать в управление", "Сдать в управление1"]
+    }
+  ]
+  return delayResponse(headerBlock);
+}
+
+export async function vHeaderBlockWithoutAgent() {
+  let headerBlock = [
+    {
+      img: "work/multimedia-option 5.svg", 
+      title: "Помощь в осуществлении самостоятельной сделки оплаты без услуг агента",
+      button: ["Узнать больше о компании"]
+    }
+  ]
+  return delayResponse(headerBlock);
+}
+
+export async function vHeaderBlockAboutCompany() {
+  let headerBlock = [
+    {
+      img: "work/multimedia-option 5.svg", 
+      title: "Агентство недвижимости «HouseHunters» – это профессионалы, выросшие из любителей своего дела!",
+      button: ["Узнать больше"]
+    }
+  ]
+  return delayResponse(headerBlock);
+}
+
+export async function vHeaderBlockVacancies() {
+  let headerBlock = [
+    {
+      img: "work/multimedia-option 5.svg", 
+      title: "Вакансии в компании HouseHunters",
+    }
+  ]
+  return delayResponse(headerBlock);
+}
+
+export async function vHeaderBlockReviews() {
+  let headerBlock = [
+    {
+      img: "work/multimedia-option 5.svg", 
+      title: "Отзывы о нашей работе",
+    }
+  ]
+  return delayResponse(headerBlock);
+}
+
+export async function vHeaderBlockContact() {
+  let headerBlock = [
+    {
+      img: "work/multimedia-option 5.svg", 
+      title: "Контакты",
+    }
+  ]
+  return delayResponse(headerBlock);
+}
+
+export async function vHeaderBlockRepair() {
+  let headerBlock = [
+    {
+      img: "work/multimedia-option 5.svg", 
+      title: "Ремонт от компании HouseHunters",
+      button: ["Заказать ремонт", "Посмотреть примеры"],
+    }
+  ]
+  return delayResponse(headerBlock);
+}
+
+export async function vHeaderBlockDesign() {
+  let headerBlock = [
+    {
+      img: "work/multimedia-option 5.svg", 
+      title: "Дизайн от компании HouseHunters",
+      button: ["Заказать дизайн", "Посмотреть примеры"],
+    }
+  ]
+  return delayResponse(headerBlock);
+}
+
+export async function vHeaderBlockCooperation() {
+  let headerBlock = [
+    {
+      img: "work/multimedia-option 5.svg", 
+      title: "Сотрудничество с HouseHunters",
+    }
   ]
   return delayResponse(headerBlock);
 }
@@ -337,7 +437,7 @@ export let useTodos = defineStore('todos', {
         characteristicsTitle: "Характеристики",
         characteristicsFaceCard: {
           roomsNumber: "4-ком. квартира",
-          maxArea: "666 кв. м.",
+          maxArea: "111 кв. м.",
           minNumberFloor: "2",
           maxNumberFloor: "15",
         },
@@ -368,6 +468,8 @@ export let useTodos = defineStore('todos', {
         metro: "м. Сокольники", 
         onLiked: false,
         isFinished: false,
+        statusDeal: "Снять",
+        iconLike: "shapes-and-symbols 2.svg",
       },
       {
         id: 1,
@@ -377,7 +479,7 @@ export let useTodos = defineStore('todos', {
         characteristicsTitle: "Характеристики",
         characteristicsFaceCard: {
           roomsNumber: "3-ком. квартира",
-          maxArea: "777 кв. м.",
+          maxArea: "222 кв. м.",
           minNumberFloor: "2",
           maxNumberFloor: "15",
         },
@@ -408,16 +510,18 @@ export let useTodos = defineStore('todos', {
         metro: "м. Сокольники", 
         onLiked: false,
         isFinished: false,
+        statusDeal: "Купить",
+        iconLike: "shapes-and-symbols 2.svg",
       },
       {
-        id: 1,
+        id: 2,
         img: ["VladaSteblina.png", "5206 1.png", "23184 1.png"],
         price: "31 900 000 ₽", 
         icon: "love.svg",
         characteristicsTitle: "Характеристики",
         characteristicsFaceCard: {
           roomsNumber: "3-ком. квартира",
-          maxArea: "777 кв. м.",
+          maxArea: "333 кв. м.",
           minNumberFloor: "2",
           maxNumberFloor: "15",
         },
@@ -448,16 +552,18 @@ export let useTodos = defineStore('todos', {
         metro: "м. Сокольники", 
         onLiked: false,
         isFinished: false,
+        statusDeal: "Купить",
+        iconLike: "shapes-and-symbols 2.svg",
       },
       {
-        id: 1,
+        id: 3,
         img: ["VladaSteblina.png", "5206 1.png", "23184 1.png"],
         price: "31 900 000 ₽", 
         icon: "love.svg",
         characteristicsTitle: "Характеристики",
         characteristicsFaceCard: {
           roomsNumber: "3-ком. квартира",
-          maxArea: "777 кв. м.",
+          maxArea: "444 кв. м.",
           minNumberFloor: "2",
           maxNumberFloor: "15",
         },
@@ -488,16 +594,18 @@ export let useTodos = defineStore('todos', {
         metro: "м. Сокольники", 
         onLiked: false,
         isFinished: false,
+        statusDeal: "Купить",
+        iconLike: "shapes-and-symbols 2.svg",
       },
       {
-        id: 1,
+        id: 4,
         img: ["VladaSteblina.png", "5206 1.png", "23184 1.png"],
         price: "31 900 000 ₽", 
         icon: "love.svg",
         characteristicsTitle: "Характеристики",
         characteristicsFaceCard: {
           roomsNumber: "3-ком. квартира",
-          maxArea: "777 кв. м.",
+          maxArea: "555 кв. м.",
           minNumberFloor: "2",
           maxNumberFloor: "15",
         },
@@ -528,6 +636,8 @@ export let useTodos = defineStore('todos', {
         metro: "м. Сокольники", 
         onLiked: false,
         isFinished: false,
+        statusDeal: "Снять",
+        iconLike: "shapes-and-symbols 2.svg",
       },
     ],
     /** @type {'all' | 'finished' | 'unfinished'} */
@@ -563,6 +673,30 @@ export let useTodos = defineStore('todos', {
         }
       })
     },
+    finishedTodosBuy(state) {
+      // autocompletion! ✨
+      return state.todos.filter((todo) => todo.onLiked)
+    },
+    finishedTodosRent(state) {
+      // autocompletion! ✨
+      return state.todos.filter((todo) => todo.onLiked)
+    },
+    finishedTodosRentFilter(state) {
+      return state.todos.filter(function(todo) {
+        // TODO 1 заменить первый элемент на "вторичку"
+        // if(todo.id==0 && todo.rooms=="4-ком. квартира" && todo.price=="32 900 000 ₽" && todo.address=="ул. Воскресенская 12А") {
+        if(todo.statusDeal == "Снять" && todo.onLiked == true) {
+          return !todo.isFinished;
+        }
+      })
+    },
+    finishedTodosBuyFilter(state) {
+      return state.todos.filter(function(todo) {
+        if(todo.statusDeal == "Купить" && todo.onLiked == true) {
+          return !todo.isFinished;
+        }
+      })
+    },
     /**
      * @returns {{ text: string, id: number, city: string, img: Array, price: string, icon: string, characteristicsTitle: string, characteristics: Array, descriptionText: string, additionalCharacteristicsTitle: string, additionalCharacteristics: Array, address: string, metro: string, onLiked: boolean, name: string, description: string, isFinished: boolean }[]}
      */
@@ -572,7 +706,16 @@ export let useTodos = defineStore('todos', {
         return this.finishedTodos
       } else if (this.filter === 'unfinished') {
         return this.unfinishedTodos
+      } else if(this.filter === 'buy'){
+        return this.finishedTodosBuy
+      } else if(this.filter === 'rent'){
+        return this.finishedTodosRent
+      } else if(this.filter === 'Снять'){
+        return this.finishedTodosRentFilter
+      } else if(this.filter === 'Купить'){
+        return this.finishedTodosBuyFilter
       }
+      
       return this.todos
     },
   },
@@ -627,6 +770,7 @@ export let useTodos = defineStore('todos', {
         telephone: pTelephone,
         email: pEmail,
         isFinished: false,
+        iconLike: "shapes-and-symbols 2.svg",
       })
     },
     addBufferNumber(element) {
@@ -635,3 +779,50 @@ export let useTodos = defineStore('todos', {
     }
   },
 })
+
+
+export let testModalController = defineStore("modalController", {
+  state: () =>({
+    controller:[
+      {
+        // TODO сделал
+        isVisibleFormLogin: false,
+        // TODO сделал
+        isVisibleFormObject: false,
+        isVisibleFormRegistration: false,
+        isVisibleFormRestorePassword: false,
+        isVisibleFormLocationComponent: false,
+      },
+    ]
+    //TODO добавить метод, который будет обнулять все видимые модальные окна,чтоб сменить на другое
+  })
+})
+
+export let userAccount = defineStore("userAccount", {
+  state: () =>({
+    usersData:[
+      {
+        usersId: 0,
+        usersLogin: "admin",
+        usersPassword: "admin",
+        isLogin: false,
+      },
+    ],
+    actions: {
+      // addDataUser(id, login, password) {
+      //   this.usersData.push({
+      //     usersId: id,
+      //     usersLogin: login,
+      //     usersPassword: password,
+      //   })
+      // }
+      // addDataUser(id, login, password) {
+      //   this.usersData.push({
+      //     usersId: id,
+      //     usersLogin: login,
+      //     usersPassword: password,
+      //   })
+      // }
+    }
+  })
+}) 

@@ -58,20 +58,24 @@
 <script>
 
 export default {
-    name: "AppQuestions"
+    name: "AppQuestions",
+
 }
 
 </script>
 
-<style>
+<style lang="scss" scoped>
 .app-questions {
     display: flex;
+    justify-content: space-between;
+    padding: 0 0 0 50px;
     width: 1110px;
-    height: 438px;
+    // height: 438px;
     flex-shrink: 0;
     border-radius: 5px;
     background: #FFF;
     box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.10);
+    margin-bottom: 100px;
 }
 
 .app-questions__social-network {
@@ -81,14 +85,17 @@ export default {
 .app-questions__information {
     display: grid;
     gap: 40px;
+    padding: 39px 0 39px;
 }
 .app-questions__mail {
     display: flex;
+    align-items: center;
     gap: 20px;
 }
 
 .app-questions__telephone-number {
     display: flex;
+    align-items: center;
     gap: 20px;
 }
 .app-questions__time-all {

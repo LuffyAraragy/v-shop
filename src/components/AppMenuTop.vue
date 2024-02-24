@@ -5,8 +5,13 @@
         </div>
         <div class="app-menu-top__city">
             <img src="@/img/menu/pin 1.svg" alt="" class="contact">
-            <div class="app-menu-top__city-name text text--font-size-normal text--color-black text--font-weight-400">
-                Екатеринбург
+            <div class="app-menu-top__city-name">
+                <button 
+                    class="app-menu-top__text-button text text--font-size-normal text--color-black text--font-weight-400"
+                    @click="testModalControllers.isVisibleFormRegistration=true"    
+                >
+                    Екатеринбург
+                </button>
             </div>
         </div>
         <div class="app-menu-top__mail">
@@ -21,15 +26,17 @@
                 +7 (777) 777-77-77
             </div>
         </div>
-        <AppButton :hasWhite="true" width="220px" :hasOutline="true" :hasSmall="true" class="">
+        <AppButton :hasWhite="true" width="220px" :hasOutline="true" :hasSmall="true">
             Бесплатная консультация
         </AppButton>
         <div class="app-menu-top__like">
             <button class="testButton" @click="consoleLog">
-                <img src="@/img/menu/love-and-romance 1.svg" alt="" class="contact">
+                <img src="@/img/menu/loveGreen.svg" alt="" class="contact" v-if="this.account.usersData[0].isLogin == true" @click="testClickVueRouter">
+                <img src="@/img/menu/love-and-romance 1.svg" alt="" class="contact" v-if="this.account.usersData[0].isLogin == false">
             </button>
-            <button class="testButton" @click="consoleLog">
-                <img src="@/img/menu/user 1.svg" alt="" class="contact">
+            <button class="testButton" @click="testModalControllers.isVisibleFormLogin=true">
+                <img src="@/img/menu/userGreen.svg" alt="" class="contact" v-if="this.account.usersData[0].isLogin == true">
+                <img src="@/img/menu/user 1.svg" alt="" class="contact" v-if="this.account.usersData[0].isLogin == false">
             </button>
         </div>
     </div>
@@ -37,22 +44,39 @@
 
 <script>
 import AppButton from './AppButton.vue';
-    export default {
-        name: "AppMenuTop",
-        components: {
-            AppButton
-        },
-        data() {
-            return {
-                
-            }
-        },
-        methods: {
-            consoleLog() {
-                console.log("consoleLog()");
-            }
+
+import { testModalController } from '@/assets/api/apiFooter';
+
+import { userAccount } from '@/assets/api/apiFooter';
+
+export default {
+    name: "AppMenuTop",
+    components: {
+        AppButton
+    },
+    data() {
+        return {
+            
         }
-    }
+    },
+    methods: {
+        testClickVueRouter() {
+            this.$router.push('/users/eduardo/AppPrivateOfficePage');
+        },
+        consoleLog() {
+            console.log("consoleLog()");
+        }
+    },
+    setup() {
+        let testModalControllers = testModalController();
+        let account = userAccount();
+        
+        return {
+            testModalControllers,
+            account
+        };
+    },
+}
 
 </script>
 
@@ -74,6 +98,12 @@ import AppButton from './AppButton.vue';
     height: 70px;
     flex-shrink: 0;
     gap: 15px;
+
+    &__text-button {
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
 }
 
 .app-menu-top__telephone-name {

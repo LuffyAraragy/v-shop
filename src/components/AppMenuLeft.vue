@@ -15,6 +15,8 @@
     </div>
 </template>
 <script>
+import { testModalController } from '@/assets/api/apiFooter';
+
 export default {
     name: "AppMenuLeft",
     data() {
@@ -22,6 +24,13 @@ export default {
             isLoad: false,
             tst: '/users/eduardo/AppDeliveryManagementPage'
         }
+    },
+    setup() {
+        let testModalControllers = testModalController();
+        
+        return {
+            testModalControllers
+        };
     },
     props: {
         menuLeft: Array,
@@ -44,6 +53,7 @@ export default {
     },
 }
 </script>
+
 <style lang="scss" scoped>
 
 .app-menu-left__link {

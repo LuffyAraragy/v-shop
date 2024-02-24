@@ -14,7 +14,7 @@
             <li v-for="todo in filteredTodos" :key="todo.id">
             <input class="app-input" v-model="todo.isFinished" type="checkbox">
             {{ todo }}
-            {{ todo.minPrice }}
+            <!-- {{ todo.minPrice }} -->
             </li>
         </ul>
         <label>
@@ -68,10 +68,10 @@ import AppButton from './AppButton.vue';
 export default {
     name: "AppCatalogPage",
     components: {
-    AppCardItem,
-    AppFilter,
-    AppButton
-},
+        AppCardItem,
+        AppFilter,
+        AppButton
+    },
     setup() {
         let cardObject = useTodos();
         const todosStore = useTodos()

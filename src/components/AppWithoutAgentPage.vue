@@ -13,7 +13,7 @@
 import AppHeaderBlock from './AppHeaderBlock.vue';
 import AppWithoutAgent from './AppWithoutAgent.vue';
 
-import { vHeaderBlock } from '@/assets/api/apiFooter'
+import { vHeaderBlockWithoutAgent } from '@/assets/api/apiFooter'
 
 export default {
     name: "AppWithoutAgentPage",
@@ -28,7 +28,7 @@ export default {
     },
     methods: {
         check() {
-            vHeaderBlock().then(result =>
+            vHeaderBlockWithoutAgent().then(result =>
             {
                 this.imgContent = result
                 console.log(this.imgContent);

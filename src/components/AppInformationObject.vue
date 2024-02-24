@@ -40,10 +40,10 @@
         </div>
     <!-- Следующий контент блок -->
         <div class="app-online-calculator">
-            <AppButton class="app-online-calculator__button">
+            <AppButton class="app-online-calculator__button" @click="isVisible=!isVisible">
                 Свернуть
             </AppButton>
-            <div class="app-online-calculator__block-content">
+            <div class="app-online-calculator__block-content" v-if="isVisible">
                 <div class="app-online-calculator__title text text--font-weight-700 text--font-size-normalx2">
                     Онлайн-калькулятор ипотеки
                 </div>
@@ -91,7 +91,8 @@ export default {
         return {
             value: [0,0,0,0],
             valueMax: [4000000, 500000, 240, 100],
-            arrayBank: []
+            arrayBank: [],
+            isVisible: true
         }
     },
     methods: {
