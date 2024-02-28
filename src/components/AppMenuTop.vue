@@ -61,7 +61,7 @@ export default {
     },
     methods: {
         testClickVueRouter() {
-            this.$router.push('/users/eduardo/AppPrivateOfficePage');
+            this.$router.push('/PagePrivateOffice');
         },
         consoleLog() {
             console.log("consoleLog()");

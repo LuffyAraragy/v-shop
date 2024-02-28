@@ -15,16 +15,16 @@
 </template>
 
 <script>
-import AppImgAndText from './AppImgAndText.vue';
-import AppListBenefits from './AppListBenefits.vue';
-import AppListOfVacancies from './AppListOfVacancies.vue';
-import AppHeaderBlock from './AppHeaderBlock.vue';
+import AppImgAndText from '../components/AppImgAndText.vue';
+import AppListBenefits from '../components/AppListBenefits.vue';
+import AppListOfVacancies from '../components/AppListOfVacancies.vue';
+import AppHeaderBlock from '../components/AppHeaderBlock.vue';
 
 import { vHeaderBlockVacancies } from '@/assets/api/apiFooter'
 
 
 export default {
-    name: "AppVacancies",
+    name: "PageVacancies",
     components: {
         AppImgAndText,
         AppListBenefits,

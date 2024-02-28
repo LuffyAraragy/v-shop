@@ -18,15 +18,15 @@
 </template>
 
 <script>
-import AppExampleOfWork from './AppExampleOfWork.vue';
-import AppWork from './AppWork.vue';
-import AppHeaderBlock from './AppHeaderBlock.vue';
+import AppExampleOfWork from '../components/AppExampleOfWork.vue';
+import AppWork from '../components/AppWork.vue';
+import AppHeaderBlock from '../components/AppHeaderBlock.vue';
 
 import { vWork, vHeaderBlockRepair } from '@/assets/api/apiFooter'
-import AppButton from './AppButton.vue';
+import AppButton from '../components/AppButton.vue';
 
 export default {
-    name: "AppRepair",
+    name: "PageRepair",
     components: {
     AppWork,
     AppExampleOfWork,

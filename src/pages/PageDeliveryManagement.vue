@@ -12,15 +12,15 @@
     </div>
 </template>
 <script>
-import AppHeaderBlock from './AppHeaderBlock.vue';
+import AppHeaderBlock from '../components/AppHeaderBlock.vue';
 
 import { vHeaderBlock, vAgent } from '@/assets/api/apiFooter';
-import AppPass from './AppPass.vue';
-import AppAgent from './AppAgent.vue';
+import AppPass from '../components/AppPass.vue';
+import AppAgent from '../components/AppAgent.vue';
 
 
 export default {
-    name: "AppDeliveryManagementPage",
+    name: "PageDeliveryManagement",
     components: {
     AppHeaderBlock,
     AppPass,

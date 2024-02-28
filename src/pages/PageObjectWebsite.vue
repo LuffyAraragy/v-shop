@@ -50,21 +50,21 @@
 </template>
 
 <script>
-import AppInformationObject from './AppInformationObject.vue'
-import AppCardObject from './AppCardObject.vue'
-import AppCardLocation from './AppCardLocation.vue'
-import AppCardItem from './AppCardItem.vue';
-import AppProperty from './AppProperty.vue';
+import AppInformationObject from '../components/AppInformationObject.vue'
+import AppCardObject from '../components/AppCardObject.vue'
+import AppCardLocation from '../components/AppCardLocation.vue'
+import AppCardItem from '../components/AppCardItem.vue';
+import AppProperty from '../components/AppProperty.vue';
 import {vServiceCardList, vTestCardObject} from '@/assets/api/apiFooter'
 
 import { useTodos } from '@/assets/api/apiFooter';
-import AppSwiperSliderComponent from './AppSwiperSliderComponent.vue';
-import AppExampleOfWork from './AppExampleOfWork.vue';
+import AppSwiperSliderComponent from '../components/AppSwiperSliderComponent.vue';
+import AppExampleOfWork from '../components/AppExampleOfWork.vue';
 
 import { storeToRefs } from 'pinia'
 
 export default {
-    name: "AppObjectWebsite",
+    name: "PageObjectWebsite",
     data() {
         return {
             isLoad: false,

@@ -29,15 +29,15 @@
 </template>
 
 <script>
-import AppCardItem from './AppCardItem.vue';
+import AppCardItem from '../components/AppCardItem.vue';
 
 import { storeToRefs } from 'pinia'
 import { useTodos } from '@/assets/api/apiFooter';
 
-import AppButton from './AppButton.vue';
+import AppButton from '../components/AppButton.vue';
 
 export default {
-    name: "AppPrivateOfficePage",
+    name: "PagePrivateOffice",
     components: {
         AppCardItem,
         AppButton

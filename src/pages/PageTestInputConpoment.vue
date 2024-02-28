@@ -155,7 +155,7 @@ import { ref } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useTodos } from '@/assets/api/apiFooter';
 // import input from './input.vue';
-import AppButton from './AppButton.vue';
+import AppButton from '../components/AppButton.vue';
 
 
 const todosStore = useTodos()

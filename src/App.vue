@@ -1,60 +1,60 @@
 <template>
   <div class="app" id="#app">
-    <AppLocationComponent>
+    <!-- <AppLocationComponent>
       
-    </AppLocationComponent>
+    </AppLocationComponent> -->
     <!-- <AppFilter>
 
     </AppFilter> -->
-    <AppHomePage>
-      
-    </AppHomePage>
-    <h1>Nested Views</h1>
+    <!-- <h1>Nested Views</h1>
     <p>
-      <router-link to="/users/eduardo">/users/eduardo</router-link>
+      <router-link to=""></router-link>
       <br />
-      <router-link to="/users/eduardo/profile">/users/eduardo/profile</router-link
+      <router-link to="/profile">/profile</router-link
       >
       <br />
-      <router-link to="/users/eduardo/post">/users/eduardo/posts</router-link>
+      <router-link to="/post">/posts</router-link>
       <br />
-      <router-link to="/users/eduardo/AppAboutCompany">/users/eduardo/AppAboutCompany</router-link>
+      <router-link to="/AppAboutCompany">/AppAboutCompany</router-link>
       <br />
-      <router-link to="/users/eduardo/AppObjectWebsite">/users/eduardo/AppObjectWebsite</router-link>
+      <router-link to="/AppObjectWebsite">/AppObjectWebsite</router-link>
       <br />
-      <router-link to="/users/eduardo/AppContact">/users/eduardo/AppContact</router-link>
+      <router-link to="/AppContact">/AppContact</router-link>
       <br />
-      <router-link to="/users/eduardo/AppVacancies">/users/eduardo/AppVacancies</router-link>
+      <router-link to="/AppVacancies">/AppVacancies</router-link>
       <br />
-      <router-link to="/users/eduardo/AppCooperation">/users/eduardo/AppCooperation</router-link>
+      <router-link to="/AppCooperation">/AppCooperation</router-link>
       <br />
-      <router-link to="/users/eduardo/AppRepair">/users/eduardo/AppRepair</router-link>
+      <router-link to="/AppRepair">/AppRepair</router-link>
       <br />
-      <router-link to="/users/eduardo/AppDesign">/users/eduardo/AppDesign</router-link>
+      <router-link to="/AppDesign">/AppDesign</router-link>
       <br />
-      <router-link to="/users/eduardo/AppWithoutAgentPage">/users/eduardo/AppWithoutAgentPage</router-link>
+      <router-link to="/AppWithoutAgentPage">/AppWithoutAgentPage</router-link>
       <br />
-      <router-link to="/users/eduardo/AppDeliveryManagementPage">/users/eduardo/AppDeliveryManagementPage</router-link>
+      <router-link to="/AppDeliveryManagementPage">/AppDeliveryManagementPage</router-link>
       <br />
-      <router-link to="/users/eduardo/AppReviewsPage">/users/eduardo/AppReviewsPage</router-link>
+      <router-link to="/AppReviewsPage">/AppReviewsPage</router-link>
       <br />
-      <router-link to="/users/eduardo/AppCatalogPage">/users/eduardo/AppCatalogPage</router-link>
+      <router-link to="/AppCatalogPage">/AppCatalogPage</router-link>
       <br />
-      <router-link to="/users/eduardo/AppTestInputConpoment">/users/eduardo/AppTestInputConpoment</router-link>
+      <router-link to="/AppTestInputConpoment">/AppTestInputConpoment</router-link>
       <br />
-      <router-link to="/users/eduardo/AppPrivateOfficePage">/users/eduardo/AppPrivateOfficePage</router-link>
+      <router-link to="/AppPrivateOfficePage">/AppPrivateOfficePage</router-link>
       <br />
-    </p>
-    <!-- TODO это шаблон всех страниц, сюда передаються данные внутреннего контента через верхнии ссылки to="/users/eduardo/post" -->
+    </p> -->
+    <!-- TODO это шаблон всех страниц, сюда передаються данные внутреннего контента через верхнии ссылки to="/post" -->
     <!-- <AppMainComponent>
       
     </AppMainComponent> -->
-    <router-view class="app__home-page" name="main">
+    <router-view>
+
+    </router-view>
+    <!-- <router-view class="app__home-page" name="main">
       
     </router-view>
     <router-view class="app__home-page" name="home">
       
-    </router-view>
+    </router-view> -->
     <!-- TODO формы сайта -->
     <AppFormLogin>
 
@@ -68,172 +68,32 @@
     <AppObject>
 
     </AppObject>
-    
-    <!-- TODO конец форм сайта -->
 
-    <!-- <AppMenuLeft :menuLeft="appMenuLeft">
-
-    </AppMenuLeft>
-    <AppObjectWebsite>
-
-    </AppObjectWebsite>
-    <AppAboutCompany>
-
-    </AppAboutCompany>
-    <AppVacancies>
-      
-    </AppVacancies>
-    <AppContact>
-
-
-    </AppContact>
-    <AppCooperation>
-
-    </AppCooperation>
-    <AppRepair>
-
-    </AppRepair>
-    <menu-left>
-
-    </menu-left> -->
-    <!-- <AppCardItem
-      v-for="(array, index) in arrayCard"
-      :key="index"
-      :card="array"
-    >
-
-    </AppCardItem> -->
-    <!-- <app-swiper-slider>
-      
-    </app-swiper-slider> -->
-    <!-- <app-input :placeholder="placeholder" width="200px">
-      
-    </app-input>
-    <app-button :hasWhite="true" width="270px" :hasOutline="true" :hasSmall="true" class="">
-      hello world
-    </app-button>
-    <app-button :hasWhite="true" width="310px" :hasOutline="true" class="">
-      hello world
-    </app-button>
-    <app-button :hasGreen="true" width="255px" class="">
-      hello world
-    </app-button>
-    <app-button :hasGreen="true" width="270px" class="">
-      hello world
-    </app-button>
-    <app-button :hasBlack="true" :hasAround="true" width="270px" class="">
-      hello world
-    </app-button> -->
-    <!-- <AppComponents v-if="isLoad" :menuLeft="appMenuLeft">
-
-    </AppComponents> -->
-    
-    <!-- <AppFooter>
-
-    </AppFooter> -->
-    
-    <!-- <AppYourLocation>
-
-    </AppYourLocation> -->
-    <!-- <AppAgent>
-
-    </AppAgent> -->
-    <!-- <AppQuestions>
-      
-    </AppQuestions> -->
-    <!-- <AppPurpose>
-
-    </AppPurpose> -->
-    <!-- <AppPass>
-
-    </AppPass> -->
-    
-    <!-- <AppCardObject>
-
-    </AppCardObject> -->
-
-<!-- <div class="swiper-content-1">
-  
-  <swiper class="v-swiper swiper-thumbs"
-    :modules="modules"
-    :slides-per-view="1"
-    :space-between="50"
-    navigation
-    :pagination="{ clickable: true }"
-
-    @swiper="onSwiper"
-    @slideChange="onSlideChange"
-  >
-    <swiper-slide><img src="@/img/agent/information-2 1.svg"></swiper-slide>
-    <swiper-slide>Slide 2</swiper-slide>
-    <swiper-slide>Slide 3</swiper-slide>
-    <swiper-slide>Slide 1</swiper-slide>
-    <swiper-slide>Slide 2</swiper-slide>
-    <swiper-slide>Slide 3</swiper-slide>
-    <swiper-slide>Slide 1</swiper-slide>
-    <swiper-slide>Slide 2</swiper-slide>
-    <swiper-slide>Slide 3</swiper-slide>
-  </swiper>
-</div> -->
-    <!-- <AppHeaderBlock :imgContent="imgContent">
-
-    </AppHeaderBlock> -->
-    <!-- <div class="movies">
-      
-    </div>
-    <AppTestMovie v-for="movie in movieStore.movies" :key="movie.id" :movie="movie">
-      
-    </AppTestMovie> -->
   </div>
   
 </template> 
 
 <script>
 
-// Основные страницы
-// import AppAboutCompany from './components/AppAboutCompany.vue';
-// import AppObjectWebsite from './components/AppObjectWebsite.vue';
 
-// import AppComponents from './components/AppComponents.vue';
-// import AppFooter from './components/AppFooter.vue';
-// import AppYourLocation from './components/AppYourLocation.vue';
-// import AppAgent from './components/AppAgent.vue';
-// import AppQuestions from './components/AppQuestions.vue';
-// import AppPurpose from './components/AppPurpose.vue';
 import AppObject from './components/AppObject.vue';
-// import AppPass from './components/AppPass.vue';
-// import AppMenuLeft from './components/AppMenuLeft.vue';
+
 import AppFormLogin from './components/AppFormLogin.vue'
 import AppFormRegistration from './components/AppFormRegistration.vue'
 import AppRestorePassword from './components/AppRestorePassword.vue'
 
-
-// import AppHeaderBlock from './components/AppHeaderBlock.vue'
 import { Navigation, Pagination, A11y, Thumbs } from 'swiper/modules';
 
-// Import Swiper Vue.js components
-// import { Swiper, SwiperSlide } from 'swiper/vue';
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-// import AppButton from './components/AppButton.vue';
-// import AppCardItem from './components/AppCardItem.vue';
-// import AppInput from './components/AppInput.vue';
-// import AppSwiperSlider from './components/AppSwiperSlider.vue';
-import {vCardService, vMenuLeft, vAddObject, vServiceCardList, vHeaderBlock} from '@/assets/api/apiFooter'
-// import AppCardObject from './components/AppCardObject.vue';
 
-// import AppTestMovie from './components/AppTestMovie.vue';
+import {vCardService, vMenuLeft, vAddObject, vServiceCardList, vHeaderBlock} from '@/assets/api/apiFooter'
+
 import { useMovieStore } from './stores/MovieStore';
-// import AppVacancies from './components/AppVacancies.vue';
-// import AppContact from './components/AppContact.vue';
-// import AppMainComponent from './components/AppMainComponent.vue';
-import AppHomePage from './components/AppHomePage.vue';
-// import AppFilter from './components/AppFilter.vue';
-import AppLocationComponent from './components/AppLocationComponent.vue';
+
 
 
 export default {
@@ -263,9 +123,9 @@ export default {
     AppFormRegistration,
     AppRestorePassword,
     AppObject,
-    AppLocationComponent,
+    // AppLocationComponent,
     // AppMainComponent,
-    AppHomePage
+    // AppHomePage
 },
   data() {
     return {

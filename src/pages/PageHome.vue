@@ -47,19 +47,19 @@
 </template>
 
 <script>
-import AppAddressOffice from './AppAddressOffice .vue';
-import AppButton from './AppButton.vue';
-import AppFilter from './AppFilter.vue';
-import AppMenuLeft from './AppMenuLeft.vue';
-import AppMenuTop from './AppMenuTop.vue';
-import AppPhoneImgComponent from './AppPhoneImgComponent.vue';
+import AppAddressOffice from '../components/AppAddressOffice.vue';
+import AppButton from '../components/AppButton.vue';
+import AppFilter from '../components/AppFilter.vue';
+import AppMenuLeft from '../components/AppMenuLeft.vue';
+import AppMenuTop from '../components/AppMenuTop.vue';
+import AppPhoneImgComponent from '../components/AppPhoneImgComponent.vue';
 import { vMenuLeft } from '@/assets/api/apiFooter'
 
 import { testModalController } from '@/assets/api/apiFooter';
 
 
 export default {
-    name: "AppHomePage",
+    name: "PageHome",
     components: { 
         AppMenuLeft, 
         AppMenuTop, 

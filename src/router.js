@@ -1,29 +1,26 @@
 import { createRouter, createWebHistory } from 'vue-router'
-// import UserTest from './views/UserTest.vue'
-// import UserHome from './views/UserHome.vue'
-import UserProfile from './views/UserProfile.vue'
-import UserPosts from './views/UserPosts.vue'
-// import AppMainComponent from './components/AppMainComponent.vue'
 
-import AppAboutCompany from './components/AppAboutCompany.vue'
-import AppObjectWebsite from './components/AppObjectWebsite.vue'
-import AppContact from './components/AppContact.vue'
-import AppVacancies from './components/AppVacancies.vue'
-import AppCooperation from './components/AppCooperation.vue'
-import AppRepair from './components/AppRepair.vue'
-import AppDesign from './components/AppDesign.vue'
+import LayoutDefault from './layouts/LayoutDefault.vue';
+import LayoutEmpty from './layouts/LayoutEmpty.vue';
 
-import AppWithoutAgentPage from './components/AppWithoutAgentPage.vue'
-import AppDeliveryManagementPage from './components/AppDeliveryManagementPage.vue'
-import AppReviewsPage from './components/AppReviewsPage.vue'
-import AppCatalogPage from './components/AppCatalogPage.vue'
-import AppTestInputConpoment from './components/AppTestInputConpoment'
-import AppPrivateOfficePage from './components/AppPrivateOfficePage'
+// LayoutEmpty
 
+import PageHome from './pages/PageHome.vue';
 
-import AppMainComponent from './components/AppMainComponent'
-
-import AppHomePage from './components/AppHomePage'
+// LayoutDefault
+import PageCatalog from './pages/PageCatalog.vue';
+import PageContact from './pages/PageContact.vue';
+import PageAboutCompany from './pages/PageAboutCompany.vue';
+import PageCooperation from './pages/PageCooperation.vue';
+import PageDeliveryManagement from './pages/PageContact.vue';
+import PageDesign from './pages/PageContact.vue';
+import PageObjectWebsite from './pages/PageObjectWebsite.vue';
+import PagePrivateOffice from './pages/PagePrivateOffice.vue';
+import PageRepair from './pages/PageRepair.vue';
+import PageReviews from './pages/PageReviews.vue';
+import PageTestInputConpoment from './pages/PageTestInputConpoment.vue';
+import PageVacancies from './pages/PageVacancies.vue';
+import PageWithoutAgent from './pages/PageWithoutAgent.vue';
 
 
 
@@ -31,66 +28,34 @@ export const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
-      path: '/users/:username',
-      // component: AppMainComponent,
+      path: '/',
+      component: LayoutEmpty,
       children: [
-        // UserHome will be rendered inside User's <router-view>
-        // when /users/:username is matched
-        { path: '/', component: AppMainComponent },
-
-        // UserProfile will be rendered inside User's <router-view>
-        // when /users/:username/profile is matched
-        { path: 'profile', component: UserProfile },
-
-        // UserPosts will be rendered inside User's <router-view>
-        // when /users/:username/posts is matched
-        { path: 'post', component: UserPosts },
-
-        // { path: 'AppObjectWebsite', component: AppObjectWebsite },
-
-        { path: 'AppAboutCompany', component: AppAboutCompany },
-
-        // TODO пока не исспользую 
-        { path: 'AppObjectWebsite', component: AppObjectWebsite },
-
-        { path: 'AppContact', component: AppContact },
-        { path: 'AppVacancies', component: AppVacancies },
-        { path: 'AppCooperation', component: AppCooperation },
-
-        // TODO пока 1 ссылка делиться на 2 страници по дизайну и ремонту
-        { path: 'AppRepair', component: AppRepair },
-
-        { path: 'AppDesign', component: AppDesign },
-
-
-        { path: 'AppWithoutAgentPage', component: AppWithoutAgentPage },
-        { path: 'AppDeliveryManagementPage', component: AppDeliveryManagementPage },
-        { path: 'AppReviewsPage', component: AppReviewsPage },
-
-        // TODO пока не исспользую 
-        { path: 'AppCatalogPage', component: AppCatalogPage },
-
-        { path: 'AppTestInputConpoment', component: AppTestInputConpoment },
-
-        { path: 'AppHomePage', component: AppHomePage },
-
-        { path: 'AppPrivateOfficePage', component: AppPrivateOfficePage },
-
-        {
-          path: "AppPrivateOfficePage1",
-          components: {
-            home: AppPrivateOfficePage
-          },
-        },
-
-        {
-          path: "AppMainComponent",
-          components: {
-            main: AppMainComponent
-          },
-        }
+        { path: '/', component: PageHome},
+        
       ],
-      
+    },
+    {
+      path: '/',
+      component: LayoutDefault,
+      children: [
+        { path: '/PageAboutCompany', component: PageAboutCompany},
+        { path: '/PageCatalog', component: PageCatalog},
+        { path: '/PageContact', component: PageContact},
+        { path: '/PageCooperation', component: PageCooperation},
+        { path: '/PageDeliveryManagement', component: PageDeliveryManagement},
+        { path: '/PageDesign', component: PageDesign},
+        { path: '/PageObjectWebsite', component: PageObjectWebsite},
+        { path: '/PagePrivateOffice', component: PagePrivateOffice},
+        { path: '/PageRepair', component: PageRepair},
+        { path: '/PageReviews', component: PageReviews},
+        { path: '/PageTestInputConpoment', component: PageTestInputConpoment},
+        { path: '/PageVacancies', component: PageVacancies},
+        { path: '/PageWithoutAgent', component: PageWithoutAgent},
+
+      ],
     },
   ],
 })
+
+

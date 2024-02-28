@@ -10,13 +10,13 @@
 </template>
 
 <script>
-import AppHeaderBlock from './AppHeaderBlock.vue';
-import AppWithoutAgent from './AppWithoutAgent.vue';
+import AppHeaderBlock from '../components/AppHeaderBlock.vue';
+import AppWithoutAgent from '../components/AppWithoutAgent.vue';
 
 import { vHeaderBlockWithoutAgent } from '@/assets/api/apiFooter'
 
 export default {
-    name: "AppWithoutAgentPage",
+    name: "PageWithoutAgent",
     components: { 
         AppWithoutAgent, 
         AppHeaderBlock 

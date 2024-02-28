@@ -70,11 +70,11 @@
     </div>
 </template>
 <script>
-import AppImgAndText from './AppImgAndText.vue';
-import AppPass from './AppPass.vue';
-import AppPurpose from './AppPurpose.vue';
-import AppInNumbers from './AppInNumbers.vue';
-import AppPhotoOffice from './AppPhotoOffice.vue';
+import AppImgAndText from '../components/AppImgAndText.vue';
+import AppPass from '../components/AppPass.vue';
+import AppPurpose from '../components/AppPurpose.vue';
+import AppInNumbers from '../components/AppInNumbers.vue';
+import AppPhotoOffice from '../components/AppPhotoOffice.vue';
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
@@ -83,16 +83,16 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { Navigation, A11y, Thumbs, EffectCoverflow } from 'swiper/modules';
-import AppSwiperSliderComponent from './AppSwiperSliderComponent.vue';
+import AppSwiperSliderComponent from '../components/AppSwiperSliderComponent.vue';
 
 import { vOurEmployees, vHeaderBlockAboutCompany, vAppAboutCompanySwiperImg } from '@/assets/api/apiFooter'
-import AppCardEmployees from './AppCardEmployees.vue';
+import AppCardEmployees from '../components/AppCardEmployees.vue';
 // import AppListBenefits from './AppListBenefits.vue';
-import AppHeaderBlock from './AppHeaderBlock.vue';
+import AppHeaderBlock from '../components/AppHeaderBlock.vue';
 
 
 export default {
-    name: "AppAboutCompany",
+    name: "PageAboutCompany",
     components: {
         AppPass,
         AppImgAndText,

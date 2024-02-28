@@ -68,8 +68,11 @@
                     <div class="app-form-login__block-button">
                         <button 
                             class="app-form-login__text-button text text--font-size-normal text--color-green text--font-weight-500"
-                            @click="testModalControllers.isVisibleFormRegistration=true"
+                            @click="closeModalWindow"
                         >
+                        {{ this.testModalControllers.isVisibleFormLogin }} 
+                            +
+                        {{ this.testModalControllers.isVisibleFormRegistration }}
                             Регистрация
                         </button>
                     </div>
@@ -128,16 +131,39 @@ export default {
             this.onLogin(login, password);
         }
 
+        function addTest() {
+            // testModalController.closeModalWindow;
+            alert(testModalController.isVisibleFormLogin);
+        }
+    
+        // function test1(testModal, testItem) {
+        //     for (const key in testModal) {
+        //         testModal[key] = true
+        //     }
+        //     console.log(testItem);
+        //     testItem = false;
+        // }
+
         return {
             testModalControllers,
             account,
             onLogin,
             allOnClick,
+            // test1,
+            addTest
         };
     },
     methods: {
         testClickVueRouter() {
-            this.$router.push('/users/eduardo/AppPrivateOfficePage');
+            this.$router.push('/PagePrivateOffice');
+        },
+        closeModalWindow() {
+            this.testModalController.isVisibleFormLogin = true;
+            this.testModalController.isVisibleFormObject = true;
+            this.testModalController.isVisibleFormRegistration = true;
+            this.testModalController.isVisibleFormRestorePassword = true;
+            this.testModalController.isVisibleFormLocationComponent = true;
+            this.testModalControllers.isVisibleFormRegistration = true
         },
     }
 }

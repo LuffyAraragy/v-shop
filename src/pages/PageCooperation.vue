@@ -13,14 +13,14 @@
 </template>
 
 <script>
-import AppAgent from './AppAgent.vue';
+import AppAgent from '../components/AppAgent.vue';
 
 import { vAgent, vCompany, vHeaderBlockCooperation } from '@/assets/api/apiFooter'
-import AppHeaderBlock from './AppHeaderBlock.vue';
+import AppHeaderBlock from '../components/AppHeaderBlock.vue';
 
 
 export default {
-    name: "AppCooperation",
+    name: "PageCooperation",
     components: {
     AppAgent,
     AppHeaderBlock

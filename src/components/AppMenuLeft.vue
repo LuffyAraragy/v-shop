@@ -22,7 +22,6 @@ export default {
     data() {
         return {
             isLoad: false,
-            tst: '/users/eduardo/AppDeliveryManagementPage'
         }
     },
     setup() {

@@ -13,14 +13,14 @@
 </template>
 
 <script>
-import AppExampleOfWork from './AppExampleOfWork.vue';
-import AppWork from './AppWork.vue';
-import AppHeaderBlock from './AppHeaderBlock.vue';
+import AppExampleOfWork from '../components/AppExampleOfWork.vue';
+import AppWork from '../components/AppWork.vue';
+import AppHeaderBlock from '../components/AppHeaderBlock.vue';
 
 import { vWorkDesign, vHeaderBlockDesign } from '@/assets/api/apiFooter'
 
 export default {
-    name: "AppDesign",
+    name: "PageDesign",
     components: {
         AppWork,
         AppExampleOfWork,

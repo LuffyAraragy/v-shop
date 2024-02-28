@@ -1,17 +1,17 @@
 <template>
-    <div class="app-main-component" v-if="isLoad">
+    <div class="layout-default">
         <AppMenuTop>
 
         </AppMenuTop>
-        <div class="app-main-component__left-menu">
+        <div class="layout-default__left-menu">
             <AppMenuLeft :menuLeft="appMenuLeft">
 
             </AppMenuLeft>
         </div>
-        <div class="app-main-component__block">
-            <div class="app-main-component__main-content">
+        <div class="layout-default__block">
+            <div class="layout-default__main-content">
                 <AppAddressOffice>
-            
+
                 </AppAddressOffice>
                 <!-- TODO ponosonik: Сюда передавать данные блоков -->
                 <router-view>
@@ -24,25 +24,23 @@
         </AppFooter>
     </div>
 </template>
-
 <script>
-// import AppAboutCompany from './AppAboutCompany.vue';
-import AppAddressOffice from './AppAddressOffice.vue';
-import AppFooter from './AppFooter.vue';
-import AppMenuLeft from './AppMenuLeft.vue';
-import AppMenuTop from './AppMenuTop.vue';
-import { vMenuLeft } from '@/assets/api/apiFooter'
+import AppFooter from '@/components/AppFooter.vue';
+import AppMenuTop from '@/components/AppMenuTop.vue';
+import AppMenuLeft from '@/components/AppMenuLeft.vue';
 
+
+import { vMenuLeft } from '@/assets/api/apiFooter'
+import AppAddressOffice from '@/components/AppAddressOffice.vue';
 
 export default {
-    name: "AppMainComponent",
+    name: "LayoutDefault",
     components: {
-        AppMenuLeft,
-        // AppAboutCompany, 
-        AppMenuTop,
-        AppAddressOffice,
-        AppFooter,
-    },
+    AppFooter,
+    AppMenuTop,
+    AppMenuLeft,
+    AppAddressOffice
+},
     data() {
         return {
             isLoad: false,
@@ -69,20 +67,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-.app-main-component {
-    // margin: 0 auto;
+    
+.layout-default {
     position: relative;
 
     &__block {
         // display: flex;
         // position: relative;
     }
-// Чёт подсказывает что это костыль
     &__main-content {
         max-width: 100%;
-        // margin: 0 auto;
-        // padding: 0 20px;
 
         // TODO позволяет растянуть весь контент на всю длину- это рпо изображение, и другие элементы, если нужно ограничить ихз размер нужно рпописать Container в класс
         flex-basis: 100%;
@@ -93,4 +87,5 @@ export default {
         position: absolute;
     }
 }
+
 </style>

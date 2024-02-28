@@ -12,14 +12,14 @@
     </div>
 </template>
 <script>
-import AppCardLocation from './AppCardLocation.vue';
-import AppQuestions from './AppQuestions.vue';
-import AppHeaderBlock from './AppHeaderBlock.vue';
+import AppCardLocation from '../components/AppCardLocation.vue';
+import AppQuestions from '../components/AppQuestions.vue';
+import AppHeaderBlock from '../components/AppHeaderBlock.vue';
 
 import { vHeaderBlockContact } from '@/assets/api/apiFooter'
 
 export default {
-    name: "AppContact",
+    name: "PageContact",
     components: {
         AppQuestions,
         AppCardLocation,

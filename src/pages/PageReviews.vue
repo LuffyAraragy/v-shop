@@ -33,16 +33,16 @@
     </div>
 </template>
 <script>
-import AppButton from './AppButton.vue';
-import AppCardEmployee from './AppCardEmployee.vue';
-import AppHeaderBlock from './AppHeaderBlock.vue';
+import AppButton from '../components/AppButton.vue';
+import AppCardEmployee from '../components/AppCardEmployee.vue';
+import AppHeaderBlock from '../components/AppHeaderBlock.vue';
 
 import { vHeaderBlockReviews } from '@/assets/api/apiFooter'
-import AppSwiperSliderComponent from './AppSwiperSliderComponent.vue';
+import AppSwiperSliderComponent from '../components/AppSwiperSliderComponent.vue';
 
 
 export default {
-    name: "AppReviewsPage",
+    name: "PageReviews",
     components: {
     AppHeaderBlock,
     AppCardEmployee,

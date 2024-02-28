@@ -106,19 +106,19 @@ export async function vCardService() {
 
 export async function vMenuLeft() {
   let menuContent = [
-    {img: "Rectangle 5.svg", dropdownButton: "Купить", link:"/users/eduardo/AppCatalogPage"},
-    {img: "Rectangle 5.svg", dropdownButton: "Продать", link:"/users/eduardo/AppDeliveryManagementPage"},
-    {img: "Rectangle 5.svg", dropdownButton: "Сдать", link:"/users/eduardo/AppDeliveryManagementPage"},
-    {img: "Rectangle 5.svg", dropdownButton: "Снять", link:"/users/eduardo/AppCatalogPage"},
-    {img: "Rectangle 5.svg", dropdownButton: "Без агента", link:"/users/eduardo/AppWithoutAgentPage"},
-    {dropdownButton: "О компании", link:"/users/eduardo/AppAboutCompany"},
-    {dropdownButton: "Вакансии", link:"/users/eduardo/AppVacancies"},
-    {dropdownButton: "Ремонт", link:"/users/eduardo/AppRepair"},
-    {dropdownButton: "Дизайн", link:"/users/eduardo/AppDesign"},
-    {dropdownButton: "Отзывы", link:"/users/eduardo/AppReviewsPage"},
-    {dropdownButton: "Сотрудничество", link:"/users/eduardo/AppCooperation"},
-    {dropdownButton: "Сдать в управление", link:"/users/eduardo/AppDeliveryManagementPage"},
-    {dropdownButton: "Контакты", link:"/users/eduardo/AppContact"},
+    {img: "Rectangle 5.svg", dropdownButton: "Купить", link:"/PageCatalog"},
+    {img: "Rectangle 5.svg", dropdownButton: "Продать", link:"/PageDeliveryManagement"},
+    {img: "Rectangle 5.svg", dropdownButton: "Сдать", link:"/PageDeliveryManagement"},
+    {img: "Rectangle 5.svg", dropdownButton: "Снять", link:"/PageCatalog"},
+    {img: "Rectangle 5.svg", dropdownButton: "Без агента", link:"/PageWithoutAgent"},
+    {dropdownButton: "О компании", link:"/PageAboutCompany"},
+    {dropdownButton: "Вакансии", link:"/PageVacancies"},
+    {dropdownButton: "Ремонт", link:"/PageRepair"},
+    {dropdownButton: "Дизайн", link:"/PageDesign"},
+    {dropdownButton: "Отзывы", link:"/PageReviews"},
+    {dropdownButton: "Сотрудничество", link:"/PageCooperation"},
+    {dropdownButton: "Сдать в управление", link:"/PageDeliveryManagement"},
+    {dropdownButton: "Контакты", link:"/PageContact"},
   ]
   return delayResponse(menuContent);
 }
@@ -783,17 +783,31 @@ export let useTodos = defineStore('todos', {
 
 export let testModalController = defineStore("modalController", {
   state: () =>({
-    controller:[
-      {
-        // TODO сделал
-        isVisibleFormLogin: false,
-        // TODO сделал
-        isVisibleFormObject: false,
-        isVisibleFormRegistration: false,
-        isVisibleFormRestorePassword: false,
-        isVisibleFormLocationComponent: false,
-      },
-    ]
+
+    isVisibleFormLogin: false,
+    isVisibleFormObject: false,
+    isVisibleFormRegistration: false,
+    isVisibleFormRestorePassword: false,
+    isVisibleFormLocationComponent: false,
+
+    // controller:[
+    //   {
+    //     isVisibleFormLogin: false,
+    //     isVisibleFormObject: false,
+    //     isVisibleFormRegistration: false,
+    //     isVisibleFormRestorePassword: false,
+    //     isVisibleFormLocationComponent: false,
+    //   },
+    // ],
+    // actions: {
+    //   closeModalWindow() {
+    //     this.isVisibleFormLogin = false;
+    //     this.isVisibleFormObject = false;
+    //     this.isVisibleFormRegistration = false;
+    //     this.isVisibleFormRestorePassword = false;
+    //     this.isVisibleFormLocationComponent = false;
+    //   }
+    // }
     //TODO добавить метод, который будет обнулять все видимые модальные окна,чтоб сменить на другое
   })
 })
@@ -823,6 +837,24 @@ export let userAccount = defineStore("userAccount", {
       //     usersPassword: password,
       //   })
       // }
+
+      
     }
   })
 }) 
+
+// export function modalWindowClose(itemOpen, arrayLength) {
+//   for (const iterator of object) {
+//     if(x < arrayLength.length){
+//       itemOpen = true;
+//     }
+//   }
+  
+// }
+
+// TODO Сделать метод закрытия всех окон при нажатии на ссылку. itemOpen - элемент который должен быть труе при условии что весь массив прошёл обнуление на false
+// modalWindowClose(itemOpen, arrayLength) {
+//   if(x < arrayLength.length){
+//     itemOpen = true;
+//   }
+// },
