@@ -2,6 +2,8 @@ import {delayResponse} from '@/assets/utils/utilsPromis'
 
 import {defineStore} from 'pinia'
 
+
+
 export async function fetchFooterData() {
     let footerData = [    
         ["Меню","Купить","Продать","Сдать","Снять","Без агента"],
@@ -107,8 +109,8 @@ export async function vCardService() {
 export async function vMenuLeft() {
   let menuContent = [
     {img: "Rectangle 5.svg", dropdownButton: "Купить", link:"/PageCatalog"},
-    {img: "Rectangle 5.svg", dropdownButton: "Продать", link:"/PageDeliveryManagement"},
-    {img: "Rectangle 5.svg", dropdownButton: "Сдать", link:"/PageDeliveryManagement"},
+    {img: "Rectangle 5.svg", dropdownButton: "Продать", buttonClick:"true"},
+    {img: "Rectangle 5.svg", dropdownButton: "Сдать", buttonClick:"true"},
     {img: "Rectangle 5.svg", dropdownButton: "Снять", link:"/PageCatalog"},
     {img: "Rectangle 5.svg", dropdownButton: "Без агента", link:"/PageWithoutAgent"},
     {dropdownButton: "О компании", link:"/PageAboutCompany"},
@@ -427,7 +429,6 @@ export let useCardObject = defineStore("movieStore2", {
 
 export let useTodos = defineStore('todos', {
   state: () => ({
-    /** @type {{ text: string, id: number, img: Array, price: string, icon: string, characteristicsTitle: string, characteristics: Array, descriptionText: string, additionalCharacteristicsTitle: string, additionalCharacteristics: Array, address: string, metro: string, onLiked: boolean, name: string, description: string, isFinished: boolean }[]} */
     todos: [
       {
         id: 0,

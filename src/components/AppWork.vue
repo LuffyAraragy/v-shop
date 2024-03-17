@@ -74,6 +74,7 @@ export default {
         margin-top: 60px;
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
         column-gap: 30px;
     }
 

@@ -31,9 +31,7 @@
                     >
                     <!-- TODO тут добавитьотдельный списко данных лучших резаультатов -->
                         <AppCardItem
-                            v-for="(array, index) in filteredTodos"
-                            :key="index"
-                            :card="array"
+                            :card="filteredTodos[0]"
                         >
                     
                         </AppCardItem>
@@ -130,5 +128,9 @@ export default {
 .tests {
     max-width: 100%;
     height: 500px;
+}
+
+.app-object-website__block-information {
+    max-width: 800px;
 }
 </style>

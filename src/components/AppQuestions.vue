@@ -69,7 +69,7 @@ export default {
     display: flex;
     justify-content: space-between;
     padding: 0 0 0 50px;
-    width: 1110px;
+    max-width: 1110px;
     // height: 438px;
     flex-shrink: 0;
     border-radius: 5px;

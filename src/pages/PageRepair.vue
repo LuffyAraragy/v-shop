@@ -10,7 +10,7 @@
             
         </AppExampleOfWork>
         <div class="app-repair__block-button">
-            <AppButton>
+            <AppButton width="350px">
                 Заказать ремонт
             </AppButton>
         </div>

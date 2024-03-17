@@ -2,7 +2,7 @@
     <div class="app-card-item" v-if="isLoad">
         <!-- Передаём массив с изображениями -->
         <app-swiper-slider :arrayImgCards="card.img">
-            
+        
         </app-swiper-slider>
         <div class="app-card-item__block-content">
             <div class="app-card-item__info-block">
@@ -88,7 +88,7 @@ export default {
             console.log("Кликнул element=: " + element);
         },
         testClickVueRouter() {
-            this.$router.push('/users/eduardo/AppObjectWebsite');
+            this.$router.push('/PageObjectWebsite');
         },
         apply(element){
             this.testClick(element)

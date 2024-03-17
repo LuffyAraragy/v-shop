@@ -6,7 +6,17 @@
                 :src="require(`@/img/leftMenu/${array.img}`)" 
             >
             <div class="content__text" v-if="index < 5">
-                <router-link :to="array.link" class="app-menu-left__link" :class="innerClass">{{ array.dropdownButton }}</router-link>
+                <button class="app-menu-left__button" @click="testModalControllers.isVisibleFormObject=array.buttonClick" v-if="array.buttonClick">
+                    {{ array.dropdownButton }}
+                </button>
+                <router-link 
+                    :to="array.link" 
+                    class="app-menu-left__link" 
+                    :class="innerClass"
+                    v-if="array.link"
+                >
+                    {{ array.dropdownButton }}
+                </router-link>
             </div>
             <div class="text" v-if="index >= 5">
                 <router-link :to="array.link" class="app-menu-left__link" :class="innerClass">{{ array.dropdownButton }}</router-link>
@@ -54,6 +64,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.app-menu-left__button {
+    cursor: pointer;
+    background: none;
+    border: none;
+}
 
 .app-menu-left__link {
     text-decoration: none;

@@ -81,7 +81,7 @@ export default {
 
     &__title {
         margin: 0 auto;
-        width: 920px;
+        max-width: 920px;
         text-align: center;
     }
     

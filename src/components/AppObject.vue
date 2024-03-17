@@ -201,7 +201,7 @@ export default {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 10;
-
+    overflow: auto;
 }
 .app-object {
     display: flex;
@@ -209,13 +209,10 @@ export default {
     margin: auto;
     gap: 30px;
     max-width: 448px;
-    // width: 100%;
-    // height: 100%;
     flex-shrink: 0;
     border-radius: 5px;
     background: #F8F7F7;
     padding: 60px;
-
 
     &__exit {
         display: flex;

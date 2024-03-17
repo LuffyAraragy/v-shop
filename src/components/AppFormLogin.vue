@@ -121,7 +121,6 @@ export default {
         function onLogin(login, password) {
             if(this.account.usersData[0].usersLogin == login &&  this.account.usersData[0].usersPassword == password) {
                 this.account.usersData[0].isLogin = true;
-                // this.$router.push('/users/eduardo/AppPrivateOfficePage');
             }
         }
 
@@ -132,24 +131,14 @@ export default {
         }
 
         function addTest() {
-            // testModalController.closeModalWindow;
             alert(testModalController.isVisibleFormLogin);
         }
     
-        // function test1(testModal, testItem) {
-        //     for (const key in testModal) {
-        //         testModal[key] = true
-        //     }
-        //     console.log(testItem);
-        //     testItem = false;
-        // }
-
         return {
             testModalControllers,
             account,
             onLogin,
             allOnClick,
-            // test1,
             addTest
         };
     },
@@ -173,30 +162,18 @@ export default {
 <style lang="scss" scoped>
 .test-background {
     z-index: 10;
-
-    // background: rgba(0, 0, 0, 0.4);
-    // position: absolute;
-    // width: 100%;
-    // height: 100%;
-    
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-
 }
 .app-form-login {
     padding: 60px;
     max-width: 430px;
     height: 721px;
     background-color: white;
-    // z-index: 10;
-    // position: absolute;
     transform: translate(0%, 90px);
 
     &__exit {

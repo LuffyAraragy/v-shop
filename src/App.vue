@@ -407,19 +407,17 @@ export default {
 
 .input {
   // TODO Кастыль
-  width: 300px;
-
-  padding: 10px;
-  max-width: 100%;
+  // width: 300px;
+  padding: 20px;
+  // max-width: 100%;
   border-radius: 5px;
   border: 2px solid #F3F3F3;
   background: #ffffff;
   color: #2F2D2D;
   font-family: Geometria;
-  font-size: 18px;
+  font-size: 14px;
   font-style: normal;
-  font-weight: 300;
-  line-height: 40px;
+  font-weight: 400;
 
   &--border-none {
     border: none;
@@ -454,7 +452,8 @@ export default {
   }
 
 .text__20px {
-  width: 540px;
+  // TODO сделал max-width вместо width
+  max-width: 540px;
   flex-shrink: 0;
   color: #2F2D2D;
   font-family: Geometria;

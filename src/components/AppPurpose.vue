@@ -86,8 +86,7 @@ export default {
     }
 
     &__step {
-        height: 210;
-        width: 255px;
+        max-width: 255px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -98,11 +97,6 @@ export default {
         width: 65px;
         height: 65px;
     }
-
-    &__text {
-        width: 255px;
-    }
-
 }
 
 

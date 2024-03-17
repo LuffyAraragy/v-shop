@@ -1,6 +1,6 @@
 <template>
     <div class="app-card-employees">
-        <img src="@\img\ourEmployees\11867_original 1.svg" alt="">
+        <img src="@\img\ourEmployees\11867_original 1.svg" alt="" class="app-card-employees__img">
         <div class="app-card-employees__name">
             Иван Иванов
         </div>
@@ -18,5 +18,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    
+
+.app-card-employees {
+    &__img {
+        max-width: 100%;
+    }
+}
+
 </style>

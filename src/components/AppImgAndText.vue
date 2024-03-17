@@ -41,10 +41,8 @@ export default {
     background-color: #ffffff;
 
     &__img {
-        width: 100%;
-        height: 100%;
-        max-width: 540px;
-        max-height: 284px;
+        max-width: 100%;
+        min-width: 300px;
     }
     
     &__title {

@@ -128,12 +128,12 @@ export default {
 <style lang="scss" scoped>
 
 .app-swiper-slider-component {
-    display: grid;
-    justify-content: center;
+    // display: grid;
+    // justify-content: center;
     gap: 40px;
     padding: 100px 0;
-    width: 100%;
-    height: 100%;
+    // width: 100%;
+    // height: 100%;
     // background: #ffffff;
 
     &__title {

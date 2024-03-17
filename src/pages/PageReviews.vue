@@ -138,8 +138,8 @@ export default {
     &__block-employee {
         // TODO Может тут ошибка по марджину
         margin: 100px 20px 0 20px; 
-        display: flex;
-        gap: 30px;
+        // display: flex;
+        // gap: 30px;
     }
 }
 

@@ -56,6 +56,11 @@ export default {
 .app-in-numbers {
     padding: 100px 20px;
     background-color: #ffffff;
+
+    &__img {
+        max-width: 100%;
+        min-width: 300px;
+    }
 }
 .app-in-numbers__title {
     display: flex;
@@ -65,7 +70,6 @@ export default {
     margin-top: 60px;
     display: flex;
     gap: 40px;
-    justify-content: center;
     align-items: center;
 }
 .app-in-numbers__block-number {

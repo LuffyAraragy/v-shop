@@ -3,13 +3,19 @@
         <!-- <AppSearchComponents>
             
         </AppSearchComponents> -->
-        <AppFilter>
-            
-        </AppFilter>
+        <div class="app-catalog-page__block-content">
+            <div class="app-card-page__block">
+                <AppButton width="160px" :hasBlack="true" :hasAround="true">
+                    <router-link to="/AppCatalogPage" class="link">Купить</router-link>
+                </AppButton>
+            </div>
+            <AppFilter>
+                
+            </AppFilter>
+        </div>
         <!-- <label><input class="app-input" v-model="filter" type="radio" value="all"> All</label>
         <label><input class="app-input" v-model="filter" type="radio" value="finished"> Finished</label>
         <label><input class="app-input" v-model="filter" type="radio" value="unfinished"> Unfinished</label> -->
-        <hr>
         <!-- <ul>
             <li v-for="todo in filteredTodos" :key="todo.id">
             <input class="app-input" v-model="todo.isFinished" type="checkbox">
@@ -123,6 +129,10 @@ export default {
 .app-catalog-page {
     margin-bottom: 100px;
 
+    &__block-content {
+        margin: 40px auto;
+    }
+
     &__card-content {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -138,6 +148,16 @@ export default {
         gap: 10px;
     }
 
+    &__block {
+        display: flex;
+        gap: 10px;
+    }
+    
+}
+
+.link {
+    text-decoration: none;
+    color: #ffffff;
 }
 
 </style>

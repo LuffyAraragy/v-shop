@@ -4,9 +4,9 @@
             Наш офис
         </div>
         <div class="app-photo-office__block-content">
-            <img src="@/img/photoOffice/OCERHB0.svg" alt="">
+            <img src="@/img/photoOffice/OCERHB0.svg" alt="" class="app-photo-office__img">
             <div class="app-photo-office__block-img">
-                <img src="@/img/photoOffice/5206.svg" alt="" v-for="(array, index) in 4" :key="index" class="img">
+                <img src="@/img/photoOffice/5206.svg" alt="" v-for="(array, index) in 4" :key="index" class="app-photo-office__img">
             </div>
         </div>
     </div>
@@ -36,6 +36,11 @@ export default {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 25px;
+        }
+        
+        &__img {
+            max-width: 100%;
+            min-width: 100px;
         }
     }
 </style>
