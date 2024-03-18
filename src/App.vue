@@ -204,13 +204,13 @@ export default {
 }
 
 .app-test {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
 }
 
 .text {
@@ -264,7 +264,7 @@ export default {
   &--font-size-big {
     font-size: 36px;
   }
-//цвет текста
+
   &--color-white {
     color: #FFF;
   }
@@ -366,10 +366,7 @@ export default {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-
   background-color: transparent;
-
-  /* ОТ себя добавил */
   cursor: pointer;
   transition: 0.4s;
 }
@@ -406,10 +403,9 @@ export default {
   }
 
 .input {
-  // TODO Кастыль
-  // width: 300px;
+  width: 100%;
   padding: 20px;
-  // max-width: 100%;
+  box-sizing: border-box;
   border-radius: 5px;
   border: 2px solid #F3F3F3;
   background: #ffffff;

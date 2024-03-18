@@ -16,13 +16,13 @@
                             <div class="app-form-login__telephone text text--font-size-normal text--color-black text--font-weight-500">
                                 {{ textPhone }}
                             </div>
-                            <input type="text" class="app-form-login__input" v-model="phone">
+                            <input type="text" class="input app-form-login__input" v-model="phone">
                         </div>
                         <div class="app-form-login__block">
                             <div class="app-form-login__telephone text text--font-size-normal text--color-black text--font-weight-500">
                                 {{ textPassword }}
                             </div>
-                            <input type="text" class="app-form-login__input" v-model="password">
+                            <input type="text" class="input app-form-login__input" v-model="password">
                         </div>
                     </div>
                     <div class="app-form-login__block-save-forgot-password">
@@ -173,7 +173,7 @@ export default {
     padding: 60px;
     max-width: 430px;
     height: 721px;
-    background-color: white;
+    background-color: #F3F3F3;
     transform: translate(0%, 90px);
 
     &__exit {
@@ -222,6 +222,7 @@ export default {
 
     &__input {
         margin-top: 15px;
+        max-width: 100%;
     }
 
     &__button {

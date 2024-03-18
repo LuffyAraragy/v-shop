@@ -22,10 +22,6 @@ import PageTestInputConpoment from './pages/PageTestInputConpoment.vue';
 import PageVacancies from './pages/PageVacancies.vue';
 import PageWithoutAgent from './pages/PageWithoutAgent.vue';
 
-
-
-
-
 export const router = createRouter({
   history: createWebHistory(),
   routes: [
